@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.homepage-images {
+display: flex;
+};
+
+.homepage-image-card {
+  position: relative;
+  text-align: left;
+}
+
+.homepage-image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  color: white;
+  font-weight: bold;
+}
