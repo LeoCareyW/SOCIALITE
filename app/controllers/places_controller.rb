@@ -45,4 +45,5 @@ def place_params
   params.require(:place).permit(:name, :address, :category)
 end
 
+
 end
