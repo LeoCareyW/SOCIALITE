@@ -1,0 +1,134 @@
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.box {
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // background: #E3E3E3;
+  text-align: center;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500px;
+}
+
+.box input[type = "email"],.box input[type = "password"],.box input[type = "password_confirmation"] {
+  border-radius:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #FFFFFF;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  // border-radius: 24px;
+  transition: 0.25s
+}
+
+.box input[type = "email"]:focus,.box input[type = "password"]:focus {
+  width: 280px;
+  border-color: #888888;
+}
+
+.box input[type = "submit"]{
+  border-radius:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #23cc71;
+  padding: 14px 20px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
+.links {
+   position:fixed;
+   bottom:10px;
+   text-align: center;
+   margin-left: 43vw;
+}
+
+.banner {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.login-boxes {
+  position: center;
+  margin-top: 300px;
+}
+
+.form-text {
+  .text-muted {
+  color: white;
+  }
+}
+
+.form-actions {
+  color: white;
+  text-align: center;
+  .btn {
+    color: white;
+    font-size: 20px;
+      &:hover {
+          color:grey;
+      }
+  }
+}
+
+
+.title {
+  h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 0px;
+  padding-top: 50px;
+  }
+}
+
+h5 {
+  text-align: center;
+  text-align: bottom;
+  font-size: 15px;
+  margin-top: 50px;
+  padding: 10px;
+  color: white;
+  a {
+    color: white;
+    &:hover {
+          color:grey;
+    }
+  }
+}
+
+.form-inputs {
+  color: white;
+}
+
+
+
+
+
+
