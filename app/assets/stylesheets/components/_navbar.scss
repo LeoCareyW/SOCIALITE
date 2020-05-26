@@ -1,12 +1,235 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+* {
+      box-sizing: border-box;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
 }
+
+body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      font: bold 'Futura', arial, sans-serif;
+      font-weight: 400;
+      background: url(background-img.jpg);
+      background-position: center;
+      background-size: cover;
+}
+
+nav {
+      padding: 8px;
+}
+
+.logo {
+      float: left;
+      padding: 8px;
+      margin-left: 16px;
+      margin-top: 8px;
+}
+
+.logo a {
+      color: #000;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0px;
+      text-decoration: none;
+}
+
+nav ul {
+      float: right;
+}
+
+nav ul li {
+      display: inline-block;
+      float: left;
+}
+
+nav ul li:not(:first-child) {
+      margin-left: 48px;
+}
+
+nav ul li:last-child {
+      margin-right: 24px;
+}
+
+nav ul li a {
+      display: inline-block;
+      outline: none;
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+}
+
+@media screen and (max-width: 864px) {
+      .logo {
+            padding: 0;
+      }
+
+      .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.2s ease;
+      }
+
+      .nav-wrapper ul {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+      }
+
+      .nav-wrapper ul li {
+            display: block;
+            float: none;
+            width: 100%;
+            text-align: right;
+            margin-bottom: 10px;
+      }
+
+      .nav-wrapper ul li:nth-child(1) a {
+            transition-delay: 0.2s;
+      }
+
+      .nav-wrapper ul li:nth-child(2) a {
+            transition-delay: 0.3s;
+      }
+
+      .nav-wrapper ul li:nth-child(3) a {
+            transition-delay: 0.4s;
+      }
+
+      .nav-wrapper ul li:nth-child(4) a {
+            transition-delay: 0.5s;
+      }
+
+      .nav-wrapper ul li:not(:first-child) {
+            margin-left: 0;
+      }
+
+      .nav-wrapper ul li a {
+            padding: 10px 24px;
+            opacity: 0;
+            color: #000;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            transform: translateX(-20px);
+            transition: all 0.2s ease;
+      }
+
+      .nav-btn {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            display: block;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 50%;
+      }
+
+      .nav-btn i {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #000;
+            border-radius: 2px;
+            margin-left: 14px;
+      }
+
+      .nav-btn i:nth-child(1) {
+            margin-top: 16px;
+      }
+
+      .nav-btn i:nth-child(2) {
+            margin-top: 4px;
+            opacity: 1;
+      }
+
+      .nav-btn i:nth-child(3) {
+            margin-top: 4px;
+      }
+}
+
+#nav:checked + .nav-btn {
+      transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i {
+      background: #000;
+      transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+      transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+      opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+      transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+      z-index: 9990;
+      opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+      opacity: 1;
+      transform: translateX(0);
+}
+
+.hidden {
+      display: none;
+}
+// // /HOW TO MAKE A BLACK LINE APPEAR BELOW ON HOVER
+// .navbar:not(.dropdown) a {
+//   color: black;
+//   text-decoration: none;
+//   font-weight: lighter;
+//   display: inline-block;
+//   padding: 15px 20px;
+//   position: relative;
+//   font: bold 'Sailec', arial, sans-serif;
+// }
+
+// .navbar:not(.dropdown) a:after  {
+//   background: none repeat scroll 0 0 transparent;
+//   bottom: 0;
+//   content: "";
+//   display: block;
+//   height: 2px;
+//   left: 50%;
+//   position: absolute;
+//   background: black;
+//   transition: width 0.3s ease 0s, left 0.3s ease 0s;
+//   width: 0;
+// }
+// .navbar:not(.dropdown) a:hover:after  {
+//   width: 100%;
+//   left: 0;
+// }

@@ -1,0 +1,26 @@
+
+<div class="container mx-auto mt-4" style="width:300px; text-align: center">
+  <h1><%= @group.name %></h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <% if @users.nil? %>
+      <p>No members yet</p>
+      <% else %>
+      <% @users.each do |user| %>
+      <%= user.name %>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="col-sm-6" style="text-align: center">
+      <% @plans.each do |plan| %>
+      <%= plan.name %>
+      <% end %>
+    </div>
+    <div class="col-sm-3">
+      CALENDAR
+    </div>
+  </div>
+</div>
