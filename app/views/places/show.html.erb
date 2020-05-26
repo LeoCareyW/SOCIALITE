@@ -1,18 +1,20 @@
 <div class="carousel-container mx-auto">
-   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-     <!--Indicators-->
-     <ol class="carousel-indicators">
-      <% if @place.photos %>
-        <% @place.photos.each do |photo| %>
-        <% if photo == @place.photos[0] %>
-           <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-         <% else %>
-           <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-         <% end %>
-         <% end  %>
-         </ol>
-       <% else  %>
-       <% end %>
+ <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+   <!--Indicators-->
+    <ol class="carousel-indicators">
+    <% if @place.photos %>
+      <% @place.photos.each do |photo| %>
+      <% if photo == @place.photos[0] %>
+         <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <% else %>
+         <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <% end %>
+      <% end  %>
+      </ol>
+    <% else  %>
+    <% end %>
+  </div>
+</div>
 
   <div class="carousel-inner" role="listbox">
     <% if @place.photos %>
