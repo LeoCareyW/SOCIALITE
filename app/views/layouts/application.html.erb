@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
   </head>
-  
+
   <body>
     <nav>
       <input type="checkbox" id="nav" class="hidden">
@@ -25,11 +25,15 @@
       </div>
       <div class="nav-wrapper">
         <ul>
-          <li>
-            <%= link_to "My Groups", groups_path %>
-          </li>
-          <li><a href="#">My Profile</a></li>
-          <li><a href="#">Account</a></li>
+          <% if user_signed_in?  %>
+          <li><%= link_to "My Profile", profile_path %></li>
+          <li><%= link_to "My Groups", groups_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+
         </ul>
       </div>
     </nav>
