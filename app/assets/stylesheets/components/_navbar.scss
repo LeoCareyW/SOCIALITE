@@ -1,12 +1,31 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+// // /HOW TO MAKE A BLACK LINE APPEAR BELOW ON HOVER
+// .navbar:not(.dropdown) a {
+//   color: black;
+//   text-decoration: none;
+//   font-weight: lighter;
+//   display: inline-block;
+//   padding: 15px 20px;
+//   position: relative;
+//   font: bold 'Sailec', arial, sans-serif;
+// }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// .navbar:not(.dropdown) a:after  {
+//   background: none repeat scroll 0 0 transparent;
+//   bottom: 0;
+//   content: "";
+//   display: block;
+//   height: 2px;
+//   left: 50%;
+//   position: absolute;
+//   background: black;
+//   transition: width 0.3s ease 0s, left 0.3s ease 0s;
+//   width: 0;
+// }
+// .navbar:not(.dropdown) a:hover:after  {
+//   width: 100%;
+//   left: 0;
+// }
