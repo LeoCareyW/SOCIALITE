@@ -4,18 +4,20 @@ body {
 background-color: white;
 }
 
-.banner {
-  background-blend-mode: lighten;
-
-}
-
-
 .homepage-image {
   display: flex;
   opacity: 95%;
 };
 
-.homepage-image-card {
+.homepage-img-card {
+&:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(black,.2);
+  }
+}
+
+
+.homepage-image-card h1 {
   position: relative;
   text-align: left;
   background-size: cover;
@@ -30,6 +32,8 @@ background-color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font: bold 46px/1.4 'Roboto', arial, sans-serif;
+
 }
 
 .homepage-image-text {
@@ -37,7 +41,6 @@ background-color: white;
   bottom: 10px;
   left: 40px;
   color: white;
-  font-size: .875rem;
   letter-spacing: .0125rem;
   font-weight: 600;
   line-height: 1.5;
@@ -45,7 +48,6 @@ background-color: white;
   text-align: center;
   justify-content: center;
   text-shadow: 0 1px 0 black;
-
 }
 
 .darken {
@@ -68,14 +70,22 @@ background-color: white;
 .d-block h2 {
   text-align: center;
   font: 46px/4 $headers-font, arial, sans-serif;
-  // $body-font-2: "Raleway", "Helvetica", "sans-serif";
-  // font-size: .875rem;
   letter-spacing: .0125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #191a1a;
-  // font-family: "Work Sans", "Helvetica", "sans-serif";
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
+
+.banner-card-text {
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  width: 600px;
+  margin-left: -300px;
+  text-align: center;
+};
 
 .banner-card-text h1 {
  font: bold 46px/1.4 'Futura', arial, sans-serif;
@@ -104,14 +114,7 @@ background-color: white;
   margin-top: 5%
 }
 
-.banner-card-text {
-  position: absolute;
-  left: 50%;
-  top: -40px;
-  width: 600px;
-  margin-left: -300px;
-  text-align: center;
-};
+
 
 
 
