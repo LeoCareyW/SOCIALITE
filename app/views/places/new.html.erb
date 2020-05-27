@@ -3,7 +3,7 @@
   <div class="login-boxes">
     <%= simple_form_for(@place, html: {class: "box"}) do |f| %>
         <%= f.input :name %>
-        <%= f.input :address %>
+        <%= f.input :address, input_html: { id: 'place_address'} %>
         <%= f.input :category %>
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
