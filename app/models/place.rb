@@ -3,5 +3,6 @@ class Place < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   has_many_attached :photos
   validates :photos, :name, :address, :category, presence: true
-  has_many :plans, :recommendations, dependent: :destroy
+  has_many :plans, dependent: :destroy
+  has_many :recommendations, dependent: :destroy
 end

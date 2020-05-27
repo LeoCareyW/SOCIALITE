@@ -28,6 +28,7 @@ end
 
 def show
   @place = Place.find(params[:id])
+  @recommendation = Recommendation.where("user_id = ? and place_id = ?", current_user.id, @place.id).first
 end
 
 

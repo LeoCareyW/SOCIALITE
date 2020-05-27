@@ -2,15 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-
   get'/profile', to: 'pages#profile'
 
-
-
-  resources :places do 
-    resources :recommendations 
+  resources :places do
+    resources :recommendations
   end
-  
+
   resources :groups
 
 
