@@ -14,16 +14,20 @@ def index
 end
 
 def new
-  @places = Place.new
-end
-
-def create
   @place = Place.new
 end
 
-def show 
-  @place = Place.find(params[:id])
+def create
+  @place = Place.new(place_params)
+   if @place.save
+    redirect_to place_path(@place)
+  else
+    render :new
+  end
+end
 
+def show
+  @place = Place.find(params[:id])
 end
 
 
@@ -31,7 +35,7 @@ def edit
   @place = Place.find(params[:id])
 end
 
-def update 
+def update
   @place = Place.find(params[:id])
   @place.update(place_params)
 
@@ -45,7 +49,7 @@ end
 private
 
 def place_params
-  params.require(:place).permit(:name, :address, :category)
+  params.require(:place).permit(:name, :address, :category, :description, photos:[])
 end
 
 end

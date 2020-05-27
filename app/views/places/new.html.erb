@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div class="login-boxes">
+    <%= simple_form_for(@place, html: {class: "box"}) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Submit Place" %>
+        <% end %>
+    </div>
+  </div>
