@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 
 
 
-  resources :places do 
-    resources :recommendations 
+  resources :places do
+    resources :plans
+    resources :recommendations
   end
-  
+
   resources :groups
 
 

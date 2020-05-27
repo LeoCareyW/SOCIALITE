@@ -28,6 +28,8 @@ end
 
 def show
   @place = Place.find(params[:id])
+  # @groups = Group.all
+  @groups = Group.joins(:users).where(users: current_user)
 end
 
 

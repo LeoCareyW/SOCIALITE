@@ -1,13 +1,15 @@
 class GroupsController < ApplicationController
 
   def index
-    @group = Group.all
+    @groups = Group.all
   end
 
   def show
     @group = Group.find(params[:id])
-    @plans = @group.plans
+    # @plans = @group.plans
+    @plans = Plan.where(group: @group)
     @members = @group.users
+
   end
 
   def new
