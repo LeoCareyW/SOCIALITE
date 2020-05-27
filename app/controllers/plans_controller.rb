@@ -19,6 +19,7 @@ class PlansController < ApplicationController
     @plan.user = @user
     @place = Place.find(params[:place_id])
     @plan.place = @place
+    @plan.group = Group.find(params[:plan][:group])
     if @plan.save
       redirect_to place_path(@place)
     else
@@ -29,7 +30,7 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:name, :date)
+    params.require(:plan).permit(:name, :date, :group_id)
   end
 
 
