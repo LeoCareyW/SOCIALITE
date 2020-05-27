@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_141506) do
+ActiveRecord::Schema.define(version: 2020_05_27_140504) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +78,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_141506) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_plans_on_group_id"
     t.index ["place_id"], name: "index_plans_on_place_id"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
@@ -98,6 +101,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_141506) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -107,6 +111,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_141506) do
   add_foreign_key "memberships", "users"
   add_foreign_key "plangroups", "groups"
   add_foreign_key "plangroups", "plans"
+  add_foreign_key "plans", "groups"
   add_foreign_key "plans", "places"
   add_foreign_key "plans", "users"
   add_foreign_key "recommendations", "places"

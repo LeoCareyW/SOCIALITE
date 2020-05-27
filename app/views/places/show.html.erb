@@ -45,7 +45,7 @@
      </div>
    </div>
   </div>
-   <div class="information-container">
+  <div class="information-container">
      <%= @place.category %>
      <%= @place.name %>
      <%= @place.address %>
@@ -58,9 +58,37 @@
      <% else  %>
      <% end %>
    </div>
-
    </div>
  </div>
+
+
+ <div class="container-fluid bg-light py-3">
+   <div class="row">
+     <div class="col-md-6 mx-auto">
+       <div class="card card-body">
+         <h3 class="text-center mb-4">Create your Listing</h3>
+           <div class="container">
+             <%= simple_form_for([@place, Plan.new]) do |f| %>
+             <%= f.input :date %>
+             <%= f.input :group, collection: @groups %>
+               <%= f.submit "Create Plan", class: "btn btn-lg btn-primary btn-block" %>
+           </div>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+    <% pre_like = @place.recommendations.find { |recommend| recommend.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= link_to 'Unrecommend', place_recommendation_path(@place, @recommendation), method: :delete, remote: true %>
+      <% else %>
+        <%= link_to 'Recommend', place_recommendations_path(@place), method: :post, remote: true %>
+      <% end %>
+    <p><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></p>
+
+
 
 
 

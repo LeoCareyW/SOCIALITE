@@ -6,11 +6,11 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <% if @users.nil? %>
+      <% if @members.nil? %>
       <p>No members yet</p>
       <% else %>
-      <% @users.each do |user| %>
-      <%= user.name %>
+      <% @members.each do |member| %>
+      <%= member.email %>
       <% end %>
       <% end %>
       <div class="container member-table">
@@ -35,7 +35,7 @@
         <h2>Upcoming Plans</h2>
       </div>
       <% @plans.each do |plan| %>
-      <%= plan.name %>
+      <%= plan %>
       <% end %>
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
