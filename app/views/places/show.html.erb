@@ -45,7 +45,7 @@
      </div>
    </div>
   </div>
-   <div class="information-container">
+  <div class="information-container">
      <%= @place.category %>
      <%= @place.name %>
      <%= @place.address %>
@@ -78,6 +78,17 @@
      </div>
    </div>
  </div>
+
+
+    <% pre_like = @place.recommendations.find { |recommend| recommend.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= link_to 'Unrecommend', place_recommendation_path(@place, @recommendation), method: :delete, remote: true %>
+      <% else %>
+        <%= link_to 'Recommend', place_recommendations_path(@place), method: :post, remote: true %>
+      <% end %>
+    <p><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></p>
+
+
 
 
 
