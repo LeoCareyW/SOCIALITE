@@ -32,17 +32,6 @@
           </div>
         <% end %>  
 
-<div class="places-index">
-  <div class="places-form">
-    <%= simple_form_for :search, url: places_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-       <i class="fas fa-search" id="search"></i> Search
-      </button>
-    <% end %>
-  </div>
-
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"

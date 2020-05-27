@@ -2,7 +2,11 @@ class PlacesController < ApplicationController
 
 
 def index
-  @places = Place.all.geocoded
+  if params[:category]
+    @places = Place.where(:category => params[:category]).geocoded
+  else
+    @places = Place.all.geocoded
+  end
 
 
   @markers = @places.map do |place|
