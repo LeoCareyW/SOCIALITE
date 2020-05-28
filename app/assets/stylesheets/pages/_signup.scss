@@ -19,7 +19,7 @@
   font-weight: 500px;
 }
 
-.box input[type = "email"],.box input[type = "password"],.box input[type = "name"],.box input[type = "address"],.box input[type = "category"],.box input[type = "description"] {
+.box input[type = "email"],.box input[type = "password"],.box input[type = "text"] {
   border-radius:0;
   background: none;
   display: block;
@@ -35,7 +35,7 @@
 }
 
 
-.box input[type = "email"]:focus,.box input[type = "password"]:focus {
+.box input[type = "email"]:focus,.box input[type = "password"]:focus,.box input[type = "text"]:focus {
   width: 350px;
   border-color: #5fdde5;
 }
