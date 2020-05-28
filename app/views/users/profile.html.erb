@@ -1,31 +1,38 @@
 <div class="header-container">
-  <div>
-    <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 150, height: 150, crop: :thumb, gravity: :face) %>
-    </div>
+  <div class="photo-container">
+    <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
+        <% else %>
+        <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 150, height: 150, crop: :thumb, gravity: :face) %>
+       <% end %>
     <br>
+  </div>
   <h4><%= current_user.name %></h4>
- </div>
+  <div class="add-profile-picture">
+    <%= link_to "Add picture", new_user_path %>
+  </div>
 
 
-  <% @recommendations.each do |recommendation| %>
-  <% id = recommendation.place_id %>
-  <p><%= Place.find(id).name %></p>
-  <% end  %>
-</div>
-
-
-<div class="container">
-  <h2>Friends</h2>
-  <ul>
-    <% @user.friendships.each do |friendship| %>
-      <li>
-        <%= friendship.friend.email %>
-        (<%= link_to "remove", friendship, :method => :delete %>)
-      </li>
-    <% end %>
-  </ul>
-
-  <p><%= link_to "Find Friends", users_path %></p>
+<div class="recommendation-container">
+  <div>
+    <h4>Friends</h4>
+    <ul>
+      <% @user.friendships.each do |friendship| %>
+        <li>
+          <%= friendship.friend.email %>
+          (<%= link_to "remove", friendship, :method => :delete %>)
+        </li>
+      <% end %>
+      <p><%= link_to "Find Friends", users_path %></p>
+    </ul>
+    </div>
+  <div>
+    <h4> Your recommendations </h4>
+      <% @recommendations.each do |recommendation| %>
+      <% id = recommendation.place_id %>
+      <p><%= Place.find(id).name %></p>
+    <% end  %>
+  </div>
 </div>
 
 

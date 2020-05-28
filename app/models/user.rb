@@ -4,6 +4,7 @@ class User < ApplicationRecord
   geocoded_by :ip_address
   after_validation :geocode
   has_many :friendships
+  has_one_attached :photo
   has_many :friends, through: :friendships
   has_many :memberships
   has_many :groups, through: :memberships
