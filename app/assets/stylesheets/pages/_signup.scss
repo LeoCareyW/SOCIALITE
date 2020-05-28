@@ -19,7 +19,7 @@
   font-weight: 500px;
 }
 
-.box input[type = "email"],.box input[type = "password"],.box input[type = "password_confirmation"],.box input[type = "name"],.box input[type = "address"],.box input[type = "category"],.box input[type = "description"] {
+.box input[type = "email"],.box input[type = "password"],.box input[type = "name"],.box input[type = "address"],.box input[type = "category"],.box input[type = "description"] {
   border-radius:0;
   background: none;
   display: block;
@@ -27,16 +27,17 @@
   text-align: center;
   border: 2px solid #FFFFFF;
   padding: 14px 10px;
-  width: 200px;
+  width: 250px;
   outline: none;
   color: white;
   // border-radius: 24px;
   transition: 0.25s
 }
 
+
 .box input[type = "email"]:focus,.box input[type = "password"]:focus {
-  width: 280px;
-  border-color: #888888;
+  width: 350px;
+  border-color: #5fdde5;
 }
 
 .box input[type = "submit"]{
@@ -45,7 +46,7 @@
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid #23cc71;
+  border: 2px solid #5fdde5;
   padding: 14px 20px;
   width: 200px;
   outline: none;
@@ -57,7 +58,7 @@
 }
 
 .box input[type = "submit"]:hover{
-  background: #2ecc71;
+  background: #5fdde5;
 }
 
 .links {
@@ -125,6 +126,7 @@ h5 {
 
 .form-inputs {
   color: white;
+  margin-top: -50px;
 }
 
 
