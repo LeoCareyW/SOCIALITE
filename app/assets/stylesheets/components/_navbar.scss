@@ -48,6 +48,7 @@ nav {
 
 nav ul {
       float: right;
+      margin-top: -7px;
 }
 
 nav ul li {
@@ -72,6 +73,9 @@ nav ul li a {
       font-size: 14px;
       letter-spacing: 1.2px;
       font-weight: 600;
+      &:hover {
+          color: #5fdde5;
+      }
 }
 
 @media screen and (max-width: 864px) {
