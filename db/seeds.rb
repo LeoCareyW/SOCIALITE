@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 
 puts "cleaning db"
 Membership.destroy_all
@@ -22,6 +24,27 @@ user1 = User.create!(
 
 puts "creating a group"
 
+place1 = Place.new(name: "Nandos", address: "Paris", category: "Food & Drink")
+file = URI.open('https://www.yorkpress.co.uk/resources/images/11410514.jpg')
+place1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+place1.save
+
+place2 = Place.new(name: "Good Godfrey's", address: "London", category: "Bar")
+file = URI.open('https://www.yorkpress.co.uk/resources/images/11410514.jpg')
+place2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+place2.save
+
+place3 = Place.new(name: "ATIK", address: "Oxford", category: "Nightclub")
+file = URI.open('https://www.yorkpress.co.uk/resources/images/11410514.jpg')
+place3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+place3.save
+
+place4 = Place.new(name: "Mauerpark", address: "Berlin", category: "Outdoors")
+file = URI.open('https://www.yorkpress.co.uk/resources/images/11410514.jpg')
+place4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+place4.save
+
+
 FamilyGroup = Group.create(name: "Family")
 
 puts "joining a user to a group"
@@ -30,10 +53,7 @@ Membership.create(group_id: 1, user_id: 1)
 
 puts "creating a place"
 
-Nandos = Place.create(name: "Nandos", address: "NW22BS", category: "Food & Drink")
-
-Place.create(name: "Nandos", address: "NW22BS", category: "restaurant")
 puts "creating a plan"
 
-NandosPlan = Plan.create(place_id: 1, user_id: 1, date: "26/05/2020")
+Plan.create(place_id: 1, user_id: 1, date: "26/05/2020")
 
