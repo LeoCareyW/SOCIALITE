@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get'/profile', to: 'pages#profile'
+  get'/profile', to: 'users#profile', as: :profile
 
   resources :places do
     resources :plans
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :groups
+  resources :users
 
   resources :users
   resources :friendships

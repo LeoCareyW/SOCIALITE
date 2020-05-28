@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 2020_05_28_112557) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.float "latitude"
     t.float "longitude"
-    t.text "description"
   end
 
   create_table "plangroups", force: :cascade do |t|
