@@ -10,7 +10,7 @@ class RecommendationsController < ApplicationController
       @place = Place.find(params[:place_id])
       @recommendation.place = @place
       if @recommendation.save
-        redirect_to place_path(@place)
+        redirect_to place_path(@place, anchor: "recommend-")
       else
         flash[:notice] = "Cannot recommend"
         redirect_to place_path(@place)
@@ -25,7 +25,7 @@ class RecommendationsController < ApplicationController
     else
       @recommendation.destroy
     end
-    redirect_to place_path(@place)
+    redirect_to place_path(@place, anchor: "recommend-")
   end
 
   def find_recommendation
