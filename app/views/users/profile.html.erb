@@ -4,11 +4,29 @@
     </div>
     <br>
   <h4><%= current_user.name %></h4>
+ </div>
 
 
   <% @recommendations.each do |recommendation| %>
   <% id = recommendation.place_id %>
   <p><%= Place.find(id).name %></p>
   <% end  %>
+
+<div class="container">
+  <h2>Friends</h2>
+  <ul>
+    <% @user.friendships.each do |friendship| %>
+      <li>
+        <%= friendship.friend.email %>
+        (<%= link_to "remove", friendship, :method => :delete %>)
+      </li>
+    <% end %>
+  </ul>
+
+  <p><%= link_to "Find Friends", users_path %></p>
+</div>
+
+
+
 
 
