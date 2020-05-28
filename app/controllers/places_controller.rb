@@ -3,9 +3,9 @@ class PlacesController < ApplicationController
 
 def index
   if params[:category]
-    @places = Place.where(:category => params[:category]).geocoded
+    @places = Place.where(:category => params[:category])
   else
-    @places = Place.all.geocoded
+    @places = Place.all
   end
 
 

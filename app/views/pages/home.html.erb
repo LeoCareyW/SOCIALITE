@@ -22,37 +22,41 @@
       <div class="col-sm">
         <div class="homepage-img-card">
           <div class="homepage-image darken">
-            <img src="https://images.unsplash.com/photo-1539639885136-56332d18071d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
-          </div>
-          <div class="homepage-image-text">Bars</div>
-          <%= link_to "Bars", places_path(:category=>"bar") %>
+            <%= link_to(places_path(:category=>"Bar")) do %>
+                <img src="https://images.unsplash.com/photo-1539639885136-56332d18071d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
+              </div>
+              <div class="homepage-image-text">Bars</div>
+            <% end %>
         </div>
       </div>
       <div class="col-sm">
         <div class="homepage-img-card">
           <div class="homepage-image darken">
-            <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
-          </div>
-          <div class="homepage-image-text">Food & Drink</div>
-          <%= link_to "Restaurants", places_path(:category=>"restaurant") %>
+            <%= link_to(places_path(:category=>"Restaurant")) do %>
+                <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
+              </div>
+              <div class="homepage-image-text">Food & Drink</div>
+            <% end %>
         </div>
       </div>
       <div class="col-sm">
         <div class="homepage-img-card">
           <div class="homepage-image darken">
-            <img src="https://images.unsplash.com/photo-1555086156-e6c7353d283f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
-          </div>
-          <div class="homepage-image-text">Nightclubs</div>
-          <%= link_to "Nightclubs", places_path(:category=>"nightclub") %>
+          <%= link_to(places_path(:category=>"Nightclub")) do %>
+              <img src="https://images.unsplash.com/photo-1555086156-e6c7353d283f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
+            </div>
+            <div class="homepage-image-text">Nightclubs</div>
+          <% end %>
         </div>
       </div>
       <div class="col-sm">
         <div class="homepage-img-card">
           <div class="homepage-image darken">
-            <img src="https://images.unsplash.com/photo-1536274236045-2ca6d4cba085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Card image cap" style="width: 225px; height: 324px";>
-          </div>
-          <div class="homepage-image-text">Outdoors</div>
-          <%= link_to "Outdoors", places_path(:category=>"outdoor") %>
+            <%= link_to(places_path(:category=>"Outdoors")) do %>
+                  <img src="https://images.unsplash.com/photo-1536274236045-2ca6d4cba085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Card image cap" style="width: 225px; height: 324px";>
+                </div>
+                <div class="homepage-image-text">Outdoors</div>
+            <% end %>
         </div>
       </div>
     </div>
