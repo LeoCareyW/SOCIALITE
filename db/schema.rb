@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_112557) do
+ActiveRecord::Schema.define(version: 2020_05_28_131527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 2020_05_28_112557) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.float "latitude"
     t.float "longitude"
+    t.text "description"
   end
 
   create_table "plangroups", force: :cascade do |t|
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_112557) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "group_id"
+    t.bigint "friend_id"
+    t.index ["friend_id"], name: "index_plans_on_friend_id"
     t.index ["group_id"], name: "index_plans_on_group_id"
     t.index ["place_id"], name: "index_plans_on_place_id"
     t.index ["user_id"], name: "index_plans_on_user_id"
@@ -122,6 +124,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_112557) do
   add_foreign_key "plans", "groups"
   add_foreign_key "plans", "places"
   add_foreign_key "plans", "users"
+  add_foreign_key "plans", "users", column: "friend_id"
   add_foreign_key "recommendations", "places"
   add_foreign_key "recommendations", "users"
 end
