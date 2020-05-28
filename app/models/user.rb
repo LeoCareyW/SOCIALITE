@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  geocoded_by :ip_address
+  after_validation :geocode
   has_many :friendships
   has_many :friends, through: :friendships
   has_many :memberships
