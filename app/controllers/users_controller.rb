@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def profile
     # @recommendations = Recommendation.joins(:users).where(users: current_user)
+    @user = current_user
     @recommendations = Recommendation.where(user_id: current_user)
   end
 end
