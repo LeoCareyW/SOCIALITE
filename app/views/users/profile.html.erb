@@ -27,6 +27,25 @@
 </div>
 
 
-
+<div class="container">
+  <h2>My Plans</h2>
+  <div class="row">
+  <% @user.plans.each do |plan| %>
+    <div class="col-sm">
+      <div class="container">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= plan.place.name %></h2>
+            </div>
+            <h2 class="card-trip-pricing"><%= plan.date %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 

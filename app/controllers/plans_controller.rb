@@ -19,7 +19,12 @@ class PlansController < ApplicationController
     @plan.user = @user
     @place = Place.find(params[:place_id])
     @plan.place = @place
+    unless params[:plan][:group].empty?
     @plan.group = Group.find(params[:plan][:group])
+    end
+    unless params[:plan][:friend_id].empty?
+    @plan.friend = User.find(params[:plan][:friend_id])
+    end
     if @plan.save
       redirect_to place_path(@place)
     else
