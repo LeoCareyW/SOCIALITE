@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="login-boxes">
-    <%= simple_form_for(@place, html: {class: "box"}) do |f| %>
+    <%= simple_form_for(@place) do |f| %>
         <%= f.input :name %>
         <%= f.input :address, input_html: { id: 'place_address'} %>
         <%= f.input :category %>
@@ -11,3 +11,5 @@
         <% end %>
     </div>
   </div>
+
+<!-- , html: {class: "box"} -->
