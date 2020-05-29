@@ -1,13 +1,14 @@
 <div class="header-container">
   <div class="photo-container">
-    <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, width: 150, height: 150 %>
-        <% else %>
-        <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 150, height: 150, crop: :thumb) %>
-       <% end %>
-    <br>
+    <h4><%= current_user.name %></h4>
+      <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, width: 150, height: 150 %>
+          <% else %>
+          <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 150, height: 150, crop: :thumb) %>
+         <% end %>
+      <br>
   </div>
-  <h4><%= current_user.name %></h4>
+
   <div class="add-profile-picture">
     <%= link_to "Add picture", new_user_path %>
   </div>
