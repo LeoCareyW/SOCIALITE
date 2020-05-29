@@ -64,27 +64,26 @@
 </div>
 <!-- <h4>Your recommendations</h4>
 <% @recommendations.each do |recommendation| %>
-  <% id = recommendation.place_id %>
 <div class="animate-container">
   <div class="flip-card-container" style="--hue: 220">
     <div class="flip-card">
       <div class="card-front">
         <figure>
           <div class="img-bg"></div>
-         <%=  cl_image_tag Place.find(id).photos %>
+         <%=  cl_image_tag recommendation.place.photos.first.key %>
           <figcaption>
-        <p><%= Place.find(id).name %></p>
+        <p><%= recommendation.place.name %></p>
       </figcaption>
         </figure>
         <ul id="ul-card">
-          <li><%= Place.find(id).description %></li>
+          <li><%= recommendation.place.description %></li>
         </ul>
       </div>
 
       <div class="card-back">
         <figure>
           <div class="img-bg"></div>
-          <img src="https://images.unsplash.com/photo-1485686531765-ba63b07845a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" alt="Brohm Lake">
+          <%=  cl_image_tag recommendation.place.photos.last.key %>
         </figure>
 
         <button>Book</button>
@@ -104,5 +103,5 @@
     </div>
   </div>
   <% end %>
-</div>
- -->
+</div> -->
+
