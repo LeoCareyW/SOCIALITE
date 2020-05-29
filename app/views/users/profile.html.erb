@@ -1,10 +1,10 @@
 <div class="header-container">
   <div class="photo-container">
-    <h4><%= current_user.name %></h4>
+    <h1><%= current_user.name %></h1>
       <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, width: 150, height: 150 %>
+          <%= cl_image_tag @user.photo.key, width: 200, height: 200, radius: "max" %>
           <% else %>
-          <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 150, height: 150, crop: :thumb) %>
+          <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 200, height: 200, crop: :thumb) %>
          <% end %>
       <br>
   </div>
@@ -14,7 +14,26 @@
   </div>
 
 
-<div class="recommendation-container">
+<div class="upper-profile-container">
+  <div>
+     <h2>My Plans</h2>
+    <% @user.plans.each do |plan| %>
+    <div class="col-sm">
+      <div class="container">
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= plan.place.name %></h2>
+            </div>
+            <%= cl_image_tag("h8wo2so21j0g4tas5pn5h38ldsh0", width: 300, height: 200) %>
+            <!-- plan.place.photos[0]  -->
+            <h2 class="card-trip-pricing"><%= plan.date %></h2>
+          </div>
+        </div>
+    </div>
+    <% end %>
+    </div>
+
+
   <div>
     <h4>Friends</h4>
     <ul>
@@ -26,36 +45,64 @@
       <% end %>
       <p><%= link_to "Find Friends", users_path %></p>
     </ul>
-    </div>
-  <div>
-    <h4> Your recommendations </h4>
-      <% @recommendations.each do |recommendation| %>
-      <% id = recommendation.place_id %>
-      <p><%= Place.find(id).name %></p>
-    <% end  %>
   </div>
 </div>
 
+<div class="recommendations-container">
+<h4>Your recommendations</h4>
+    <% @recommendations.each do |recommendation| %>
+      <p><%= recommendation.place.name %></p>
+      <p><%= recommendation.place.description %></p>
+      <%= cl_image_tag recommendation.place.photos.first.key, width: 300, height: 200 %>
+      <% end %>
+</div>
 
-<div class="container">
-  <h2>My Plans</h2>
+
   <div class="row">
-  <% @user.plans.each do |plan| %>
-    <div class="col-sm">
-      <div class="container">
-        <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= plan.place.name %></h2>
-            </div>
-            <h2 class="card-trip-pricing"><%= plan.date %></h2>
-          </div>
+
+</div>
+</div>
+<!-- <h4>Your recommendations</h4>
+<% @recommendations.each do |recommendation| %>
+  <% id = recommendation.place_id %>
+<div class="animate-container">
+  <div class="flip-card-container" style="--hue: 220">
+    <div class="flip-card">
+      <div class="card-front">
+        <figure>
+          <div class="img-bg"></div>
+         <%=  cl_image_tag Place.find(id).photos %>
+          <figcaption>
+        <p><%= Place.find(id).name %></p>
+      </figcaption>
+        </figure>
+        <ul id="ul-card">
+          <li><%= Place.find(id).description %></li>
+        </ul>
+      </div>
+
+      <div class="card-back">
+        <figure>
+          <div class="img-bg"></div>
+          <img src="https://images.unsplash.com/photo-1485686531765-ba63b07845a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" alt="Brohm Lake">
+        </figure>
+
+        <button>Book</button>
+
+        <div class="design-container">
+          <span class="design design--1"></span>
+          <span class="design design--2"></span>
+          <span class="design design--3"></span>
+          <span class="design design--4"></span>
+          <span class="design design--5"></span>
+          <span class="design design--6"></span>
+          <span class="design design--7"></span>
+          <span class="design design--8"></span>
         </div>
       </div>
+
     </div>
-    <% end %>
   </div>
+  <% end %>
 </div>
-
-
+ -->
