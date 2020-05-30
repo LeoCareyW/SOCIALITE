@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_145439) do
+ActiveRecord::Schema.define(version: 2020_05_30_143941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2020_05_28_145439) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "friend_id"
@@ -59,15 +65,25 @@ ActiveRecord::Schema.define(version: 2020_05_28_145439) do
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.float "latitude"
     t.float "longitude"
-    t.text "description"
   end
 
   create_table "plangroups", force: :cascade do |t|
@@ -102,6 +118,16 @@ ActiveRecord::Schema.define(version: 2020_05_28_145439) do
     t.index ["user_id"], name: "index_recommendations_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "places_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["places_id"], name: "index_reviews_on_places_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -122,6 +148,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_145439) do
   add_foreign_key "friendships", "users"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "plangroups", "groups"
   add_foreign_key "plangroups", "plans"
   add_foreign_key "plans", "groups"
@@ -130,4 +158,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_145439) do
   add_foreign_key "plans", "users", column: "friend_id"
   add_foreign_key "recommendations", "places"
   add_foreign_key "recommendations", "users"
+  add_foreign_key "reviews", "places", column: "places_id"
+  add_foreign_key "reviews", "users"
 end
