@@ -5,4 +5,5 @@ class Place < ApplicationRecord
   validates :photos, :name, :address, :category, presence: true
   has_many :plans, dependent: :destroy
   has_many :recommendations, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end
