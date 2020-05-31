@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment.place = @place
     @comment.user = current_user
     if @comment.save
-      redirect_to place_path(@place)
+      redirect_to place_path(@place, anchor: "comment-#{@comment.id}")
     else
       render 'places/show'
     end
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :rating)
   end
 end
 
