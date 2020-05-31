@@ -28,3 +28,53 @@
 
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: auto;
+}
+
+.profile-buttons {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 80px;
+  height: 25px;
+  left: 525px;
+  top: 741px;
+  background: rgba(245, 196, 160, 0.54);
+  border-radius: 20px;
+  a {
+    color: grey;
+    opacity: 0.5;
+    font-family: Roboto-Mono;
+    font-size: 13px;
+  }
+}
+
+.profile-text {
+  font-family: Roboto-Mono;
+}
+
+.profile-plans {
+  width: 600px;
+  height: 400px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+#pbtn2 {
+  background: rgba(30, 167, 210, 0.22);
+}
+
+#pbtn3 {
+  background: #FAF3B6;
+}
+
+
+
+
+
