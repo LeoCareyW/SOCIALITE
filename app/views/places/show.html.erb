@@ -94,6 +94,25 @@
  </div>
 </div>
 
+<%= link_to "Leave a comment", new_place_comment_path(@place) %>
+
+<%= simple_form_for [ @place, @comment ] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+<ul class=“list-group”>
+    <% @place.comments.each do |comment| %>
+      <li class=“list-group-item”><%= comment.content %></li>
+      <%= link_to "Remove",
+                  comment_path(comment),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          <% end %>
+       </ul>
+    </li>
+
+
+
 
 
 
