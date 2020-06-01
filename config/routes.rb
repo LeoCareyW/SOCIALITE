@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :places do
     resources :plans
     resources :recommendations
-    resources :reviews, only: [ :new, :create ]
+    resources :comments, only: [ :new, :create ]
   end
-   resources :reviews, only: [ :destroy ]
+   resources :comments, only: [ :destroy ]
 
   resources :chatrooms do
     resources :messages, only: :create

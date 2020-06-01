@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :friends, through: :friendships
   has_many :memberships
-  has_many :reviews
+  has_many :comments
   has_many :chatrooms, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :groups, through: :memberships
