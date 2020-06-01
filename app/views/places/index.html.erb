@@ -1,4 +1,10 @@
-<section>
+
+<div class="title-container">
+  <span class="word" id="title">Socialite</span>
+  <h3>Discover places for you</h3>
+</div>
+
+
   <div class="places-index">
     <div class="places-form">
         <%= simple_form_for :search, url: places_path, method: :get do |f| %>
@@ -11,13 +17,18 @@
       </div>
     </div>
 
-
     <div id="map"
         style="height: 450px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
- 
+
+    <hr class="horizontal-line my-4" size="30" width="75%">
+
+    <div class="subtitle-container">
+      <h2>Showing <%= @places.count %> places near you</h2>
+    </div>
+
     <div class="index-cards">
       <% @places.each do |place| %>
           <div class="place-cards">
@@ -32,7 +43,5 @@
   <%= link_to "Add a new place", new_place_path %>
   </div>
 </div>
-</section>
 
-  
-    
+

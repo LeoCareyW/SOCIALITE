@@ -1,0 +1,33 @@
+.place-card {
+  border-radius: 5px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  }
+
+.place-card p {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 21px;
+}
+  .heart-button {
+  position: absolute;
+  left: 130px;
+  top: 4px;
+  color: white;
+  }
+  .heart-button:hover .heart-unlock,
+  .heart-button .heart-lock {
+      display: none;
+  }
+  .heart-button:hover .heart-lock {
+      display: inline;
+  }
+  .heart-button:active .heart-unlock .heart-button .heart-lock {
+      display: none;
+  }
+  .heart-button:active .heart-lock {
+      display: inline;
+  }
+

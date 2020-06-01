@@ -27,15 +27,17 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/carousel';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-
+import 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { initSlick } from '../plugins/init_slick';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   initAutocomplete();
+  initSlick();
   initMapbox();
 });

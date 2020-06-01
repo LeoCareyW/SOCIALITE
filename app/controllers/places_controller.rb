@@ -8,7 +8,6 @@ def index
     @places = Place.all
   end
 
-
   @markers = @places.map do |place|
     {
       lat: place.latitude,
@@ -32,6 +31,8 @@ end
 
 def show
   @place = Place.find(params[:id])
+  @places = Place.all
+  @markers = [{ lat: @place.latitude, lng: @place.longitude }]
   # @groups = Group.joins(:users).where(users: current_user)
   @groups = current_user.groups
   @friends = current_user.friends
