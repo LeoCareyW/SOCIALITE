@@ -1,0 +1,204 @@
+.place-container {
+  display: flex;
+  padding-right: 0px;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 5% !important;
+}
+
+.text-container {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ width: 638px;
+ height: 638px;
+}
+
+.img-container {
+  // width: 638px;
+  // height: 638px;
+}
+
+.location-container {
+  display: flex;
+  justify-content: space-between;
+  width: 370px;
+}
+
+.place-img {
+  width: 638px;
+  height: 638px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 88px;
+  line-height: 103px;
+  color: #000000;
+}
+
+span.word {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 88px;
+    line-height: 103px;
+    color: #000000;
+  }
+
+  span.word:after  {
+    background-color: #9ED9EB;
+    content: " ";
+    height: 10%;
+    position: absolute;
+    left: 0;
+    margin-left: 0rem;
+    top: 83%;
+    width: calc(100% + 1rem);
+    z-index: -2;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 88px;
+    line-height: 103px;
+    color: #000000;
+  }
+
+h3 {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+}
+
+.description-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.description-container p {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.icons-container p {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.fa-star{
+  color: #F1A975;
+  margin-right: 10px;
+}
+
+#reviews-stars {
+  color: #F1A975;
+  margin-right: 2px !important;
+}
+
+.recommend-btn {
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 2px;
+  width: 219px;
+  height: 74px;
+  background: #9ED9EB;
+  border: 1px solid #9ED9EB;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: white;
+}
+
+.book-btn {
+  font-family: 'Roboto Mono', monospace;
+  width: 219px;
+  height: 74px;
+  background: #334AC0;
+  border: 1px solid #9ED9EB;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: white;
+}
+
+.place-card-with-border {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.reviews-container {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 5% !important;
+}
+
+.reviews-card-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px !important;
+  border: solid 1px;
+  border-color: #E5E5E5;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.reviews-card {
+  overflow: hidden;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.reviews-card img {
+  height:90px;
+  width: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.reviews-card h2 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.reviews-card p {
+  font-family: 'Roboto Mono', monospace;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.reviews-card .reviews-card-infos {
+  padding: 16px;
+}
+
+
+
