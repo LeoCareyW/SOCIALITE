@@ -35,8 +35,8 @@ def show
   # @groups = Group.joins(:users).where(users: current_user)
   @groups = current_user.groups
   @friends = current_user.friends
-  @recommendation = Recommendation.where("user_id = ? and place_id = ?", current_user.id, @place.id).first
   @comment = Comment.new
+  @recommendation = Recommendation.where("user_id = ? and place_id = ?", current_user.id, @place.id).first
 end
 
 

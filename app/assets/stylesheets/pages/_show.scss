@@ -36,11 +36,27 @@ width: 100%;
 
 }
 
+.comments {
+  max-width: 60vw;
+  margin: auto;
+  }
+  ul {
+    list-style: none;
+}
+
 .secondary-photo {
 }
 
 .recommend {
   text-align: center;
   margin-top: 200px;
+}
+
+.fa-star {
+  color: orange;
+}
+
+.fa-star-half {
+  color: orange;
 }
 
