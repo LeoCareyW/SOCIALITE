@@ -1,60 +1,88 @@
 <div class="header-container">
   <div class="photo-container">
-    <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, width: 150, height: 150 %>
-        <% else %>
-        <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 150, height: 150, crop: :thumb) %>
-       <% end %>
-    <br>
+    <h1 class="profile-text"><%= current_user.name %></h1>
+      <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, width: 250, height: 250, radius: "max" %>
+          <% else %>
+          <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 250, height: 250, crop: :thumb) %>
+         <% end %>
+      <br>
   </div>
-  <h4><%= current_user.name %></h4>
+
   <div class="add-profile-picture">
-    <%= link_to "Add picture", new_user_path %>
+
+  </div>
+
+  <div class="button-container">
+    <p class="profile-buttons" id="pbtn1"><%= link_to "Edit Profile", new_user_path %></p>
+    <p class="profile-buttons" id="pbtn2"><%= link_to "New Plans", new_user_path %></p>
+    <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
   </div>
 
 
-<div class="recommendation-container">
+<div class="upper-profile-container">
+
   <div>
-    <h4>Friends</h4>
-    <ul>
-      <% @user.friendships.each do |friendship| %>
-        <li>
-          <%= friendship.friend.email %>
-          (<%= link_to "remove", friendship, :method => :delete %>)
-        </li>
-      <% end %>
-      <p><%= link_to "Find Friends", users_path %></p>
-    </ul>
-    </div>
-  <div>
-    <h4> Your recommendations </h4>
-      <% @recommendations.each do |recommendation| %>
-      <% id = recommendation.place_id %>
-      <p><%= Place.find(id).name %></p>
-    <% end  %>
-  </div>
-</div>
+     <h2 class="profile-text">My Plans</h2>
+    <% @user.plans.each do |plan| %>
 
 
-<div class="container">
-  <h2>My Plans</h2>
-  <div class="row">
-  <% @user.plans.each do |plan| %>
-    <div class="col-sm">
-      <div class="container">
-        <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
+
+          <div class="profile-plans">
             <div>
-              <h2><%= plan.place.name %></h2>
+              <h2 class="profile-plans-text"><%= plan.place.name %></h2>
             </div>
+           <%= cl_image_tag plan.place.photos.first.key %>
+            <!-- plan.place.photos[0]  -->
             <h2 class="card-trip-pricing"><%= plan.date %></h2>
           </div>
-        </div>
-      </div>
     </div>
     <% end %>
+
+
+<div>
+ <h4 class="profile-text">Friends <%=  %></h4>
+  <div class="friends-container">
+      <% @user.friendships.each do |friendship| %>
+        <div class="avatar-container">
+          <%= cl_image_tag @user.photo.key %>
+          <p class="profile-text"><%= friendship.friend.name %></p>
+          <div>
+           <!--  (<%= link_to "-", friendship, :method => :delete %>) -->
+          </div>
+        </div>
+    <%end%>
+  </div>
+  <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
   </div>
 </div>
+
+
+<br>
+<br>
+<br>
+
+<div class="recommendations-container">
+  <h4 class="profile-text">Your recommendations</h4>
+    <% @recommendations.each do |recommendation| %>
+    <div class="recommendation-grid-item">
+      <p><%= recommendation.place.name %></p>
+      <p><%= recommendation.place.description %></p>
+      <%= cl_image_tag recommendation.place.photos.first.key, width: 300, height: 200 %>
+    </div>
+      <% end %>
+</div>
+
+
+  <div class="row">
+
+</div>
+</div>
+
+
+
+
+
+
 
 

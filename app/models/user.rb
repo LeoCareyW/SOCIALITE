@@ -7,9 +7,13 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :friends, through: :friendships
   has_many :memberships
+  has_many :comments
+  has_many :chatrooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
   has_many :groups, through: :memberships
   has_many :plans, dependent: :destroy
   has_many :recommendations, dependent: :destroy
+  # has_many :messages
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

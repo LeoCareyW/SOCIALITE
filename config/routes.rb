@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   resources :places do
     resources :plans
     resources :recommendations
+    resources :comments, only: [ :new, :create ]
+  end
+   resources :comments, only: [ :destroy ]
 
+  resources :chatrooms do
+    resources :messages, only: :create
   end
 
   resources :groups
