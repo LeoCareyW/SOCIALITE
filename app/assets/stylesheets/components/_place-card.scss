@@ -1,0 +1,27 @@
+.place-card {
+  border-radius: 5px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  }
+  .heart-button {
+  position: absolute;
+  left: 130px;
+  top: 4px;
+  color: white;
+  }
+  .heart-button:hover .heart-unlock,
+  .heart-button .heart-lock {
+      display: none;
+  }
+  .heart-button:hover .heart-lock {
+      display: inline;
+  }
+  .heart-button:active .heart-unlock .heart-button .heart-lock {
+      display: none;
+  }
+  .heart-button:active .heart-lock {
+      display: inline;
+  }
+  
+  

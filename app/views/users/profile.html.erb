@@ -4,7 +4,7 @@
       <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, width: 250, height: 250, radius: "max" %>
           <% else %>
-          <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9", width: 250, height: 250, crop: :thumb) %>
+          <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9") %>
          <% end %>
       <br>
   </div>
@@ -44,8 +44,12 @@
  <h4 class="profile-text">Friends <%=  %></h4>
   <div class="friends-container">
       <% @user.friendships.each do |friendship| %>
+       <% if @user.photo.attached? %>
         <div class="avatar-container">
           <%= cl_image_tag @user.photo.key %>
+          <% else %>
+           <%= cl_image_tag("bo77jp8r7432zubtupaup2uprps9") %>
+           <% end %>
           <p class="profile-text"><%= friendship.friend.name %></p>
           <div>
            <!--  (<%= link_to "-", friendship, :method => :delete %>) -->
