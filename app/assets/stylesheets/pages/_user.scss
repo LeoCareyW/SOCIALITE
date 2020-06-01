@@ -8,8 +8,8 @@
 }
 
 .upper-profile-container {
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
   flex-direction: row;
   text-align: center;
   align-content: center;
@@ -37,13 +37,14 @@
 
 
 .friends-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // grid-template-rows: repeat(3, 100px);
 }
 
 .avatar-container {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
   p {
@@ -64,6 +65,10 @@
 }
 
 .find-friends {
+  width: 95px;
+  height: 30px;
+  background: rgba(196, 196, 196, 0.4);
+  border-radius: 20px;
    a {
     font-family: Roboto-Mono;
     font-size: 12px;
@@ -103,17 +108,19 @@
 
 
 .profile-text {
-  font-family: Roboto-Mono;
+  font-family: Roboto;
 }
 
 .profile-plans {
-  width: 600px;
-  height: 400px;
+  width: 450px;
+  height: 350px;
   img {
     height: 100%;
     width: 100%;
   }
 }
+
+
 
 #pbtn1:hover {
   width: 90px;
@@ -143,6 +150,13 @@
   margin-right: 5px
 }
 
+.plans-list {
+  display: grid;
+  width: 45%;
+}
 
+// .friends-list {
+//   width: 45%;
+// }
 
 
