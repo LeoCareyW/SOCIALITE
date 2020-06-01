@@ -4,6 +4,13 @@
   margin-left: 10px;
   margin-right: 10px;
   }
+
+.place-card p {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 21px;
+}
   .heart-button {
   position: absolute;
   left: 130px;
@@ -23,5 +30,4 @@
   .heart-button:active .heart-lock {
       display: inline;
   }
-  
-  
+

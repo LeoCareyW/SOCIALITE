@@ -38,6 +38,6 @@ import { initSlick } from '../plugins/init_slick';
 
 document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
-  initMapbox();
   initSlick();
+  initMapbox();
 });

@@ -23,8 +23,17 @@
 
 .location-container {
   display: flex;
-  justify-content: space-between;
-  width: 370px;
+  width: 450px
+}
+
+.description-container {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  width: 450px
 }
 
 .place-img {
@@ -32,12 +41,19 @@
   height: 638px;
 }
 
+.title-star-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 45%;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 88px;
-  line-height: 103px;
+  font-size: 66px;
+  line-height: 80px;
   color: #000000;
 }
 
@@ -73,23 +89,26 @@ h3 {
   font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 18px;
   line-height: 42px;
   color: #000000;
 }
 
-.description-container {
+
+.description-plan-container {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.similar-places-container {
   width: 70%;
   margin: 0 auto;
 }
 
-.description-container p {
-  font-family: 'Roboto Mono', monospace;
-  font-style: normal;
-  font-weight: 200;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
+.plan-container {
+  margin-left: 75px;
 }
 
 .icons-container p {
