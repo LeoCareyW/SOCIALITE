@@ -16,12 +16,77 @@
   margin-top: 70px;
 }
 
+.profile-buttons {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 80px;
+  height: 25px;
+  left: 525px;
+  top: 741px;
+  transition: 0.3s;
+  background: rgba(245, 196, 160, 0.54);
+  border-radius: 20px;
+  a {
+    color: grey;
+    opacity: 0.5;
+    font-family: Roboto-Mono;
+    font-size: 13px;
+    text-decoration: none;
+  }
+}
+
+
+.friends-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  p {
+    font-size: 14px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+}
+
+.avatar-container:hover {
+  img {
+  border-color: grey;
+  }
+}
+
+.find-friends {
+   a {
+    font-family: Roboto-Mono;
+    font-size: 12px;
+    color: grey;
+  }
+}
+
 .photo-container {
   margin: 20px;
 }
 
 .recommendations-container {
   margin-top: 60px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.recommendation-grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
 
 .add-profile-picture {
@@ -33,24 +98,9 @@
   flex-direction: row;
   align-content: center;
   margin: auto;
+  position: relative;
 }
 
-.profile-buttons {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 80px;
-  height: 25px;
-  left: 525px;
-  top: 741px;
-  background: rgba(245, 196, 160, 0.54);
-  border-radius: 20px;
-  a {
-    color: grey;
-    opacity: 0.5;
-    font-family: Roboto-Mono;
-    font-size: 13px;
-  }
-}
 
 .profile-text {
   font-family: Roboto-Mono;
@@ -65,15 +115,33 @@
   }
 }
 
+#pbtn1:hover {
+  width: 90px;
+  transition: 0.3s;
+  margin-right: 5px;
+  margin-left: 5px;
+}
 
 #pbtn2 {
   background: rgba(30, 167, 210, 0.22);
+}
+
+#pbtn2:hover {
+  width: 90px;
+  transition: 0.3s;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 #pbtn3 {
   background: #FAF3B6;
 }
 
+#pbtn3:hover {
+  width: 90px;
+  margin-left: 5px;
+  margin-right: 5px
+}
 
 
 

@@ -14,7 +14,7 @@
   </div>
 
   <div class="button-container">
-    <p class="profile-buttons"><%= link_to "Edit Profile", new_user_path %></p>
+    <p class="profile-buttons" id="pbtn1"><%= link_to "Edit Profile", new_user_path %></p>
     <p class="profile-buttons" id="pbtn2"><%= link_to "New Plans", new_user_path %></p>
     <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
   </div>
@@ -40,19 +40,20 @@
     <% end %>
 
 
-
-
-  <div>
-    <h4 class="profile-text">Friends <%=  %></h4>
-    <ul>
+<div>
+ <h4 class="profile-text">Friends <%=  %></h4>
+  <div class="friends-container">
       <% @user.friendships.each do |friendship| %>
-        <li>
-          <%= friendship.friend.email %>
-          (<%= link_to "remove", friendship, :method => :delete %>)
-        </li>
-      <% end %>
-      <p><%= link_to "Find Friends", users_path %></p>
-    </ul>
+        <div class="avatar-container">
+          <%= cl_image_tag @user.photo.key %>
+          <p class="profile-text"><%= friendship.friend.name %></p>
+          <div>
+           <!--  (<%= link_to "-", friendship, :method => :delete %>) -->
+          </div>
+        </div>
+    <%end%>
+  </div>
+  <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
   </div>
 </div>
 
@@ -62,11 +63,13 @@
 <br>
 
 <div class="recommendations-container">
-<h4 class="profile-text">Your recommendations</h4>
+  <h4 class="profile-text">Your recommendations</h4>
     <% @recommendations.each do |recommendation| %>
+    <div class="recommendation-grid-item">
       <p><%= recommendation.place.name %></p>
       <p><%= recommendation.place.description %></p>
       <%= cl_image_tag recommendation.place.photos.first.key, width: 300, height: 200 %>
+    </div>
       <% end %>
 </div>
 
