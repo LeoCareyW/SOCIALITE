@@ -1,2 +1,48 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.title-container {
+margin-top: 10px;
+text-align: left;
+display: flex;
+flex-direction: column;
+}
+
+.subtitle-container h2 {
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 47px;
+text-align: left;
+}
+
+
+
+#title {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 88px;
+    line-height: 103px;
+    color: #000000;
+  }
+
+ #title:after {
+    background-color: #9ED9EB;
+    content: " ";
+    height: 10%;
+    position: absolute;
+    left: 0;
+    margin-left: 0rem;
+    top: 78%;
+    width: 35%;
+    z-index: -2;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 88px;
+    line-height: 103px;
+    color: #000000;
+  }

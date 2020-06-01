@@ -85,7 +85,10 @@
       Leave a Review
     </button>
   </div>
-  <% @place.comments.each do |comment| %>
+  <% if @place.comments.blank? %>
+    <h3>Be the first to leave a review for <%= @place.name  %></h3>
+  <% else %>
+  <% @place.comments.last(4).each do |comment| %>
   <div class="reviews-card-container">
     <div class="reviews-card" id="review-<%= comment.id %>">
       <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
@@ -102,6 +105,7 @@
       </div>
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>
 
