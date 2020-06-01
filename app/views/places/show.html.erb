@@ -29,9 +29,21 @@
       <button type="button" class="recommend-btn">Recomend</button>
       <button type="button" class="book-btn">Book</button>
     </div>
+    <div class="recommend">
+      <% pre_like = @place.recommendations.find { |recommend| recommend.user_id == current_user.id} %>
+      <% if pre_like %>
+        <p id="recommend-"><i class="fas fa-star"></i><%= link_to 'Unrecommend', place_recommendation_path(@place, @recommendation), method: :delete, remote: true %></p>
+        <% else %>
+        <p id="recommend-"><i class="fas fa-star"></i><%= link_to 'Recommend', place_recommendations_path(@place), method: :post, remote: true %></p>
+        <% end %>
+      <p><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></p>
+    </div>
   </div>
-  <%= cl_image_tag @place.photos[0].key, height: 638, width: 638, crop: :fill %>
+  <%= cl_image_tag @place.photos[0].key, height: 600, width: 750, crop: :fill %>
 </div>
+
+
+
 
   <hr class="horizontal-line my-4" size="30" width="75%">
 
@@ -137,6 +149,5 @@
   </div>
 </div>
 
-</div>
 
 
