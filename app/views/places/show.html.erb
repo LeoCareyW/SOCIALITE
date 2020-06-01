@@ -73,7 +73,51 @@
    </div>
  </div>
 </div>
-  
+
+
+<div class="reviews-container">
+  <h2>Reviews</h2>
+  <% @place.comments.each do |comment| %>
+  <div class="reviews-card-container">
+    <div class="reviews-card">
+      <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
+      <div class="-reviews-card-infos">
+      <ul>
+      <li id="comment-<%= comment.id %>"><%= comment.content %></li>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <% comment.rating.to_i.times do  %>
+      <i id="star" class="fas fa-star"></i>
+      <% end %>
+      <% if comment.user.name  %>
+        <p id="commenter"><%= comment.user.name %><p>
+      <% else %>
+      <% end  %>
+      <%= link_to "Remove",
+        comment_path(comment),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+        <% end %>
+        </li>
+        </ul>
+      
+    
+        <%
+=begin%>
+ <div class="star-rating" style="font-size:0.5rem;">
+          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
+          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
+          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
+          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
+          <span class="fa fa-2x fa-star" id="reviews-stars"></span> 
+<%
+=end%>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="comments">
   <% if @place.comments.any? %>
     <% star = [] %>
@@ -98,74 +142,80 @@
         <% end %>
       <% else %>
       <% end %>
+    <% end %>
+ 
+  <div>
+    <%= link_to "Leave a comment", new_place_comment_path(@place) %>
+  </div>
 
-<div class="reviews-container">
-  <h2>Reviews</h2>
-  <div class="reviews-card-container">
-    <div class="reviews-card">
-      <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
-      <div class="-reviews-card-infos">
-        <h2>Ryid</h2>
-        <p>Not sure what was better...</p>
-        <div class="star-rating" style="font-size:0.5rem;">
-          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
-          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
-          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
-          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
-          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
-        </div>
-      </div>
+  <div>
+    <%= simple_form_for [ @place, @comment ], remote: true do |f| %>
+      <%= f.input :content, :label => "What did you think, #{current_user.name}?" %>
+      <%= f.input :rating, collection: (1..5) %>
+      <%= f.submit "Submit comment", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+<h2>Similar Places You Might Like</h2>
+<div class="multiple-items">
+  <div class="place-card card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+    <a href="#" class="heart-button">
+        <i class="heart-button far fa-heart heart-unlock"></i>
+        <i class="heart-button fas fa-heart heart-lock"></i>
+    </a>
+    <div class="card-body">
+      <p class="card-text">Restaurant.title</p>
+    </div>
+  </div>
+  <div class="place-card card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+    <a href="#" class="heart-button">
+        <i class="heart-button far fa-heart heart-unlock"></i>
+        <i class="heart-button fas fa-heart heart-lock"></i>
+    </a>
+    <div class="card-body">
+      <p class="card-text">Restaurant.title</p>
+    </div>
+  </div>
+  <div class="place-card card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+    <a href="#" class="heart-button">
+        <i class="heart-button far fa-heart heart-unlock"></i>
+        <i class="heart-button fas fa-heart heart-lock"></i>
+    </a>
+    <div class="card-body">
+      <p class="card-text">Restaurant.title</p>
+    </div>
+  </div>
+  <div class="place-card card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+    <a href="#" class="heart-button">
+        <i class="heart-button far fa-heart heart-unlock"></i>
+        <i class="heart-button fas fa-heart heart-lock"></i>
+    </a>
+    <div class="card-body">
+      <p class="card-text">Restaurant.title</p>
+    </div>
+  </div>
+  <div class="place-card card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+    <a href="#" class="heart-button">
+        <i class="heart-button far fa-heart heart-unlock"></i>
+        <i class="heart-button fas fa-heart heart-lock"></i>
+    </a>
+    <div class="card-body">
+      <p class="card-text">Restaurant.title</p>
+    </div>
+  </div>
+  <div class="place-card card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+    <a href="#" class="heart-button">
+        <i class="heart-button far fa-heart heart-unlock"></i>
+        <i class="heart-button fas fa-heart heart-lock"></i>
+    </a>
+    <div class="card-body">
+      <p class="card-text">Restaurant.title</p>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-
-<%= link_to "Leave a comment", new_place_comment_path(@place) %>
-
-<%= simple_form_for [ @place, @comment ], remote: true do |f| %>
-  <%= f.input :content, :label => "What did you think, #{current_user.name}?" %>
-  <%= f.input :rating, collection: (1..5) %>
-  <%= f.submit "Submit comment", class: "btn btn-primary" %>
-<% end %>
-<ul>
-    <% @place.comments.each do |comment| %>
-      <li id="comment-<%= comment.id %>"><%= comment.content %></li>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <% comment.rating.to_i.times do  %>
-      <i id="star" class="fas fa-star"></i>
-      <% end %>
-      <% if comment.user.name  %>
-        <p id="commenter"><%= comment.user.name %><p>
-      <% else %>
-      <% end  %>
-      <%= link_to "Remove",
-        comment_path(comment),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-        <% end %>
-      <% end  %>
-       </ul>
-    </li>
-</div>
-
