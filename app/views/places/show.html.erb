@@ -30,7 +30,7 @@
       <button type="button" class="book-btn">Book</button>
     </div>
   </div>
-  <img class="place-img" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" alt="">
+  <%= cl_image_tag @place.photos[0].key, height: 638, width: 638, crop: :fill %>
 </div>
 
   <hr class="horizontal-line my-4" size="30" width="75%">
@@ -84,13 +84,14 @@
     <h2>Reviews</h2>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
-      Leave a Review
+    Leave a Review
     </button>
   </div>
   <% if @place.comments.blank? %>
     <h3>Be the first to leave a review for <%= @place.name  %></h3>
   <% else %>
-  <% @place.comments.last(4).each do |comment| %>
+  <% @place.comments.each do |comment| %>
+  <div class="review-scroller">
   <div class="reviews-card-container">
     <div class="reviews-card" id="review-<%= comment.id %>">
       <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
@@ -109,6 +110,7 @@
   </div>
   <% end %>
   <% end %>
+  </div>
 </div>
 
 <!-- Modal -->
@@ -134,6 +136,7 @@
     </div>
   </div>
 </div>
+
 </div>
 
 

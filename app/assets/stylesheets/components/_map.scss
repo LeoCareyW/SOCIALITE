@@ -1,7 +1,7 @@
 .places-index {
   text-align: center;
   margin: auto;
-  width: 50%;
+  width: 55%;
 }
 
 .places-form {
@@ -24,18 +24,20 @@
   background-color: #343a40;
 }
 
-.index-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
-}
+// .index-cards {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-auto-rows: auto;
+//   grid-gap: 1rem;
+// }
 
-.place-cards {
-  border: 1px solid #343a40;
-  border-radius: 2px;
-  padding: .5rem;
-}
+// .place-cards {
+//   border: 1px solid #343a40;
+//   border-radius: 2px;
+//   padding: .5rem;
+//   height: 200px;
+//   width: 275px;
+// }
 
 #map {
   margin-bottom: 30px;

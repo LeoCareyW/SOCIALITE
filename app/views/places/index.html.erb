@@ -26,17 +26,38 @@
     <hr class="horizontal-line my-4" size="30" width="75%">
 
     <div class="subtitle-container">
-      <h2>Showing <%= @places.count %> places near you</h2>
+      <h2>Showing <%= @places.count %> Places Near You</h2>
+      <div class="messages-buttons">
+        <div class="button-container">
+          <p class="profile-buttons" id="pbtn1"><%= link_to "TAGS", places_path %></p>
+          <p class="profile-buttons" id="pbtn2"><%= link_to "TAGS", places_path %></p>
+          <p class="profile-buttons" id="pbtn3"><%= link_to "TAGS", places_path %></p>
+        </div>
+      </div>
     </div>
 
-    <div class="index-cards">
-      <% @places.each do |place| %>
-          <div class="place-cards">
-            <h2><%= link_to "#{place.name}", place_path(place)%></h2>
-            <p><%= place.address %></p>
-            <p><%= place.category %></p>
+    <div class="container">
+    <% @places.each_slice(3) do |three_places| %>
+      <div class="row">
+        <% three_places.each do |place| %>
+        <div class="col-4 margin-padding">
+          <div class="place-card card" style="width: 18rem;">
+            <%= cl_image_tag place.photos[0].key, class: "card-img" %>
+            <a href="#" class="heart-button">
+                <i class="heart-button far fa-heart heart-unlock"></i>
+                <i class="heart-button fas fa-heart heart-lock"></i>
+            </a>
+            <div class="place-card-text">
+              <div class="title-adress-container">
+                <h3><%= link_to "#{place.name}", place_path(place) %></h3>
+                <p><%= place.address %></p>
+              </div>
+            </div>
           </div>
-      <% end %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
     </div>
 
   <div class="add-btn">
