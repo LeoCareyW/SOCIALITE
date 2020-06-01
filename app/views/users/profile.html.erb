@@ -23,7 +23,7 @@
 
   <div class="upper-profile-container">
 
-    <div class="plans-list">
+    <div class="w-50">
       <h2 class="profile-text">My Plans</h2>
       <% @user.plans.each do |plan| %>
 
@@ -45,7 +45,7 @@
       <% end %>
 
 
-  <div class="friends-list">
+  <div class="w-50">
   <h4 class="profile-text">Friends <%=  %></h4>
     <div class="friends-container w-100">
         <% @user.friendships.each do |friendship| %>
@@ -75,9 +75,9 @@
 
   <br>
   <br>
-  
+
   <div class="recommendations-container">
-    <h4 class="profile-text">Your recommendations</h4>
+    <h4 class="profile-text">My Recommendations</h4>
       <% @recommendations.each do |recommendation| %>
       <div class="recommendation-grid-item">
         <p><%= recommendation.place.name %></p>
