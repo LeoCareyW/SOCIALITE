@@ -73,7 +73,44 @@
    </div>
  </div>
 </div>
-  
+
+<div class="reviews-container">
+  <h2>Reviews</h2>
+  <div class="reviews-card-container">
+    <div class="reviews-card">
+      <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
+      <div class="-reviews-card-infos">
+        <h2>Ryid</h2>
+        <p>Not sure what was better...</p>
+        <div class="star-rating" style="font-size:0.5rem;">
+          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
+          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
+          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
+          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
+          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+
 <div class="comments">
   <% if @place.comments.any? %>
     <% star = [] %>
@@ -98,48 +135,6 @@
         <% end %>
       <% else %>
       <% end %>
-
-<div class="reviews-container">
-  <h2>Reviews</h2>
-  <div class="reviews-card-container">
-    <div class="reviews-card">
-      <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
-      <div class="-reviews-card-infos">
-        <h2>Ryid</h2>
-        <p>Not sure what was better...</p>
-        <div class="star-rating" style="font-size:0.5rem;">
-          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
-          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
-          <span class="fa fa-star fa-2x checked" id="reviews-stars"></span>
-          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
-          <span class="fa fa-2x fa-star" id="reviews-stars"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
-<hr class="horizontal-line my-4" size="30" width="75%">
 
 <%= link_to "Leave a comment", new_place_comment_path(@place) %>
 
@@ -167,5 +162,6 @@
       <% end  %>
        </ul>
     </li>
+</div>
 </div>
 

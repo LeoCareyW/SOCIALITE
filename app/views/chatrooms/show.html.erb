@@ -1,4 +1,8 @@
 <div>
+  <%= simple_form_for [@chatroom, @chatroom_user], remote: true do |f| %>
+  <%= f.input :user_id, collection: User.all.map { |user| [user.name, user.id] }  %>
+  <%= f.submit %>
+  <% end %>
   <h1>#<%= @chatroom.name %></h1>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>

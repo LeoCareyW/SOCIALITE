@@ -3,10 +3,11 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+    @chatroom_user = ChatroomUser.new
   end
 
   def index
-    @chatrooms = Chatroom.all
+    @chatrooms = Chatroom.joins(:chatroom_users).where(chatroom_users: { user_id: current_user.id })
   end
 
   def new
@@ -15,8 +16,9 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
-    @chatroom.user = current_user
+    # @chatroom.user = current_user
     if @chatroom.save
+      ChatroomUser.create(user: current_user, chatroom: @chatroom)
       flash[:success] = "Room #{@chatroom.name} was created successfully"
       redirect_to chatrooms_path(@chatroom)
     else
