@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment.place = @place
     @comment.user = current_user
     if @comment.save
-      redirect_to place_path(@place, anchor: "comment-#{@comment.id}")
+      redirect_to place_path(@place, anchor: "review-#{@comment.id}")
     else
       render 'places/show'
     end
