@@ -8,6 +8,8 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = Chatroom.joins(:chatroom_users).where(chatroom_users: { user_id: current_user.id })
+    @user = current_user
+    @chatroom = Chatroom.new
   end
 
   def new
