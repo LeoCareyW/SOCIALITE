@@ -1,16 +1,39 @@
 <div class="row">
-  <div class="col-12 col-md-3">
-    <div class="mb-3">
-      <%= link_to new_chatroom_path, class: "btn btn-primary" do %>
-        Start a Conversation
-      <% end %>
+  <div>
+    <div >
+      <h3 class="messages-title">Your Messages </h3>
+      <div class="messages-buttons">
+        <div class="button-container">
+          <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
+          <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_user_path %></p>
+          <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+        </div>
+    </div>
+
+     <div id="PopUpModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+          <%= simple_form_for @chatroom do |f| %>
+            <%= f.input :name %>
+            <%= f.submit "Save", class: 'btn btn-success' %>
+<% end %>
+      </div>
     </div>
 
 
     <% if @chatrooms.present? %>
-      <nav class="nav flex-column">
+      <nav class="index-chat-parent">
         <% @chatrooms.each do |chatroom| %>
-          <%= link_to chatroom.name, chatroom_path(chatroom), class: "nav-link room-nav-link" %>
+        <div class="index-chat-container">
+          <div class="group-message-title"> <%= link_to chatroom.name, chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
+          <% chatroom.users.each do |user| %>
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key %>
+        <% else %>
+          <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+          <% end %>
+        <% end %>
+        </div>
         <% end %>
       </nav>
     <% else %>
@@ -18,4 +41,5 @@
         The are no rooms
       </div>
     <% end %>
+
   </div>

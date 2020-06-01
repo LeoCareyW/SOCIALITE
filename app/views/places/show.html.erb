@@ -135,6 +135,7 @@
         <% end %>
       <% else %>
       <% end %>
+    <% end %>
 
 <%= link_to "Leave a comment", new_place_comment_path(@place) %>
 
@@ -159,7 +160,6 @@
         method: :delete,
         data: { confirm: "Are you sure?" } %>
         <% end %>
-      <% end  %>
        </ul>
     </li>
 </div>
