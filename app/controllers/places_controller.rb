@@ -36,6 +36,7 @@ def show
   @groups = current_user.groups
   @friends = current_user.friends
   @recommendation = Recommendation.where("user_id = ? and place_id = ?", current_user.id, @place.id).first
+  @review = Review.new
 end
 
 

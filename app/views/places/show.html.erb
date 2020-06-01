@@ -95,7 +95,27 @@
 </div>
 
 
+<%= link_to 'Back', places_path %> |
+<%= link_to 'Leave a review', new_place_review_path(@place) %>
 
+<%= simple_form_for [ @place, @review ] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+
+<ul class="list-group">
+    <% @place.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+    <% end %>
+</ul>
+
+<li class="list-group-item">
+      <%= review.content %>
+      <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+</li>
 
 
 
