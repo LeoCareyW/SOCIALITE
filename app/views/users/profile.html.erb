@@ -79,16 +79,19 @@
   <br>
 
   <hr class="horizontal-line my-4" width="75%" size="30">
-  <div class="recommendations-container">
-    <h4 class="profile-text">My Recommendations</h4>
-      <% @recommendations.each do |recommendation| %>
-      <div class="recommendation-grid-item">
-        <p><%= recommendation.place.name %></p>
-        <p><%= recommendation.place.description %></p>
-        <%= cl_image_tag recommendation.place.photos.first.key, width: 300, height: 200 %>
-      </div>
+  <div class="similar-places-container">
+      <h2>My Recommendations</h2>
+      <div class="multiple-items">
+        <% @recommendations.each do |recommendation|  %>
+          <div class="b-card">
+            <%= cl_image_tag recommendation.place.photos[0].key, class: "card-img" %>
+            <div class="b-card-text">
+              <h3><%= link_to "#{recommendation.place.name}", place_path(recommendation.place), class: "b-card-text" %></h3>
+            </div>
+          </div>
         <% end %>
-  </div>
+      </div>
+    </div>
 
 
     <div class="row">
@@ -96,17 +99,13 @@
   </div>
   </div>
   <div class="similar-places-container">
-    <h2>Places You Might Like</h2>
+    <h2>Similar Places You Might Like</h2>
     <div class="multiple-items">
       <% @places.each do |place|  %>
-        <div class="place-card card" style="width: 18rem;">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
-          <a href="#" class="heart-button">
-              <i class="heart-button far fa-heart heart-unlock"></i>
-              <i class="heart-button fas fa-heart heart-lock"></i>
-          </a>
-          <div class="card-body">
-            <p class="card-text"><%= place.name %></p>
+        <div class="b-card">
+          <%= cl_image_tag place.photos[0].key, class: "card-img" %>
+          <div class="b-card-text">
+            <h3><%= link_to "#{place.name}", place_path(place), class: "b-card-text" %></h3>
           </div>
         </div>
       <% end %>
