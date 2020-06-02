@@ -38,17 +38,6 @@
 
     <div class="slick-wrapper">
       <div id="slick1">
-      <% @places.each do |place| %>
-        <div class="slide-item">
-          <div class="a-card">
-            <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1385&q=80" alt="Avatar" style="width:100%">
-            <div class="a-card-text">
-              <h3><%= place.name %></h3>
-              <p><%= place.address %></p>
-            </div>
-          </div>
-        </div>
-        <% end %>
         <% @places.each do |place| %>
           <div class="slide-item">
             <div class="a-card">

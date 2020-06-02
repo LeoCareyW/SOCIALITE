@@ -16,6 +16,16 @@
  height: 638px;
 }
 
+.recommendation-count-container p {
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    width: 450px
+  }
+
 .img-container {
   // width: 638px;
   // height: 638px;
@@ -138,7 +148,7 @@ h3 {
 .recommend-btn {
   font-family: 'Roboto Mono', monospace;
   letter-spacing: 2px;
-  width: 219px;
+  width: 175px;
   height: 74px;
   background: #9ED9EB;
   border: 1px solid #9ED9EB;
@@ -149,7 +159,7 @@ h3 {
 
 .book-btn {
   font-family: 'Roboto Mono', monospace;
-  width: 219px;
+  width: 175px;
   height: 74px;
   background: #334AC0;
   border: 1px solid #9ED9EB;
@@ -173,7 +183,7 @@ h2 {
 }
 
 .reviews-container {
-  width: 75%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 5% !important;
 }
