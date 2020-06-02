@@ -1,10 +1,41 @@
-<h1> My Groups</h1>
+<div class="groups-parent">
+ <div class="groups-title">
+  <h2 class="messages-title"> My Groups</h2>
+</div>
+
+  <div class="messages-buttons">
+    <div class="button-container">
+      <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
+      <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_group_path %> </p>
+      <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+    </div>
+  </div>
 
 
-<% @groups.each do |group| %>
-<ul><%= link_to "#{group.name}", group_path(group) %></ul>
-<% end %>
-<ul><%= link_to "Create a group", new_group_path %></ul>
+<div id="PopUpModal" class="modal">
+  <div class="modal-content">
+    <span class="close"></span>
+      <%= simple_form_for @group_new do |f| %>
+        <%= f.input :name %>
+        <%= f.input :users, collection: @friends %>
+        <%= f.submit "+", class: 'add-button' %>
+      <% end %>
+    </div>
+  </div>
 
-
-
+  <div class="group-indexes">
+    <% @groups.each do |group| %>
+    <div class="group-container">
+      <span class="group-names"><p><%= link_to "#{group.name}", group_path(group)%>
+        (<%= group.users.count %>)</p></span>
+        <% group.users.each do |user| %>
+          <% if user.photo.attached? %>
+           <%= cl_image_tag user.photo.key %>
+          <% else %>
+           <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
