@@ -1,45 +1,44 @@
 <div class="row">
-  <div>
+  <div class="sidebar-m-container">
     <div >
-      <h3 class="messages-title">Your Messages </h3>
-      <div class="messages-buttons">
-        <div class="button-container">
-          <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
-          <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_user_path %></p>
-          <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+      <h2 class="messages-title">Your Messages </h2>
+        <div class="messages-buttons">
+          <div class="button-container">
+            <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
+            <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_user_path %></p>
+            <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+          </div>
         </div>
-      </div>
 
      <div id="PopUpModal" class="modal">
         <div class="modal-content">
-        <span class="close"></span>
-          <%= simple_form_for @chatroom do |f| %>
-            <%= f.input :name %>
-            <%= f.submit "+", class: 'add-button' %>
-<% end %>
-      </div>
-    </div>
-
-
-    <% if @chatrooms.present? %>
-      <nav class="index-chat-parent">
-        <% @chatrooms.each do |chatroom| %>
-        <div class="index-chat-container">
-          <div class="group-message-title"> <%= link_to chatroom.name, chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
-          <% chatroom.users.each do |user| %>
-        <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key %>
-        <% else %>
-          <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
-          <% end %>
-        <% end %>
+          <span class="close"></span>
+            <%= simple_form_for @chatroom do |f| %>
+             <%= f.input :name %>
+              <%= f.submit "+", class: 'add-button' %>
+              <% end %>
+           </div>
         </div>
+      <% if @chatrooms.present? %>
+        <nav class="index-chat-parent">
+          <% @chatrooms.each do |chatroom| %>
+          <div class="index-chat-container">
+            <div class="group-message-title"> <%= link_to chatroom.name, chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
+              <% chatroom.users.each do |user| %>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key %>
+              <% else %>
+                <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </nav>
-    <% else %>
-      <div class="text-muted">
-        The are no rooms
-      </div>
-    <% end %>
-
+      <% else %>
+        <div class="text-muted">
+          The are no rooms
+        </div>
+      <% end %>
+    </div>
   </div>
+</div>

@@ -28,6 +28,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '../plugins/carousel';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { messagesPopup } from '../plugins/messages_popup';
+import { messagesPopup2 } from '../plugins/add_to_chat';
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -44,4 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   initSlick();
   initMapbox();
   messagesPopup();
+  messagesPopup2();
+  addFriend();
 });

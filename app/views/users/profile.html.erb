@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header-container">
     <div class="photo-container">
-      <h1 id="profile-title" class="profile-text"><%= current_user.name %></h1>
+      <h1 class="profile-text"><%= current_user.name %></h1>
         <% if @user.photo.attached? %>
             <%= cl_image_tag @user.photo.key, width: 250, height: 250, radius: "max" %>
             <% else %>
@@ -25,19 +25,28 @@
 
     <div class="w-50">
       <h2 class="profile-text">My Plans</h2>
-      <div class="profile-plans">
-         <% @user.plans.each do |plan| %>
-              <h2 class="profile-plans-text"> <%= plan.place.name %></h2>
+      <% @user.plans.each do |plan| %>
+
+
+
+            <div class="profile-plans">
+              <div>
+                <h2 class="profile-plans-text"><%= plan.place.name %></h2>
+              </div>
             <%= cl_image_tag plan.place.photos.first.key %>
-             <%# @plan.place.photos[0] %>
+              <%
+=begin%>
+ <% @plan.place.photos[0] %>
+<%
+=end%>
               <h2 class="card-trip-pricing"><%= plan.date %></h2>
             </div>
       </div>
       <% end %>
 
 
-  <div class="w-50 m-50">
-  <h4 class="profile-text"> <strong><%= @user.friendships.count %></strong> friends</h4>
+  <div class="w-50">
+  <h4 class="profile-text">Friends <%=  %></h4>
     <div class="friends-container w-100">
         <% @user.friendships.each do |friendship| %>
         <div class="avatar-container">
@@ -46,15 +55,14 @@
             <% else %>
             <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
             <% end %>
-            <p id="friendship-name" class="profile-text"><%= friendship.friend.name %></p>
-            <div>
+            <p class="profile-text"><%= friendship.friend.name %>
+            <span>
               <%= link_to "Delete", friendship, :method => :delete %>
-              
-            </div>
+            </span></p>
           </div>
       <%end%>
     </div>
-      <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
+    <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
     </div>
   </div>
 
@@ -62,10 +70,12 @@
   <br>
   <br>
   <br>
+
+<hr class="horizontal-line my-4" width="75%" size="30">
+
   <br>
   <br>
 
-  <hr class="horizontal-line my-4" width="75%" size="30">
   <div class="recommendations-container">
     <h4 class="profile-text">My Recommendations</h4>
       <% @recommendations.each do |recommendation| %>
@@ -76,11 +86,8 @@
       </div>
         <% end %>
   </div>
-
-
-    <div class="row">
-
-  </div>
+      <div class="row">
+    </div>
   </div>
 </div>
 

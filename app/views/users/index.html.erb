@@ -3,18 +3,18 @@
 </div>
 
 <div id="users">
+
 <% @users.each do |user| %>
-  <div class="user">
+  <div class="user" id="user">
       <% if user.photo.attached? %>
           <%= cl_image_tag user.photo.key %>
         <% else %>
           <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
       <% end %>
-       <strong><%= user.name %></strong>
-      <div class="add-friend"> <%= link_to "+", friendships_path(:friend_id => user), :method => :post, remote: true %> </div>
+       <span><strong><%= user.name %></strong></span>
+      <div class="add-friend" id="add-friend-plus"> <%= link_to "+", friendships_path(:friend_id => user), :method => :post, remote: true %> </div>
     <% end %>
       <div class="clear"></div>
-
   </div>
 </div>
 
