@@ -1,8 +1,9 @@
   <div class="super-container">
-    <div class="row">
+  <div>
+    <div class="sidebar-m-container">
       <div>
-        <div >
-          <h2 class="messages-title">Your Messages </h2>
+        <div class="scroll-left-m">
+          <h3 class="messages-title">Your Messages </h3>
             <div class="messages-buttons">
               <div class="button-container">
                 <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
@@ -43,14 +44,13 @@
         </div>
       </div>
     </div>
-
-
+  </div>
     <div class="message-main-parent">
        <div class="message-main-child">
         <div class="row">
           <div>
-          <div>
-            <h3 class="messages-title"><%= @chatroom_side.name %></h3>
+          <div class="m-border-div">
+            <h4 class="messages-title">'<%= @chatroom_side.name %>'</h4>
             <div class="messages-buttons">
               <div class="button-container">
                 <p class="profile-buttons" id="pbtn4"><%= link_to "Add" %></p>

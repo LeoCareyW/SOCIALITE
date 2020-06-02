@@ -17,6 +17,7 @@
   </head>
 
   <body>
+  <div class="nav-container">
     <nav>
       <input type="checkbox" id="nav" class="hidden">
       <label for="nav" class="nav-btn">
@@ -31,7 +32,11 @@
         <ul>
           <% if user_signed_in?  %>
           <li><%= link_to "Profile", profile_path %></li>
-          <li><%= link_to "Messages", chatrooms_path %></li>
+          <% if current_user.messages.where(read: false) %>
+            <li id="messages-click"><%= link_to "Messages(#{current_user.messages.where(read: false).count})", chatrooms_path %></li>
+          <% else  %>
+            <li id="messages-click"><%= link_to "Messages", chatrooms_path %></li>
+          <% end %>
           <li><%= link_to "Groups", groups_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% else %>
@@ -42,6 +47,7 @@
         </ul>
       </div>
     </nav>
+  </div>
   <div class="min-height">
     <%= yield %>
   </div>

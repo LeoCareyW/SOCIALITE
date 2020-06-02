@@ -2,6 +2,10 @@
   background-color: white;
 }
 
+.nav-container {
+  background-color: #70B5CD
+}
+
 
 * {
       box-sizing: border-box;
@@ -27,7 +31,7 @@ body {
 }
 
 nav {
-      padding: 8px;
+      padding-bottom: 40px;
 }
 
 .logo {
@@ -65,14 +69,15 @@ nav ul li:last-child {
 }
 
 nav ul li a {
+      margin-top: 5px;
       display: inline-block;
       outline: none;
-      color: #000;
+      color: white;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 14px;
       letter-spacing: 1.2px;
-      font-weight: 600;
+      font-weight: 500;
       transition: 0.3s;
       &:hover {
           color: #818181;
