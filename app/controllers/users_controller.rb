@@ -19,6 +19,9 @@ class UsersController < ApplicationController
   def profile
     # @recommendations = Recommendation.joins(:users).where(users: current_user)
     @user = current_user
+    @places = Place.all.sort_by do |place|
+      -place.recommendations.count 
+    end
     @recommendations = Recommendation.where(user_id: current_user)
   end
 
