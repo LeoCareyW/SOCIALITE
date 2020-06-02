@@ -14,6 +14,7 @@
   text-align: center;
   align-content: center;
   margin-top: 70px;
+  margin-bottom: 100px;
 }
 
 .friends-container {
@@ -49,6 +50,7 @@
   height: 30px;
   background: rgba(196, 196, 196, 0.4);
   border-radius: 20px;
+  display: inline-block;
    a {
     font-family: Roboto-Mono;
     font-size: 12px;
@@ -86,11 +88,24 @@
   position: relative;
 }
 
+#profile-title {
+  background: rgba(30, 167, 210, 0.43);
+  border-radius: 52px;
+  height:12px;
+  z-index: -1;
+  font-family: roboto;
+}
 
 .profile-text {
   font-family: Roboto;
   margin-right: 10px;
   text-align: center;
+  z-index: 1;
+}
+
+#friendship-name {
+  font-family: roboto-mono;
+  font-size: 24px;
 }
 
 .profile-plans {
