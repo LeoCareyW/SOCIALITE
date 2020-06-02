@@ -1,7 +1,33 @@
 // Specific CSS for your home-page
 
-body {
-background-color: white;
+.homepage-title-container {
+    padding-top: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.tagline-container {
+    padding-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tagline-container h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+}
+
+
+.image-banner {
+width: 100%;
+margin-top: 50px;
+}
+
+.image-banner img {
+  width: 100%;
 }
 
 .homepage-image {
@@ -15,7 +41,6 @@ background-color: white;
     box-shadow: 0 1rem 2rem rgba(black,.2);
   }
 }
-
 
 .homepage-image-card h1 {
   position: relative;
@@ -33,8 +58,12 @@ background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   font: bold 46px/1.4 'Roboto', arial, sans-serif;
-
 }
+
+//// OLD HOME PAGE BELOW
+// body {
+// background-color: white;
+// }
 
 .homepage-image-text {
   position: absolute;
@@ -48,72 +77,73 @@ background-color: white;
   text-align: center;
   justify-content: center;
   text-shadow: 0 1px 0 black;
+  font-family: 'Roboto Mono', monospace;
 }
 
-.darken {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-}
+// .darken {
+//   background-image:
+//     linear-gradient(
+//       rgba(0, 0, 0, 0.5),
+//       rgba(0, 0, 0, 0.5)
+//     ),
+// }
 
-.banner img {
-  width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
-  height: 100%;
-}
+// .banner img {
+//   width: 100%;
+//   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+//   height: 100%;
+// }
 
-.container h1 {
- font: bold 46px/1.4 'Roboto', arial, sans-serif;
-}
+// .container h1 {
+//  font: bold 46px/1.4 'Roboto', arial, sans-serif;
+// }
 
-.d-block h2 {
-  text-align: center;
-  font: 46px/4 $headers-font, arial, sans-serif;
-  letter-spacing: .0125rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #191a1a;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
+// .d-block h2 {
+//   text-align: center;
+//   font: 46px/4 $headers-font, arial, sans-serif;
+//   letter-spacing: .0125rem;
+//   font-weight: 400;
+//   line-height: 1.5;
+//   color: #191a1a;
+//   margin-bottom: 0px;
+//   margin-top: 0px;
+// }
 
-.banner-card-text {
-  position: absolute;
-  left: 50%;
-  top: -40px;
-  width: 600px;
-  margin-left: -300px;
-  text-align: center;
-};
+// .banner-card-text {
+//   position: absolute;
+//   left: 50%;
+//   top: -40px;
+//   width: 600px;
+//   margin-left: -300px;
+//   text-align: center;
+// };
 
-.banner-card-text h1 {
- font: bold 46px/1.4 'Futura', arial, sans-serif;
- text-transform: uppercase;
- letter-spacing: .0125rem;
- font-weight: 300;
- font-size: 5rem;
- line-height: 5rem;
- height: 100px;
- text-align: center;
- margin-bottom: 0;
-}
+// .banner-card-text h1 {
+//  font: bold 46px/1.4 'Futura', arial, sans-serif;
+//  text-transform: uppercase;
+//  letter-spacing: .0125rem;
+//  font-weight: 300;
+//  font-size: 5rem;
+//  line-height: 5rem;
+//  height: 100px;
+//  text-align: center;
+//  margin-bottom: 0;
+// }
 
-.banner-card-text p {
-  text-align: center;
-  font: 22px $headers-font, arial, sans-serif;
-  letter-spacing: .0125rem;
-  font-weight: 400;
-  line-height: 1.1;
-  color: #191a1a;
-  text-align: center;
-}
+// .banner-card-text p {
+//   text-align: center;
+//   font: 22px $headers-font, arial, sans-serif;
+//   letter-spacing: .0125rem;
+//   font-weight: 400;
+//   line-height: 1.1;
+//   color: #191a1a;
+//   text-align: center;
+// }
 
-.banner-card {
-  position: relative;
-  margin-top: 5%
-}
+// .banner-card {
+//   position: relative;
+//   margin-top: 5%
+// }
 
 
 

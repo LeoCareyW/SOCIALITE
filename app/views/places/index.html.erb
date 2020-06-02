@@ -36,26 +36,29 @@
       </div>
     </div>
 
-    <div class="container">
-    <% @places.each_slice(3) do |three_places| %>
-      <div class="row">
-        <% three_places.each do |place| %>
-        <div class="col-4 margin-padding">
-          <div class="place-card card" style="width: 18rem;">
-            <%= cl_image_tag place.photos[0].key, class: "card-img" %>
-            <a href="#" class="heart-button">
-                <i class="heart-button far fa-heart heart-unlock"></i>
-                <i class="heart-button fas fa-heart heart-lock"></i>
-            </a>
-            <div class="place-card-text">
-              <div class="title-adress-container">
+    <div class="slick-wrapper">
+      <div id="slick1">
+      <% @places.each do |place| %>
+        <div class="slide-item">
+          <div class="a-card">
+            <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1385&q=80" alt="Avatar" style="width:100%">
+            <div class="a-card-text">
+              <h3><%= place.name %></h3>
+              <p><%= place.address %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% @places.each do |place| %>
+          <div class="slide-item">
+            <div class="a-card">
+              <%= cl_image_tag place.photos[0].key, class: "card-img" %>
+              <div class="a-card-text">
                 <h3><%= link_to "#{place.name}", place_path(place) %></h3>
                 <p><%= place.address %></p>
               </div>
             </div>
           </div>
-        </div>
-        <% end %>
         <% end %>
       </div>
     </div>
@@ -64,5 +67,10 @@
   <%= link_to "Add a new place", new_place_path %>
   </div>
 </div>
+
+
+
+
+
 
 
