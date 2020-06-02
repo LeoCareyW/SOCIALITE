@@ -31,7 +31,7 @@ end
 
 def show
   @place = Place.find(params[:id])
-  @places = Place.all
+  @places = Place.where(:category => @place.category)
   @markers = [{ lat: @place.latitude, lng: @place.longitude }]
   # @groups = Group.joins(:users).where(users: current_user)
   @groups = current_user.groups
