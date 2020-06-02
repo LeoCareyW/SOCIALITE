@@ -1,38 +1,84 @@
-<div class="message-main-parent">
-   <div class="message-main-child">
+  <div class="super-container">
     <div class="row">
       <div>
-      <div>
-        <h3 class="messages-title"><%= @chatroom.name %></h3>
-        <div class="messages-buttons">
-          <div class="button-container">
-            <p class="profile-buttons" id="pbtn1"><%= link_to "Back", chatrooms_path %></p>
-            <p class="profile-buttons" id="pbtn2"><%= link_to "Add" %></p>
-            <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
-          </div>
-        </div>
-      </div>
-          <div id="PopUpModal" class="modal md-effect-1">
-            <div class="modal-content">
-            <span class="close"></span>
-              <%= simple_form_for [@chatroom, @chatroom_user], remote: true do |f| %>
-              <%= f.input :user_id, collection: User.all.map { |user| [user.name, user.id] }  %>
-              <%= f.submit "Add", class: 'add-friend-button' %>
-             <% end %>
-          </div>
-        </div>
+        <div >
+          <h2 class="messages-title">Your Messages </h2>
+            <div class="messages-buttons">
+              <div class="button-container">
+                <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
+                <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_user_path %></p>
+                <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+              </div>
+            </div>
 
-        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-          <% @chatroom.messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
+         <div id="PopUpModal" class="modal">
+            <div class="modal-content">
+              <span class="close"></span>
+                <%= simple_form_for @chatroom do |f| %>
+                 <%= f.input :name %>
+                  <%= f.submit "+", class: 'add-button' %>
+                  <% end %>
+               </div>
+            </div>
+          <% if @chatrooms.present? %>
+            <nav class="index-chat-parent">
+              <% @chatrooms.each do |chatroom| %>
+              <div class="index-chat-container">
+                <div class="group-message-title"> <%= link_to chatroom.name, chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
+                  <% chatroom.users.each do |user| %>
+                  <% if user.photo.attached? %>
+                    <%= cl_image_tag user.photo.key %>
+                  <% else %>
+                    <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </nav>
+          <% else %>
+            <div class="text-muted">
+              The are no rooms
+            </div>
           <% end %>
         </div>
-    <div>
-      <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-      <%= f.input :content %>
-      <% end %>
+      </div>
     </div>
+
+
+    <div class="message-main-parent">
+       <div class="message-main-child">
+        <div class="row">
+          <div>
+          <div>
+            <h3 class="messages-title"><%= @chatroom_side.name %></h3>
+            <div class="messages-buttons">
+              <div class="button-container">
+                <p class="profile-buttons" id="pbtn4"><%= link_to "Add" %></p>
+              </div>
+            </div>
+          </div>
+              <div id="PopUpModal2" class="modal">
+                <div class="modal-content">
+                <span class="close"></span>
+                  <%= simple_form_for [@chatroom_side, @chatroom_user], remote: true do |f| %>
+                  <%= f.input :user_id, collection: User.all.map { |user| [user.name, user.id] }  %>
+                  <%= f.submit "Add", class: 'add-friend-button' %>
+                 <% end %>
+              </div>
+            </div>
+
+            <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+              <% @chatroom_side.messages.each do |message| %>
+              <%= render 'messages/message', message: message %>
+              <% end %>
+            </div>
+        <div>
+          <%= simple_form_for [@chatroom_side, @message], remote: true do |f| %>
+          <%= f.input :content %>
+          <% end %>
+        </div>
+      </div>
     </div>
-    </div>
-   </div>
+  </div>
+  </div>
 </div>
