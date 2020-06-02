@@ -10,8 +10,7 @@
       <div class="form-inputs">
         <%= f.input :name, required: true %>
         <%= f.input :email,
-                    required: true,
-                    input_html: { autocomplete: "email" }%>
+                    required: true %>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -27,5 +26,4 @@
     <% end %>
     </div>
    </div>
-  <h5 class="links"><%= render "devise/shared/links" %></h5>
 </div>

@@ -12,12 +12,12 @@
 
      <div id="PopUpModal" class="modal">
         <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close"></span>
           <%= simple_form_for @chatroom do |f| %>
             <%= f.input :name %>
-            <%= f.submit "Save", class: 'btn btn-success' %>
-              <% end %>
-        </div>
+            <%= f.submit "+", class: 'add-button' %>
+<% end %>
+      </div>
     </div>
 
 
