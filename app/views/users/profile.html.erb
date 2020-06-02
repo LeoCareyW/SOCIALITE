@@ -20,8 +20,7 @@
       <p class="profile-buttons" id="pbtn1"><%= link_to "Edit Profile", new_user_path %></p>
       <p class="profile-buttons" id="pbtn2"><%= link_to "New Plans", new_user_path %></p>
       <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
-    </div>
-
+  </div>
 
 <div class=“plan-carousel”>
   <div>
@@ -31,10 +30,10 @@
           <%= cl_image_tag plan.place.photos.first.key %>
         <h2 class="plan-card-date m-0"><%= plan.date %></h2>
         </div>
-      </div>
     <% end %>
   </div>
 </div>
+
 
   <div class="upper-profile-container">
     <h2 class="profile-text text-left">My Plans</h2>
@@ -70,7 +69,7 @@
                 <%= link_to "Delete", friendship, :method => :delete %>
               </div>
             </div>
-          <%end%>
+
         </div>
           <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
       </div>
@@ -91,8 +90,8 @@
             <span>
               <%= link_to "Delete", friendship, :method => :delete %>
             </span></p>
+            <%end%>
           </div>
-      <%end%>
     </div>
     <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
     </div>
@@ -122,11 +121,4 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
