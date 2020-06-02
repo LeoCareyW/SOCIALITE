@@ -21,7 +21,7 @@
       <p class="profile-buttons" id="pbtn2"><%= link_to "New Plans", new_user_path %></p>
       <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
     </div>
-
+</div>
 
 <div class=“plan-carousel”>
   <div>
@@ -33,17 +33,29 @@
         </div>
       </div>
     <% end %>
-  </div>
 </div>
+
 
   <div class="upper-profile-container">
     <h2 class="profile-text text-left">My Plans</h2>
     <div class="d-flex">
       <div class="w-75">
         <div class="profile-plans">
-        <% if @user.plans.nil? %>
-         <h2 class="empty-plans-img">Make A Plan with some friends!</h2>
-        <% else %>
+          <% if @user.plans.nil? %>
+           <h2 class="empty-plans-img">Make A Plan with some friends!</h2>
+          <% else %>
+          <div class=“plan-carousel”>
+            <div>
+              <% @user.plans.each do |plan| %>
+                <div class="plan-card">
+                  <h2 class="plan-card-text"> <%= plan.place.name %></h2>
+                    <%= cl_image_tag plan.place.photos.first.key %>
+                  <h2 class="plan-card-date m-0"><%= plan.date %></h2>
+                  </div>
+                </div>
+              <% end %>
+          </div>
+
           <% @user.plans.each do |plan| %>
             <div class="plan-card">
               <h2 class="plan-card-text"> <%= plan.place.name %></h2>
@@ -74,7 +86,7 @@
         </div>
           <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
       </div>
-      <% end %>
+
 
 
   <div class="w-50">
@@ -92,7 +104,7 @@
               <%= link_to "Delete", friendship, :method => :delete %>
             </span></p>
           </div>
-      <%end%>
+      <% end %>
     </div>
     <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
     </div>
