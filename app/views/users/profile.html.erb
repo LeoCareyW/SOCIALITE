@@ -20,38 +20,33 @@
       <p class="profile-buttons" id="pbtn1"><%= link_to "Edit Profile", new_user_path %></p>
       <p class="profile-buttons" id="pbtn2"><%= link_to "New Plans", new_user_path %></p>
       <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
-  </div>
+    </div>
 
-<div class=“plan-carousel”>
-  <div>
-    <% @user.plans.each do |plan| %>
-      <div class="plan-card">
-        <h2 class="plan-card-text"> <%= plan.place.name %></h2>
-          <%= cl_image_tag plan.place.photos.first.key %>
-        <h2 class="plan-card-date m-0"><%= plan.date %></h2>
-        </div>
-    <% end %>
-  </div>
-</div>
 
 
   <div class="upper-profile-container">
     <h2 class="profile-text text-left">My Plans</h2>
-    <div class="d-flex">
-      <div class="w-75">
+    <div class="d-flex" style="justify-content: space-between;">
+      <div style="width:60%;">
         <div class="profile-plans">
-        <% if @user.plans.nil? %>
-         <h2 class="empty-plans-img">Make A Plan with some friends!</h2>
+        <% if @user.plans.empty? %>
+         <div class="plan-carousel">
+             <div class="plan-card">
+               <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" style="width:80%">
+               <h2 class="plan-card-date m-0">You have no plans! Make a Plan...</h2>
+             </div>
+         </div>
         <% else %>
-          <% @user.plans.each do |plan| %>
-            <div class="plan-card">
-              <h2 class="plan-card-text"> <%= plan.place.name %></h2>
-              <%= cl_image_tag plan.place.photos.first.key %>
-                <%# @plan.place.photos[0] %>
+          <div class="plan-carousel">
+            <% @user.plans.each do |plan| %>
+              <div class="plan-card">
+                <h2 class="plan-card-text"> <%= plan.place.name %></h2>
+                <%= cl_image_tag plan.place.photos.first.key %>
                 <h2 class="plan-card-date m-0"><%= plan.date %></h2>
-            </div>
-        </div>
-        <% end %>
+              </div>
+            <% end %>
+          </div>
+          </div>
         <% end %>
       </div>
       <div class="w-25 m-50">
@@ -69,31 +64,10 @@
                 <%= link_to "Delete", friendship, :method => :delete %>
               </div>
             </div>
-
+          <%end%>
         </div>
           <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
       </div>
-      <% end %>
-
-
-  <div class="w-50">
-  <h4 class="profile-text">Friends <%=  %></h4>
-    <div class="friends-container w-100">
-        <% @user.friendships.each do |friendship| %>
-        <div class="avatar-container">
-        <% if @user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key %>
-            <% else %>
-            <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
-            <% end %>
-            <p class="profile-text"><%= friendship.friend.name %>
-            <span>
-              <%= link_to "Delete", friendship, :method => :delete %>
-            </span></p>
-            <%end%>
-          </div>
-    </div>
-    <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
     </div>
   </div>
 
@@ -101,12 +75,10 @@
   <br>
   <br>
   <br>
-
-<hr class="horizontal-line my-4" width="75%" size="30">
-
   <br>
   <br>
 
+  <hr class="horizontal-line my-4" width="75%" size="30">
   <div class="recommendations-container">
     <h4 class="profile-text">My Recommendations</h4>
       <% @recommendations.each do |recommendation| %>
@@ -117,8 +89,10 @@
       </div>
         <% end %>
   </div>
-      <div class="row">
-    </div>
+
+
+    <div class="row">
+
+  </div>
   </div>
 </div>
-
