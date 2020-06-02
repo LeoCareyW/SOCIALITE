@@ -46,3 +46,21 @@ text-align: left;
     line-height: 103px;
     color: #000000;
   }
+
+/// slick carousel
+
+// body {
+//   display: flex;
+//   justify-content: center;
+// }
+.slick-wrapper {
+  width: 100%;
+}
+.slide-item {
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 320px;
+  border: 1px solid white;
+}
