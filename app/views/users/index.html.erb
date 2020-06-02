@@ -1,13 +1,21 @@
-<h1>User List</h1>
+<div class="users-title">
+  <h3 class="messages-title">Find your friends... </h3>
+</div>
 
 <div id="users">
 <% @users.each do |user| %>
   <div class="user">
-    <p>
-      <strong><%=h user.email %></strong>
-      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key %>
+        <% else %>
+          <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+      <% end %>
+       <strong><%= user.name %></strong>
+      <div class="add-friend"> <%= link_to "+", friendships_path(:friend_id => user), :method => :post, remote: true %> </div>
+    <% end %>
       <div class="clear"></div>
-    </p>
+
   </div>
-<% end %>
 </div>
+
+
