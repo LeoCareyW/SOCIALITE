@@ -38,7 +38,7 @@
           </nav>
           <% else %>
             <div class="text-muted">
-              The are no rooms
+              You have no conversations yet, start one!
             </div>
           <% end %>
         </div>
@@ -73,8 +73,9 @@
               <% end %>
             </div>
         <div>
-          <%= simple_form_for [@chatroom_side, @message], remote: true do |f| %>
-          <%= f.input :content %>
+          <%= simple_form_for [@chatroom_side, @message], remote: true, html: {class: "type-m-box"} do |f| %>
+          <%= f.input :content, label: false,
+          placeholder: "Type a message..." %>
           <% end %>
         </div>
       </div>

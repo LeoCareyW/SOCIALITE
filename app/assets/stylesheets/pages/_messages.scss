@@ -40,14 +40,18 @@
 }
 
 .scroll-left-m {
-  overflow-y: auto;
-  max-height: 80vh;
   padding-right: 40px;
+}
+
+.index-chat-parent {
+  overflow-y: auto;
+  max-height: 65vh;
+  padding-left: 10px;
 }
 
 #messages {
   margin-top: 20px;
-  max-height: 50vh;
+  max-height: 60vh;
   overflow-y: auto;
   width: 480px;
 }
@@ -130,5 +134,9 @@
   border-radius: 8px;
   width: 55px;
   padding-top: 4px;
+}
+
+.type-m-box input[type = "text"] {
+  border-radius: 25px;
 }
 

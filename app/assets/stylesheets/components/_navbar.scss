@@ -42,13 +42,19 @@ nav {
 }
 
 .logo a {
-      color: #000;
+      color: white;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 18px;
       letter-spacing: 0px;
       text-decoration: none;
+      transition: 0.5s;
 }
+
+.logo a:hover {
+  font-weight: 2000;
+}
+
 
 nav ul {
       float: right;
@@ -80,7 +86,11 @@ nav ul li a {
       font-weight: 500;
       transition: 0.3s;
       &:hover {
-          color: #818181;
+          color: white;
+          border-bottom: solid;
+          border-color: white;
+          padding-bottom: 17px;
+          text-decoration: none;
       }
 }
 
