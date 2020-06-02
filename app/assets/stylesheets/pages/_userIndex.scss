@@ -1,0 +1,19 @@
+.users-title {
+  margin-left: 50px;
+}
+
+#users {
+  margin-left: 50px;
+  column-count: 3;
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin-top: 5px;
+  }
+
+  a {
+    color: green;
+  }
+}

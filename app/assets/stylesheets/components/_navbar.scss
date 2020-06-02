@@ -21,7 +21,7 @@ body {
       height: 100vh;
       font: bold 'Futura', arial, sans-serif;
       font-weight: 400;
-      background: url(background-img.jpg);
+      // background: asset_url(background-img.jpg);
       background-position: center;
       background-size: cover;
 }
@@ -73,8 +73,9 @@ nav ul li a {
       font-size: 14px;
       letter-spacing: 1.2px;
       font-weight: 600;
+      transition: 0.3s;
       &:hover {
-          color: #5fdde5;
+          color: #818181;
       }
 }
 

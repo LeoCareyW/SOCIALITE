@@ -14,11 +14,13 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @friends = current_user.friends
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(name: group_params[:name])
     @group.users << current_user
+    @group.users << User.find(group_params[:users])
     if @group.save
       redirect_to group_path(@group)
     else
@@ -29,7 +31,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :users)
   end
 
 

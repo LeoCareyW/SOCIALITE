@@ -1,0 +1,78 @@
+
+.profile-buttons {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 80px;
+  height: 25px;
+  left: 525px;
+  top: 741px;
+  transition: 0.3s;
+  background: rgba(245, 196, 160, 0.54);
+  border-radius: 20px;
+}
+
+.profile-buttons a {
+    opacity: 0.5;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+
+#pbtn1 {
+  background: rgba(245, 196, 160, 0.54);
+}
+
+#pbtn1 a {
+  color: #BF6E34;
+}
+
+#pbtn1:hover {
+  width: 90px;
+  transition: 0.3s;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#pbtn2 {
+  background: rgba(30, 167, 210, 0.22);
+}
+
+#pbtn2 a {
+  color: #087EA4;
+}
+
+#pbtn2:hover {
+  width: 90px;
+  transition: 0.3s;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#pbtn3 {
+  background: #FAF3B6;
+}
+
+#pbtn3 a {
+  color: #AB7E09;
+}
+
+#pbtn3:hover {
+  width: 90px;
+  margin-left: 5px;
+  margin-right: 5px
+}
+
+#pbtn4 {
+  background: rgba(196, 196, 196, 0.4);
+}
+
+#pbtn4 a {
+  color: #635D5D;
+}
+
+.plans-list {
+  display: grid;
+  width: 45%;
+}

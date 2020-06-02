@@ -1,3 +1,8 @@
+.message-main-parent {
+  margin-left: 40vw;
+}
+
+
 .messages-title {
   margin-top: 30px;
   margin-left: 7px;
@@ -16,6 +21,7 @@
   border-top: none;
   border-right: none;
   border-left: none;
+  border-bottom: none;
   max-width: 200px;
   position: relative;
   transition: 0.4s;
@@ -42,7 +48,7 @@
 
 #messages {
   margin-top: 20px;
-  max-height: 47%;
+  max-height: 400px;
   overflow-y: auto;
 }
 
@@ -76,3 +82,20 @@
 .mn-container {
   margin-top: 5px;
 }
+
+.add-button {
+  background-color: #BDECB6;
+  width: 30px;
+  border: none;
+  border-radius: 8px;
+}
+
+.add-friend-button {
+  background-color: #BDECB6;
+  width: 30px;
+  border: none;
+  border-radius: 8px;
+  width: 55px;
+  padding-top: 4px;
+}
+

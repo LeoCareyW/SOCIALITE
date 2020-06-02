@@ -3,6 +3,7 @@
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
+  padding: 0;
   }
 
 .place-card p {
@@ -11,6 +12,35 @@
   font-size: 18px;
   line-height: 21px;
 }
+
+.place-card-text {
+  font-family: 'Roboto Mono', monospace;
+  margin-left: 10%;
+  text-align: left;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.place-card-text p {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 0px !important;
+  margin-right: 10px;
+}
+
+.place-card h3 a {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0px !important;
+  color: black;
+}
+
   .heart-button {
   position: absolute;
   left: 130px;
@@ -31,3 +61,14 @@
       display: inline;
   }
 
+// used in the index page
+.card-img {
+ height: 200px;
+ width: 100%;
+ crop: fill;
+}
+
+.margin-padding {
+  padding: 0;
+  // margin: 2.5px 1.25px 2.5px 1.25px;
+}
