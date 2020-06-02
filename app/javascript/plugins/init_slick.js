@@ -17,7 +17,7 @@ const initSlick = () => {
       dots: true,
       arrows: true,
       infinite: true,
-      speed: 300,
+      speed: 100,
       slidesToShow: 3,
       slidesToScroll: 3
   });
