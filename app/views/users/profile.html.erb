@@ -95,4 +95,21 @@
 
   </div>
   </div>
+  <div class="similar-places-container">
+    <h2>Places You Might Like</h2>
+    <div class="multiple-items">
+      <% @places.each do |place|  %>
+        <div class="place-card card" style="width: 18rem;">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1543&q=80" alt="Card image cap">
+          <a href="#" class="heart-button">
+              <i class="heart-button far fa-heart heart-unlock"></i>
+              <i class="heart-button fas fa-heart heart-lock"></i>
+          </a>
+          <div class="card-body">
+            <p class="card-text"><%= place.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
