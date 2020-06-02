@@ -4,7 +4,7 @@
     <%= simple_form_for(@place) do |f| %>
         <%= f.input :name %>
         <%= f.input :address, input_html: { id: 'place_address'} %>
-        <%= f.input :category %>
+        <%= f.input :category, collection: ["Bar", "Food & Drink", "Nightclub", "Outdoors"]%>
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Submit Place" %>

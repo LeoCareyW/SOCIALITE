@@ -16,26 +16,6 @@
   margin-top: 70px;
 }
 
-.profile-buttons {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 80px;
-  height: 25px;
-  left: 525px;
-  top: 741px;
-  transition: 0.3s;
-  background: rgba(245, 196, 160, 0.54);
-  border-radius: 20px;
-  a {
-    color: grey;
-    opacity: 0.5;
-    font-family: Roboto-Mono;
-    font-size: 13px;
-    text-decoration: none;
-  }
-}
-
-
 .friends-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -120,41 +100,6 @@
     height: 100%;
     width: 100%;
   }
-}
-
-
-
-#pbtn1:hover {
-  width: 90px;
-  transition: 0.3s;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-#pbtn2 {
-  background: rgba(30, 167, 210, 0.22);
-}
-
-#pbtn2:hover {
-  width: 90px;
-  transition: 0.3s;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-#pbtn3 {
-  background: #FAF3B6;
-}
-
-#pbtn3:hover {
-  width: 90px;
-  margin-left: 5px;
-  margin-right: 5px
-}
-
-.plans-list {
-  display: grid;
-  width: 45%;
 }
 
 // .friends-list {

@@ -16,11 +16,14 @@ Plan.destroy_all
 Place.destroy_all
 puts "clean"
 
-puts "creating a user"
+puts "creating 20 users"
 
-user1 = User.create!(
-  email: "mikey@gmail.com",
+20 times do User.create!(
+  names = ["John", "Harry", "Tom", "Anna", "Kate", "Mary", "Ella", "Lebron", "Lionel", "Rodrigo", "Alejandro", "Dylan", "Jamal", "Margaret", "Zahra", "Mo"]
+  name: names.sample
+  email: "test@test.com",
   password: "123456")
+end
 
 puts "creating a group"
 
