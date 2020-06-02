@@ -5,12 +5,12 @@ const initSlick = () => {
     slidesToScroll: 3,
     dots: true
   });
-  $(‘.plan-carousel’).slick({
+  $('.plan-carousel').slick({
     dots: true,
     infinite: true,
     speed: 500,
     fade: true,
-    cssEase: ‘linear’
+    cssEase: 'linear'
   });
   $('#slick1').slick({
       rows: 3,
