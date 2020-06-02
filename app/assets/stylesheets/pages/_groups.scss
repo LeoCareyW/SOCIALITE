@@ -1,0 +1,77 @@
+.groups-parent {
+  margin-left: 37vw;
+}
+
+.groups-title {
+  margin-left: 25px;
+}
+
+.group-container {
+  margin-top: 15px;
+}
+
+.buttons-container-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.group-indexes {
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin-left: -7px;
+    margin-right: -7px;
+    margin-top: -7px;
+    margin-bottom: 8px;
+    }
+}
+
+.group-names {
+  a {
+    color: grey;
+    text-decoration: none;
+    transition: 0.3s
+  }
+}
+
+.group-names a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.group-members-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+}
+
+.each-user {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.upcoming-group-plan {
+  img {
+    width: 45vw;
+    height: 50vh;
+  }
+}
+
+.upcoming-plan-cont, .post-cont {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+
+

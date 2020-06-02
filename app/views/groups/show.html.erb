@@ -4,19 +4,46 @@
   </div>
 </div>
 
-<div class="buttons-container">
+<div class="buttons-container-group">
 <div class="messages-buttons">
   <div class="button-container">
-    <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
-    <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_user_path %></p>
+    <p class="profile-buttons" id="pbtn1"><%= link_to "Back", groups_path %></p>
+    <p class="profile-buttons" id="pbtn6"><%= link_to "Add", new_user_path %></p>
     <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
   </div>
 </div>
 </div>
 
-  <hr class="horizontal-line my-4" size="30" width="75%">
+<hr class="horizontal-line my-4" size="30" width="75%">
+
+<div class="group-members-container">
+  <% @group.users.each do |user| %>
+  <div class="each-user">
+    <% if user.photo.attached? %>
+      <%= cl_image_tag user.photo.key %>
+    <% else %>
+      <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+    <% end %>
+      <h3><%= user.name %></h3>
+    </div>
+  <% end %>
+</div>
+<div class="upcoming-plan-cont">
+  <div class="upcoming-group-plan">
+    <% @group.plans.each do |plan| %>
+      <h3>Next meetup: <%= plan.place.name %></h3>
+      <div>
+        <% if plan.place.photos.attached? %>
+          <%= cl_image_tag plan.place.photos.first.key %>
+      </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 
-<% @group.users.each do |user| %>
-<h1><%= user.name %></h1>
-<% end %>
+<div class="post-cont">
+  <div class="group-posts">
+    <h3> Group Posts </h3>
+  </div>
+</div>

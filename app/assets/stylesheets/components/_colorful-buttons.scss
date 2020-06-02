@@ -90,5 +90,14 @@
   margin-left: 125px
 }
 
+#pbtn6 {
+  color: #087EA4;
+  background: rgba(30, 167, 210, 0.22);
+}
 
-
+#pbtn6:hover {
+  width: 90px;
+  transition: 0.3s;
+  margin-right: 5px;
+  margin-left: 5px;
+}

@@ -2,6 +2,8 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @group_new = Group.new
+    @friends = current_user.friends
   end
 
   def show
@@ -10,11 +12,6 @@ class GroupsController < ApplicationController
     @plans = Plan.where(group: @group)
     @members = @group.users
 
-  end
-
-  def new
-    @group = Group.new
-    @friends = current_user.friends
   end
 
   def create
