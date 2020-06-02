@@ -46,5 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   messagesPopup();
   messagesPopup2();
-  addFriend();
+  // addFriend();
 });
