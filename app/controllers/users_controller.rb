@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    all_users = User.all
+    friends = current_user.friendships.map { |friendship| friendship.friend }
+    var = friends + all_users
+    @users = []
+    var.each do |person|
+      if var.count(person) < 2
+        @users << person
+      end
+    end
   end
 
   def show

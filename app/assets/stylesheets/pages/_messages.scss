@@ -1,5 +1,14 @@
+.super-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-m-container {
+  margin-left: -6px;
+}
+
 .message-main-parent {
-  margin-left: 40vw;
+  margin-left: 20vw;
 }
 
 
@@ -7,6 +16,11 @@
   margin-top: 30px;
   margin-left: 7px;
   margin-bottom: 30px;
+    h2 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-size: 30px;
+  }
 }
 
 .messages-buttons {

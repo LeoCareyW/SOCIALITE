@@ -1,9 +1,12 @@
 class ChatroomsController < ApplicationController
 
   def show
-    @chatroom = Chatroom.find(params[:id])
+    @chatroom_side = Chatroom.find(params[:id])
     @message = Message.new
     @chatroom_user = ChatroomUser.new
+    @chatrooms = Chatroom.joins(:chatroom_users).where(chatroom_users: { user_id: current_user.id })
+    @user = current_user
+    @chatroom = Chatroom.new
   end
 
   def index
