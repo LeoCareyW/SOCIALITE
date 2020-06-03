@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
   def index
+    if params[:query].present?
+      if params[:search][:query].present?
+        @users = User.seach_by(params[:search][:query])
+        else
+        @users = User.all
+      end
+    end
     all_users = User.all
     friends = current_user.friendships.map { |friendship| friendship.friend }
     var = friends + all_users
@@ -42,6 +49,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:photo)
+    params.require(:user).permit(:photo, :name)
   end
 end
