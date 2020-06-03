@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @place = Place.find(params[:place_id])
+    @places = Place.where(:category => @place.category)
     @comment.place = @place
     @comment.user = current_user
     if @comment.save

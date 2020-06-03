@@ -13,19 +13,27 @@
             <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png") %>
           <% end %>
         </div>
+        <div class="newsfeed-groups-container">
+          <h3>My Groups</h3>
+          <% @user.memberships.each do |membership| %>
+          <li><%= Group.find(membership.group_id).name %></li>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-6">
       <div class="newsfeed-container">
-        <% @friends[0..2].each do |friend|%>
-          <% friend.recommendations[0..3].each do |recommendation| %>
+        <%= link_to "Refresh", feed_path, id: "autorefresh" %>
+        <% @friends.each do |friend|%>
+          <% friend.recommendations.order(created_at: :desc).each do |recommendation| %>
             <div class="newsfeed-card">
               <div class="newsfeed-card-header">
                 <div class="newsfeed-avatar-container">
                   <%= cl_image_tag friend.photo.key %>
                 </div>
                 <div class="name-time-ago">
-                  <h4><%= friend.name %> liked <b><%= recommendation.place.name %></b></h4>
+                  <h4><%= friend.name %> liked <b><%= link_to "#{recommendation.place.name}", place_path(recommendation.place) %></b></h4>
+                  <h4><%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago </h4>
                 </div>
                 <div class="newsfeed-icons-container">
                   <p><%= recommendation.place.recommendations.count%></p>
@@ -34,6 +42,25 @@
               </div>
               <div class="newsfeed-img-container">
                 <%= cl_image_tag recommendation.place.photos.first.key %>
+              </div>
+            </div>
+          <% end %>
+          <% friend.plans.each do |plan| %>
+            <div class="newsfeed-card">
+              <div class="newsfeed-card-header">
+                <div class="newsfeed-avatar-container">
+                  <%= cl_image_tag friend.photo.key %>
+                </div>
+                <div class="name-time-ago">
+                  <h4><%= friend.name %> visited <b><%= link_to "#{plan.place.name}", place_path(plan.place) %></b></h4>
+                </div>
+                <div class="newsfeed-icons-container">
+                  <p><%= plan.place.recommendations.count%></p>
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              <div class="newsfeed-img-container">
+                <%= cl_image_tag plan.place.photos.first.key %>
               </div>
             </div>
           <% end %>
