@@ -24,7 +24,12 @@
         <nav class="index-chat-parent">
           <% @chatrooms.each do |chatroom| %>
           <div class="index-chat-container">
-            <div class="group-message-title"> <%= link_to "#{(chatroom.name + chatroom.messages.where(read: false).count.to_s)}",  chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
+            <% notification_count = chatroom.messages.where(read: false).count.to_s %>
+              <% if notification_count != "0" %>
+                <div class="group-message-title"> <%= link_to "#{chatroom.name} (#{chatroom.messages.where(read: false).count.to_s})",  chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
+              <% else  %>
+                <div class="group-message-title"> <%= link_to "#{(chatroom.name)}", chatroom_path(chatroom), class: "nav-link room-nav-link" %></div>
+              <% end %>
               <% chatroom.users.each do |user| %>
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key %>
