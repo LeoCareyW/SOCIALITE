@@ -1,27 +1,15 @@
 export const noScroll = () => {
+  console.log("scroll maybe working")
 
-Turbolinks.scroll = {};
 
-document.addEventListener("turbolinks:load", ()=> {
+  const container = document.getElementById("messages");
 
-  const elements = document.querySelectorAll("data-turbolinks-scroll");
+if (container) {
 
-  elements.forEach(function(element){
+const message = document.getElementById(`elementMessage-${container.dataset.lastMessageId}`)
+message.scrollIntoView();
+message.scrollIntoView("alignToBottom");
+message.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
 
-    element.addEventListener("click", ()=> {
-      Turbolinks.scroll['top'] = document.scrollingElement.scrollTop;
-    });
-
-    element.addEventListener("submit", ()=> {
-      Turbolinks.scroll['top'] = document.scrollingElement.scrollTop;
-    });
-
-  });
-
-  if (Turbolinks.scroll['top']) {
-    document.scrollingElement.scrollTo(0, Turbolinks.scroll['top']);
   }
-
-  Turbolinks.scroll = {};
-});
 }

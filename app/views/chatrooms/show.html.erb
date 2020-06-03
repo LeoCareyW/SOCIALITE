@@ -72,7 +72,7 @@
               </div>
             </div>
 
-            <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <div id="messages" data-chatroom-id="<%= @chatroom.id %>" data-last-message-id="<%= @chatroom_side.messages.last.id %>">
               <% @chatroom_side.messages.each do |message| %>
               <%= render 'messages/message', message: message %>
               <% end %>

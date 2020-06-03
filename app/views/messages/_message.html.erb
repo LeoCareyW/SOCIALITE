@@ -6,7 +6,7 @@
           <% else %>
           <div class="message-avatar"> <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %> </div>
           <% end %>
-        <div class="mn-container">
+        <div class="mn-container" id="elementMessage-<%=message.id%>">
           <span><%= message.user.name %></span>
           <small><%= message.created_at.strftime("%H:%M") %></small>
         </div>
