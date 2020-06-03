@@ -1,10 +1,20 @@
+::-webkit-scrollbar {
+display: none;
+}
+
 .super-container {
   display: flex;
   flex-direction: row;
 }
 
+.parent-inbox {
+  margin-left: 15px;
+}
+
 .sidebar-m-container {
-  margin-left: -6px;
+  margin-left: 70px;
+  border-right: solid;
+  border-width: 1px;
 }
 
 .message-main-parent {
@@ -13,18 +23,41 @@
 
 
 .messages-title {
-  margin-top: 30px;
+  margin-top: 32px;
   margin-left: 7px;
-  margin-bottom: 30px;
-    h2 {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-size: 30px;
-  }
+  text-align: center;
+}
+
+.m-border-div {
+  border-bottom: solid;
+  border-width: 1px;
 }
 
 .messages-buttons {
+  display: flex;
+  justify-content: center;
   text-align: center;
+}
+
+.messages-buttons-b {
+  text-align: center;
+}
+
+.scroll-left-m {
+  padding-right: 40px;
+}
+
+.index-chat-parent {
+  overflow-y: auto;
+  max-height: 65vh;
+  padding-left: 10px;
+}
+
+#messages {
+  margin-top: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+  width: 480px;
 }
 
 .index-chat-container {
@@ -59,12 +92,6 @@
      color: black;
    }
   }
-
-#messages {
-  margin-top: 20px;
-  max-height: 400px;
-  overflow-y: auto;
-}
 
 .group-message-title {
   margin-left: -20px;
@@ -111,5 +138,9 @@
   border-radius: 8px;
   width: 55px;
   padding-top: 4px;
+}
+
+.type-m-box input[type = "text"] {
+  border-radius: 25px;
 }
 

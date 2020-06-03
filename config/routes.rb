@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :chatrooms do
     resources :messages, only: :create
+    put'/mark_as_read', to: 'chatrooms#mark_as_read'
     resources :chatroom_users, only: :create
   end
 

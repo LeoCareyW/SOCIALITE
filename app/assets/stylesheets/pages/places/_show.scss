@@ -104,7 +104,25 @@ h3 {
   font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: normal;
+  font-size: 25px;
+  line-height: 42px;
+  color: #000000;
+}
+
+h4 {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
   font-size: 18px;
+  line-height: 42px;
+  color: #000000;
+}
+
+h6 {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
   line-height: 42px;
   color: #000000;
 }
@@ -233,6 +251,5 @@ h2 {
 .reviews-card .reviews-card-infos {
   padding: 16px;
 }
-
 
 

@@ -32,7 +32,7 @@
       <div class="recommend">
         <% pre_like = @place.recommendations.find { |recommend| recommend.user_id == current_user.id} %>
         <% if pre_like %>
-          <%= link_to place_recommendation_path(@place, @recommendation), method: :delete, remote: true do %>
+          <%= link_to place_recommendation_path(@place, @recommendation), method: :delete, 'data-turbolinks-scroll': false, remote: true do %>
             <button id="recommend-" type="button" class="recommend-btn">Unrecommend</button>
           <% end %>
           <% else %>

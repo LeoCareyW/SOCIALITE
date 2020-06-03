@@ -30,6 +30,16 @@ class ChatroomsController < ApplicationController
     end
   end
 
+  def mark_as_read
+    @chatroom = Chatroom.find(params[:id])
+    @messages = @chatroom.messages
+    @messages.each do |message|
+      message.read = true
+      message.save
+    end
+    render json: @chatroom, status: 200
+  end
+
   private
 
   def chatroom_params

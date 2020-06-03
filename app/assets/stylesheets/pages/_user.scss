@@ -4,7 +4,7 @@
   flex-direction: column;
   text-align: center;
   align-content: center;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .upper-profile-container {
@@ -131,6 +131,16 @@
   left: 10px;
   font-size: 18px;
 }
+
+.profile-text {
+  h3 {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 42px;
+  color: #000000;
+  }
 
 .similar-places-container h2 {
   text-align: left;

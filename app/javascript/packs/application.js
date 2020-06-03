@@ -34,6 +34,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { initSlick } from '../plugins/init_slick';
 import { addFriend } from '../plugins/add_friend';
+import { notification } from '../plugins/notifications';
+import { noScroll } from '../plugins/no-scroll';
 
 
 // Internal imports, e.g:
@@ -46,5 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   messagesPopup();
   messagesPopup2();
+  notification();
+  noScroll();
   // addFriend();
 });

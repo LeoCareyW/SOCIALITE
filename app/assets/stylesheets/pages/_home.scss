@@ -1,5 +1,9 @@
 // Specific CSS for your home-page
 
+body {
+  background: white;
+}
+
 .homepage-title-container {
     padding-top: 30px;
     text-align: left;
@@ -36,6 +40,7 @@ margin-top: 50px;
 };
 
 .homepage-img-card {
+  transition: 0.3s;
 &:hover {
     transform: translateY(-.3rem);
     box-shadow: 0 1rem 2rem rgba(black,.2);
@@ -76,7 +81,7 @@ margin-top: 50px;
   color: white;
   text-align: center;
   justify-content: center;
-  text-shadow: 0 1px 0 black;
+  text-shadow: 0 2px 0 black;
   font-family: 'Roboto Mono', monospace;
 }
 
