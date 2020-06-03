@@ -26,9 +26,19 @@ class UsersController < ApplicationController
     # @recommendations = Recommendation.joins(:users).where(users: current_user)
     @user = current_user
     @places = Place.all.sort_by do |place|
-      -place.recommendations.count 
+      -place.recommendations.count
     end
     @recommendations = Recommendation.where(user_id: current_user)
+  end
+
+  def feed
+    @user = current_user
+
+    if @user.friends.empty?
+    else
+      @friends = @user.friends
+    end
+
   end
 
   def new

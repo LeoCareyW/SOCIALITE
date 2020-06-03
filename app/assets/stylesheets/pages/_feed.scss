@@ -1,0 +1,123 @@
+.newsfeed {
+  max-height: calc(100vh - 188px);
+}
+
+.newsfeed-container {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2pt;
+  height: 60vh;
+  overflow: scroll;
+}
+
+.newsfeed-card {
+  height: 275px;
+  width:400px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  margin: 35px auto;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.newsfeed-card-header {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+}
+
+.name-time-ago h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+// .name-time-ago {
+//   display: flex;
+//   flex-direction: column;
+//   height: 50px;
+//   padding-left: 10px;
+// }
+
+.newsfeed-avatar-container img {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.newsfeed-friends-card {
+  width: 80%;
+  height: 60vh;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 0 auto;
+
+}
+
+.avatar-container:hover img {
+  border-color: gray;
+}
+
+.newsfeed-img-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.newsfeed-img-container img {
+  height: 200px;
+  width: 100%;
+  border-radius: 2px;
+  object-fit: cover;
+  align-content: center;
+}
+
+.newsfeed-icons-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 80px;
+  margin-top: 10px;
+}
+
+.newsfeed-icons-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  margin-right: 10px;
+}
+
+.newsfeed-profile-card {
+  width: 80%;
+  height: 60vh;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsfeed-profile-title h3 {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 42px;
+  color: #000000;
+}
+
+.newsfeed-photo-container img {
+  align-content: center;
+  object-fit: cover;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
