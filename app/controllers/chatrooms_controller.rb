@@ -31,7 +31,7 @@ class ChatroomsController < ApplicationController
   end
 
   def mark_as_read
-    @chatroom = Chatroom.find(params[:id])
+    @chatroom = Chatroom.find(params[:chatroom_id].to_i)
     @messages = @chatroom.messages
     @messages.each do |message|
       message.read = true
