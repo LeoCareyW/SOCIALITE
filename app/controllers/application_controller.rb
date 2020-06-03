@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   def unread_messages_count
-    @count = current_user.messages.where(read: false).count
+    if current_user.messages
+      @count = current_user.messages.where(read: false).count
+    end
   end
 end
