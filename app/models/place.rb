@@ -6,4 +6,11 @@ class Place < ApplicationRecord
   has_many :plans, dependent: :destroy
   has_many :recommendations, dependent: :destroy
   has_many :comments, dependent: :destroy
+  include PgSearch::Model
+  pg_search_scope :search_by_address_and_description_and_category_and_name,
+  against: [ :address, :description, :category, :name ],
+  using: {
+    tsearch: { prefix: true } 
+  }
 end
+

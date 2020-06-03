@@ -1,8 +1,10 @@
 class PlacesController < ApplicationController
 
-
 def index
-  if params[:category]
+  if params[:search].present? && params[:search][:query].present?
+    @places = Place.search_by_address_and_description_and_category_and_name(params[:search][:query])
+    # @places = Place.all
+  elsif params[:category]
     @places = Place.where(:category => params[:category])
   else
     @places = Place.all
