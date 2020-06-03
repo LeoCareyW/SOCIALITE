@@ -102,9 +102,9 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.float "latitude"
     t.float "longitude"
+    t.text "description"
   end
 
   create_table "plangroups", force: :cascade do |t|
@@ -137,16 +137,6 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["place_id"], name: "index_recommendations_on_place_id"
     t.index ["user_id"], name: "index_recommendations_on_user_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text "content"
-    t.bigint "places_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["places_id"], name: "index_reviews_on_places_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -183,6 +173,4 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
   add_foreign_key "plans", "users", column: "friend_id"
   add_foreign_key "recommendations", "places"
   add_foreign_key "recommendations", "users"
-  add_foreign_key "reviews", "places", column: "places_id"
-  add_foreign_key "reviews", "users"
 end
