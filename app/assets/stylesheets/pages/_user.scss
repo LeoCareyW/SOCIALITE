@@ -41,15 +41,21 @@
   }
 }
 
+.friends-plans-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .find-friends {
   width: 95px;
   height: 30px;
-  background: rgba(196, 196, 196, 0.4);
+  background: #BDECB6;
   border-radius: 20px;
   display: inline-block;
    a {
     font-family: 'Roboto-Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
     color: grey;
   }
 }
@@ -97,7 +103,7 @@
 
 #friendship-name {
   font-family: 'Roboto-mono', monospace;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .empty-plans-img {
@@ -105,18 +111,6 @@
   height: 500px;
 }
 
-.plan-card {
-  position: relative;
-  border-radius: 10px;
-  width: 75%;
-  h2 {
-    color: #FFFFFF;
-  }
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
-}
 
 .plan-card-text {
   position: absolute;
@@ -127,7 +121,7 @@
 
 .plan-card-date {
   position: absolute;
-  bottom: 10px;
+  top: 40px;
   left: 10px;
   font-size: 18px;
 }
@@ -142,9 +136,4 @@
 }
 
 
-.similar-places-container h2 {
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
-}
 
