@@ -19,7 +19,22 @@
           <%= f.input :name %>
           <%= f.input :users, collection: @friends %>
           <%= f.submit "+", class: 'add-button' %>
+  <div class="group-indexes">
+    <% if @groups.empty? %>
+      <p>You are a loner</p>
+    <% else %>
+      <% @groups.each do |group| %>
+      <div class="group-container">
+        <span class="group-names"><p><%= link_to "#{group.name}", group_path(group)%>
+          (<%= group.users.count %>)</p></span>
+          <% group.users.each do |user| %>
+            <% if user.photo.attached? %>
+             <%= cl_image_tag user.photo.key %>
+            <% else %>
+             <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+            <% end %>
         <% end %>
+      <% end %>
       </div>
     </div>
 

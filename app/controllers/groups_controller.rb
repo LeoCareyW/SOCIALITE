@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.all
+    @groups = Group.joins(:memberships).where(memberships: { user_id: current_user })
     @group_new = Group.new
     @friends = current_user.friends
   end
@@ -11,7 +11,6 @@ class GroupsController < ApplicationController
     # @plans = @group.plans
     @plans = Plan.where(group: @group)
     @members = @group.users
-
   end
 
   def create
@@ -24,6 +23,8 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+
+
 
   private
 
