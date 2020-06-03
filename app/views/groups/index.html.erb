@@ -3,7 +3,6 @@
    <div class="groups-title">
     <div class="groups-title-child"><h3>My Groups</h3></div>
   </div>
-
     <div class="messages-buttons-b">
       <div class="button-container">
         <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
@@ -11,7 +10,6 @@
         <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
       </div>
     </div>
-
   <div id="PopUpModal" class="modal">
     <div class="modal-content">
       <span class="close"></span>
@@ -19,25 +17,9 @@
           <%= f.input :name %>
           <%= f.input :users, collection: @friends %>
           <%= f.submit "+", class: 'add-button' %>
-  <div class="group-indexes">
-    <% if @groups.empty? %>
-      <p>You are a loner</p>
-    <% else %>
-      <% @groups.each do |group| %>
-      <div class="group-container">
-        <span class="group-names"><p><%= link_to "#{group.name}", group_path(group)%>
-          (<%= group.users.count %>)</p></span>
-          <% group.users.each do |user| %>
-            <% if user.photo.attached? %>
-             <%= cl_image_tag user.photo.key %>
-            <% else %>
-             <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
-            <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
-
     <div class="group-indexes">
       <% @groups.each do |group| %>
       <div class="group-container">
@@ -54,3 +36,4 @@
       <% end %>
     </div>
   </div>
+</div>
