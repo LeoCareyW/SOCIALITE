@@ -31,6 +31,7 @@
       <div class="nav-wrapper">
         <ul>
           <% if user_signed_in?  %>
+          <li><%= link_to "Feed", feed_path %></li>
           <li><%= link_to "Profile", profile_path %></li>
           <% if current_user.messages.where(read: false) %>
             <li id="messages-click"><%= link_to "Messages(#{current_user.messages.where(read: false).count})", chatrooms_path %></li>

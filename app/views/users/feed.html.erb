@@ -1,0 +1,68 @@
+<div class="newsfeed">
+<h2>Discover</h2>
+  <div class="row">
+    <div class="col">
+      <div class="newsfeed-profile-card">
+        <div class="newsfeed-profile-title">
+          <h3><%= current_user.name %></h3>
+        </div>
+        <div class="newsfeed-photo-container">
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key %>
+          <% else %>
+            <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="newsfeed-container">
+        <% @friends[0..2].each do |friend|%>
+          <% friend.recommendations[0..3].each do |recommendation| %>
+            <div class="newsfeed-card">
+              <div class="newsfeed-card-header">
+                <div class="newsfeed-avatar-container">
+                  <%= cl_image_tag friend.photo.key %>
+                </div>
+                <div class="name-time-ago">
+                  <h4><%= friend.name %> liked <b><%= recommendation.place.name %></b></h4>
+                </div>
+                <div class="newsfeed-icons-container">
+                  <p><%= recommendation.place.recommendations.count%></p>
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              <div class="newsfeed-img-container">
+                <%= cl_image_tag recommendation.place.photos.first.key %>
+              </div>
+            </div>
+          <% end %>
+        <% end  %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="newsfeed-friends-card">
+        <h4 class="profile-text"> <strong><%= @user.friendships.count %></strong> friends</h4>
+        <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
+        <div class="friends-container w-100">
+          <% @user.friendships.each do |friendship| %>
+            <div class="avatar-container">
+              <% if @user.photo.attached? %>
+                <%= cl_image_tag @user.photo.key %>
+              <% else %>
+                <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
+              <% end %>
+              <p id="friendship-name" class="profile-text"><%= friendship.friend.name %></p>
+              <div>
+                <%= link_to "Delete", friendship, :method => :delete %>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -112,21 +112,16 @@ outdoor_urls = ["https://images.unsplash.com/photo-1448375240586-882707db888b?ix
 end
 
 puts "recommending some places"
-counter = 0
 
-72.times do
-  counter = 0
-  4.times do
-    counter += 1
-    place = Place.find(counter)
-    recommendation = Recommendation.new(
-    user_id: User.all.sample.id,
-    place_id: place.id)
-    recommendation.save!
-    place.save!
+  Place.all.each do |place|
+    4.times do
+      recommendation = Recommendation.new(
+      user_id: User.all.sample.id,
+      place_id: place.id)
+      recommendation.save!
+      place.save!
+    end
   end
-end
-
 
 puts "creating some groups with 4 users in each"
 
@@ -139,6 +134,36 @@ puts "creating some groups with 4 users in each"
     group_id: group.id,
     user_id: User.all.sample.id)
     membership.save!
+  end
+end
+
+puts "deleting all plans"
+
+Plan.destroy_all
+
+puts "making some plans"
+
+User.all.each do |user|
+  if user.id == User.last.id
+    2.times do
+    plan = Plan.new(
+      user_id: user.id,
+      place_id: Place.all.sample.id,
+      date: Faker::Date.forward(days: 23),
+      friend_id: User.find(user.id - 2).id
+      )
+    plan.save!
+    end
+  else
+    2.times do
+    plan = Plan.new(
+      user_id: user.id,
+      place_id: Place.all.sample.id,
+      date: Faker::Date.forward(days: 23),
+      friend_id: User.find(user.id + 1).id
+      )
+    plan.save!
+    end
   end
 end
 

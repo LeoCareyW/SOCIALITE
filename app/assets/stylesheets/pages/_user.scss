@@ -32,12 +32,13 @@
     height: 60px;
     border-radius: 50%;
     transition: 0.5s;
+    object-fit: cover;
   }
 }
 
 .avatar-container:hover {
   img {
-  border-color: grey;
+  border-color: gray;
   }
 }
 
