@@ -1,8 +1,26 @@
 
 <div class="homepage-title-container">
-  <span class="word" id="title">Socialite</span>
-  <h3>Great places by peple you trust</h3>
+  <div class="title-frame">
+    <div class="wrapper"><h1>Socialite</h1></div>
+    <!-- <span class="word" id="title"><h1>Socialite<h1></span> -->
+    <h3>Great places by people you trust</h3>
+  </div>
+  <div class="blue-btn">
+    <a class="first-link" href="#down">
+      In a rush?
+    </a>
+    <a href="#down">
+    Find somewhere now!
+    </a>
+  </div>
 </div>
+
+
+<!-- </div>
+  <a class="blue-btn" href="#down">Get Started</a>
+</div> -->
+
+
 
 <div class="image-banner">
   <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1385&q=80" alt="">
@@ -23,7 +41,7 @@
   <div class="homepage-image">
     <div class="row">
       <div class="col-sm">
-        <div class="homepage-img-card">
+        <div class="homepage-img-card" id="down">
           <div class="homepage-image darken">
             <%= link_to(places_path(:category=>"Bar")) do %>
                 <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" alt="Card image cap" style="width: 225px; height: 324px; object-fit: cover;">
