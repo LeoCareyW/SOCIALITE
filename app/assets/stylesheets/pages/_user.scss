@@ -50,12 +50,12 @@
 .find-friends {
   width: 95px;
   height: 30px;
-  background: rgba(196, 196, 196, 0.4);
+  background: #BDECB6;
   border-radius: 20px;
   display: inline-block;
    a {
     font-family: 'Roboto-Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
     color: grey;
   }
 }
@@ -136,9 +136,4 @@
 }
 
 
-.similar-places-container h2 {
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
-}
 

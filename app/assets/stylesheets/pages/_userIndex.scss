@@ -82,6 +82,7 @@
   display: flex;
   flex-direction: row;
   justify-content: left;
+  margin-right: -40px;
   margin-top: -40px;
   img {
       min-width: 70px;
@@ -90,6 +91,10 @@
       height: 70px;
       border-radius: 50%;
     }
+}
+
+.fa-arrow-right {
+  margin-right: -500px;
 }
 
 .rpu-friends {
@@ -122,7 +127,14 @@
   font-size: 12px;
 }
 
+.similar-places-container {
+  margin-top: 30px;
 
-
+ h2 {
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  }
+}
 
 
