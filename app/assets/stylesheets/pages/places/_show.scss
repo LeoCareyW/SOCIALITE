@@ -2,7 +2,7 @@
   display: flex;
   padding-right: 0px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 75%;
   margin: 0 auto;
   margin-top: 5% !important;
@@ -13,7 +13,7 @@
  flex-direction: column;
  justify-content: space-between;
  width: 638px;
- height: 638px;
+ height: 550px;
 }
 
 .recommendation-count-container p {
@@ -23,27 +23,67 @@
     font-size: 18px;
     line-height: 28px;
     color: #000000;
-    width: 450px
+    width: 450px;
+    margin-top: 20px;
   }
 
-.img-container {
-  // width: 638px;
-  // height: 638px;
+.underline {
+  border-bottom: solid;
+  padding-bottom: 6px;
+  border-color: #CFECF5;
+  margin-right: 5px;
+  }
+
+.recommenders-cont {
+  display: flex;
+  margin-top: -20px;
+  margin-right: 20px;
+  overflow-x: auto;
+}
+
+.recommenders {
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+}
+
+  .p-btn-cont {
+    display: flex;
+    justify-content: center;
+  }
+
+.place-img-cont {
+  margin-top: -30px;
+  min-width: 53vw;
+  margin-left: 30px;
+
 }
 
 .location-container {
   display: flex;
-  width: 450px
+  max-width: 40vw;
+    h3 {
+      color: grey;
+      font-size: 20px;
+      word-spacing: 0px;
+    }
 }
+
 
 .description-container {
   font-family: 'Roboto Mono', monospace;
   font-style: normal;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 26px;
   color: #000000;
-  width: 450px
+  width: 450px;
+  max-height: 350px;
+  overflow-y: auto;
+  text-align: center;
 }
 
 .place-img {
@@ -54,8 +94,9 @@
 .title-star-group {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 45%;
+  text-align: center;
 }
 
 .review-scroller {
@@ -129,19 +170,21 @@ h6 {
 
 
 .description-plan-container {
-  width: 70%;
+  width: 95%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .similar-places-container {
   width: 70%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .plan-container {
-  margin-left: 75px;
+  margin-top: 53px;
+  margin-left: 30px;
 }
 
 
@@ -155,7 +198,7 @@ h6 {
 }
 
 .fa-star{
-  color: #F1A975;
+  color: #F8C103;
   margin-right: 10px;
 }
 
@@ -164,27 +207,25 @@ h6 {
   margin-right: 2px !important;
 }
 
-.recommend-btn {
+.recommend-butn {
   font-family: 'Roboto Mono', monospace;
-  letter-spacing: 2px;
-  width: 175px;
-  height: 74px;
-  background: #9ED9EB;
-  border: 1px solid #9ED9EB;
-  box-sizing: border-box;
-  border-radius: 3px;
+  width: 120px;
+  height: 40px;
+  background: #BDECB6;
   color: white;
+  border: none;
+  margin-right: 10px;
 }
 
-.book-btn {
+.book-butn {
   font-family: 'Roboto Mono', monospace;
-  width: 175px;
-  height: 74px;
+  width: 120px;
+  height: 40px;
   background: #334AC0;
-  border: 1px solid #9ED9EB;
   box-sizing: border-box;
-  border-radius: 3px;
   color: white;
+  border: none;
+  margin-left: 10px;
 }
 
 .place-card-with-border {
@@ -202,9 +243,17 @@ h2 {
 }
 
 .reviews-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 70%;
   margin: 0 auto;
   margin-top: 5% !important;
+}
+
+.p-review-title, .l-r-btn {
+  display: flex;
+  justify-content: center;
 }
 
 .reviews-card-container {
@@ -253,4 +302,20 @@ h2 {
   padding: 16px;
 }
 
+.p-form-cont {
+  text-align: center;
+}
 
+#pbtn7 {
+  color: #90A48A;
+  background-color: #BDECB6;
+  height: 30px;
+  border-radius: 25px;
+  border: none;
+  width: 80px
+}
+
+#pbtn7:hover {
+  width: 90px;
+  transition: 0.3s;
+}
