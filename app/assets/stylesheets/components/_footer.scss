@@ -1,5 +1,5 @@
 .footer {
-  background: white;
+  background: #F4F4F4;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,7 +7,6 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   bottom: 0;
-  width: 100%;
 }
 
 .footer-links {
@@ -32,5 +31,5 @@
 }
 
 .min-height {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 167px);
 }
