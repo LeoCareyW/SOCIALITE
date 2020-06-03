@@ -17,3 +17,112 @@
     color: green;
   }
 }
+
+// below is the profile code
+
+.p-title {
+  text-align: left;
+  margin-left: 210px;
+}
+
+.p-up-cont {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  .slick-dotted {
+
+  }
+}
+
+.left-p-up {
+  max-width: 50vw;
+}
+
+.right-p-up {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  min-width: 40vw;
+
+}
+
+.lpu-plans {
+
+}
+
+.plan-card {
+  position: relative;
+  border-radius: 10px;
+  h2 {
+    color: #FFFFFF;
+  }
+  img {
+    min-width: 45vw;
+    max-width: 45vw;
+    object-fit: cover;
+  }
+  p {
+    img {
+      min-width: 70px;
+      max-width: 70px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.plan-user-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.plan-user-avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: -40px;
+  img {
+      min-width: 70px;
+      max-width: 70px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+}
+
+.rpu-friends {
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  margin-top: 45px;
+}
+
+.ffriend {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-friend-method {
+  margin-top: -20px;
+  a {
+    color: red;
+    font-size: 7px;
+  }
+}
+
+.ru-friends-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#friendship-name {
+  font-family: 'Roboto-mono', monospace;
+  font-size: 12px;
+}
+
+
+
+
+
