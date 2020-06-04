@@ -124,13 +124,6 @@ Place.all.each do |place|
   end
 end
 
-t.text "content"
-    t.bigint "place_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "rating"
-
 puts "recommending some places"
 
 Place.all.each do |place|
