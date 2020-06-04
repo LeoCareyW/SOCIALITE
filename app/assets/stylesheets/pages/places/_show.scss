@@ -12,11 +12,12 @@
  display: flex;
  flex-direction: column;
  justify-content: space-between;
- width: 638px;
+ width: 620px;
  height: 550px;
 }
 
 .recommendation-count-container p {
+    text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-style: normal;
     font-weight: bold;
@@ -36,6 +37,7 @@
 
 .recommenders-cont {
   display: flex;
+  justify-content: center;
   margin-top: -20px;
   margin-right: 20px;
   overflow-x: auto;
@@ -183,7 +185,7 @@ h6 {
 }
 
 .plan-container {
-  margin-top: 53px;
+  margin-top: 50px;
   margin-left: 30px;
 }
 

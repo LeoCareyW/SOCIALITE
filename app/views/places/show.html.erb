@@ -47,7 +47,6 @@
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="book-butn">Book</button>
     </div>
   </div>
   <div class="place-img-cont">
@@ -108,7 +107,7 @@
   </div>
   <div class="plan-container">
     <div class="card card-body">
-      <h3 class="text-center">Make A Plan</h3>
+      <h3 class="text-center" id="plan">Make A Plan</h3>
       <div class="p-form-cont">
         <%= simple_form_for([@place, Plan.new]) do |f| %>
         <%= f.input :date %>
