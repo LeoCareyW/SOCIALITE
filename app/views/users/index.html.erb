@@ -24,8 +24,9 @@
           <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
           <% end %>
           <span><strong><%= user.name %></strong></span>
-            <div class="add-friend" id="add-friend-plus"> <%= link_to "+", friendships_path(:friend_id => user), :method => :post, remote: true %> 
-            </div>
+          <div class="add-friend" id="add-friend-plus" > 
+            <%= link_to "+", friendships_path(friend_id: user), method: :post, remote: true %>
+          </div>
         </div>
       </div>
       <% end %>
