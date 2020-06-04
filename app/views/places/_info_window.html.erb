@@ -1,6 +1,6 @@
 <%= cl_image_tag place.photos[0].key %>
 <div class="map-popup-container">
-  <h2><%= place.name %></h2>
+  <h2><%= link_to "#{place.name}", place_path(place) %></h2>
   <p><%= place.address %></p>
 </div>
 
