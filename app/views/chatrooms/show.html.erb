@@ -78,7 +78,7 @@
               <% end %>
             </div>
         <div>
-          <%= simple_form_for [@chatroom_side, @message], remote: true, html: {class: "type-m-box"} do |f| %>
+          <%= simple_form_for [@chatroom_side, @message], remote: true, html: {class: "type-m-box", autocomplete: 'off'} do |f| %>
           <%= f.input :content, label: false,
           placeholder: "Type a message..." %>
           <% end %>
