@@ -180,17 +180,18 @@ User.all.each do |user|
   end
 end
 
-# puts "making some friends... FINALLY"
+puts "making some friends... FINALLY"
 
-# User.all.each do |user|
-#   until user.id == User.last.id
-#     friendship = Friendship.new(
-#     user_id: user.id,
-#     friend_id: User.find(user.id + 1).id
-#     )
-#   friendship.save!
-#   end
-# end
+User.all.each do |user|
+  if user.id == User.last.id
+  else
+    friendship = Friendship.new(
+    user_id: user.id,
+    friend_id: User.find(user.id + 1).id
+    )
+  friendship.save!
+  end
+end
 
 puts "LETS GET IT"
 

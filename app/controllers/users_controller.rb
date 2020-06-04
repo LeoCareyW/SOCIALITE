@@ -33,6 +33,10 @@ class UsersController < ApplicationController
       @friends = @user.friends
     end
 
+    @trending = Place.all.sort_by do |place|
+      -place.recommendations.count
+    end
+
   end
 
   def new

@@ -82,6 +82,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.photo-container img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
+
 .profile-text {
   font-family: 'Roboto', sans-serif;
   margin-right: 10px;
