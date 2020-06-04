@@ -118,7 +118,7 @@ Place.all.each do |place|
     review = Comment.new(
     place_id: place.id,
     user_id: User.all.sample.id,
-    content: Faker::Restaurant.review(20),
+    content: Faker::Restaurant.review,
     rating: rand(1..5))
     review.save!
   end
@@ -150,9 +150,7 @@ puts "creating some groups with 4 users in each"
   end
 end
 
-puts "deleting all plans"
 
-Plan.destroy_all
 
 puts "making some plans"
 
