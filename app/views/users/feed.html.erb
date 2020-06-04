@@ -1,5 +1,4 @@
 <div class="newsfeed">
-<h2>Discover</h2>
   <div class="row">
     <div class="col">
       <div class="newsfeed-profile-card">
@@ -16,7 +15,7 @@
         <div class="newsfeed-groups-container">
           <h3>My Groups</h3>
           <% @user.memberships.each do |membership| %>
-          <li><%= Group.find(membership.group_id).name %></li>
+          <p><%= link_to "#{Group.find(membership.group_id).name}", groups_path %></p>
           <% end %>
         </div>
       </div>
@@ -34,12 +33,17 @@
                     <%= cl_image_tag friend.photo.key %>
                   </div>
                   <div class="name-time-ago">
-                    <h4><%= friend.name %> liked <b><%= link_to "#{recommendation.place.name}", place_path(recommendation.place) %></b></h4>
-                    <h4><%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago </h4>
+                    <div class="feed-btn">
+                       <%= link_to "#{recommendation.place.name}", place_path(recommendation.place), class: "first-link" %>
+
+                        <a href="/places/<%= recommendation.place.id %>">
+                        <%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago
+                        </a>
+                    </div>
                   </div>
                   <div class="newsfeed-icons-container">
-                    <p><%= recommendation.place.recommendations.count%></p>
-                    <i class="fas fa-heart"></i>
+                     <p><%= recommendation.place.recommendations.count%></p>
+                        <i class="fas fa-heart"></i>
                   </div>
                 </div>
                 <div class="newsfeed-img-container">
@@ -54,11 +58,16 @@
                     <%= cl_image_tag friend.photo.key %>
                   </div>
                   <div class="name-time-ago">
-                    <h4><%= friend.name %> visited <b><%= link_to "#{plan.place.name}", place_path(plan.place) %></b></h4>
+                    <div class="feed-btn">
+                       <%= link_to "#{plan.place.name}", place_path(plan.place), class: "first-link" %>
+                        <a>
+                        <%= friend.name %> visited
+                        </a>
+                    </div>
                   </div>
                   <div class="newsfeed-icons-container">
-                    <p><%= plan.place.recommendations.count%></p>
-                    <i class="fas fa-heart"></i>
+                     <p><%= plan.place.recommendations.count%></p>
+                     <i class="fas fa-heart"></i>
                   </div>
                 </div>
                 <div class="newsfeed-img-container">
@@ -73,7 +82,9 @@
     <div class="col">
       <div class="newsfeed-friends-card">
         <h4 class="profile-text"> <strong><%= @user.friendships.count %></strong> friends</h4>
-        <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
+        <div class="ffriend">
+          <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
+        </div>
         <div class="friends-container w-100">
           <% @user.friendships.each do |friendship| %>
             <div class="avatar-container">
@@ -82,9 +93,8 @@
               <% else %>
                 <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
               <% end %>
-              <p id="friendship-name" class="profile-text"><%= friendship.friend.name %></p>
+              <p><%= link_to "#{friendship.friend.name}", users_path %></p>
               <div>
-                <%= link_to "Delete", friendship, :method => :delete %>
               </div>
             </div>
           <%end%>
