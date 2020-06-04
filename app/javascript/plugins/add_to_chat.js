@@ -20,7 +20,7 @@ export const messagesPopup2 = () => {
     }
   }
 
-  if (span) {
+  if (span && modal2) {
     span.onclick = function() {
      modal2.style.display = "none";
     }
