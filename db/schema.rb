@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_155956) do
+ActiveRecord::Schema.define(version: 2020_06_04_002435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,9 +102,9 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.float "latitude"
     t.float "longitude"
-    t.text "description"
   end
 
   create_table "plangroups", force: :cascade do |t|
@@ -130,6 +130,16 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_posts_on_group_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "recommendations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "place_id", null: false
@@ -137,6 +147,16 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["place_id"], name: "index_recommendations_on_place_id"
     t.index ["user_id"], name: "index_recommendations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "places_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["places_id"], name: "index_reviews_on_places_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -171,6 +191,10 @@ ActiveRecord::Schema.define(version: 2020_06_02_155956) do
   add_foreign_key "plans", "places"
   add_foreign_key "plans", "users"
   add_foreign_key "plans", "users", column: "friend_id"
+  add_foreign_key "posts", "groups"
+  add_foreign_key "posts", "users"
   add_foreign_key "recommendations", "places"
   add_foreign_key "recommendations", "users"
+  add_foreign_key "reviews", "places", column: "places_id"
+  add_foreign_key "reviews", "users"
 end

@@ -22,10 +22,13 @@
       </div>
     </div>
     <div class="description-container">
-      <p><%= @place.description %> </p>
-    </div>
-    <div class="recommendation-count-container">
+      <div class="description">
+        <p><%= @place.description %></p>
+      </div>
+      <div class="recommendation-count-container">
+        <i class="fas fa-thumbs-up" id="recommendation-thumb"></i>
         <p><b><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></b></p>
+       </div>
     </div>
     <div class="recommenders-cont">
       <% if @place.recommendations %>
@@ -91,7 +94,6 @@
 </div>
 
   </div>
-
 </div>
 
   <hr class="horizontal-line my-4" size="30" width="75%">
@@ -144,6 +146,7 @@
         Leave a Review
         </button>
       </div>
+
 
   <% if @place.comments.blank? %>
     <h3>Be the first to leave a review for <%= @place.name  %></h3>

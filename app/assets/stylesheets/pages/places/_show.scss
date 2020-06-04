@@ -8,6 +8,13 @@
   margin-top: 5% !important;
 }
 
+.place-container img {
+  height: 500px;
+  width: 650px;
+  crop: fill;
+  object-fit: cover;
+}
+
 .text-container {
  display: flex;
  flex-direction: column;
@@ -25,6 +32,20 @@
     line-height: 28px;
     color: #000000;
     width: 450px;
+  }
+// THUMB
+.recommendation-count-container {
+  display: flex;
+};
+
+#recommendation-thumb {
+  margin-top: 6px;
+  margin-right: 10px;
+}
+
+.img-container {
+  // width: 638px;
+  // height: 638px;
     margin-top: 20px;
   }
 
@@ -61,11 +82,16 @@
   margin-top: -30px;
   min-width: 53vw;
   margin-left: 30px;
-
 }
 
 .location-container {
   display: flex;
+}
+
+.location-container h3 {
+  font-weight: 200px;
+  font-family: 'Roboto', sans-serif;
+
   max-width: 40vw;
     h3 {
       color: grey;
@@ -115,33 +141,6 @@ h1 {
   color: #000000;
 }
 
-span.word {
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 88px;
-    line-height: 103px;
-    color: #000000;
-  }
-
-  span.word:after  {
-    background-color: #9ED9EB;
-    content: " ";
-    height: 10%;
-    position: absolute;
-    left: 0;
-    margin-left: 0rem;
-    top: 76%;
-    width: calc(100% + 1rem);
-    z-index: -2;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 88px;
-    line-height: 103px;
-    color: #000000;
-  }
 
 h3 {
   font-family: 'Roboto Mono', monospace;
@@ -182,6 +181,10 @@ h6 {
   width: 70%;
   margin: 0 auto;
   text-align: center;
+}
+
+#profile-similar-places-container {
+  width: 90%;
 }
 
 .plan-container {
@@ -258,6 +261,7 @@ h2 {
   justify-content: center;
 }
 
+
 .reviews-card-container {
   width: 90%;
   margin: 0 auto;
@@ -303,6 +307,7 @@ h2 {
 .reviews-card .reviews-card-infos {
   padding: 16px;
 }
+
 
 .p-form-cont {
   text-align: center;

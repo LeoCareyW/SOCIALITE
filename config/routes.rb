@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     resources :chatroom_users, only: :create
   end
 
-  resources :groups
+  resources :groups do
+    resources :posts, only: [ :new, :create ]
+  end
+    resources :posts, only: [ :destroy ]
+
   resources :users
 
   resources :users

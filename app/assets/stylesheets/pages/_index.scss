@@ -2,10 +2,11 @@
 @import "home";
 
 .title-container {
-margin-top: 10px;
+margin-top: 100px;
 text-align: left;
 display: flex;
 flex-direction: column;
+text-align: center;
 }
 
 .subtitle-container h2 {
@@ -16,8 +17,6 @@ font-size: 32px;
 line-height: 47px;
 text-align: left;
 }
-
-
 
 #title {
     position: relative;
@@ -53,9 +52,11 @@ text-align: left;
 //   display: flex;
 //   justify-content: center;
 // }
+
 .slick-wrapper {
   width: 100%;
 }
+
 .slide-item {
   display: flex !important;
   justify-content: space-around;

@@ -101,3 +101,24 @@
   margin-right: 5px;
   margin-left: 5px;
 }
+
+// GREEN BUTTON
+
+.find-friends {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 120px;
+  height: 25px;
+  background: #BDECB6;
+  border-radius: 20px;
+  display: inline-block;
+   a {
+    color: #058612;
+    opacity: 0.5;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 300;
+  }
+}
+

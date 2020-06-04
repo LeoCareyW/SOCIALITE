@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :groups, through: :memberships
   has_many :plans, dependent: :destroy
   has_many :recommendations, dependent: :destroy
+  has_many :posts, dependent: :destroy
   # has_many :messages
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
