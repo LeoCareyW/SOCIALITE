@@ -40,6 +40,7 @@
 
 .name-time-ago {
   margin-top: -13px;
+  margin-right: 150px;
 }
 
 .name-time-ago h4 {
@@ -48,6 +49,7 @@
   font-weight: 300;
   line-height: 25px;
   margin-bottom: 0px;
+  text-align: left;
 }
 
 // .name-time-ago {
@@ -62,7 +64,6 @@
   margin-right: 10px;
   position: relative;
   top: 20px;
-  right: 20px;
     img {
   width: 60px;
   height: 60px;
@@ -97,7 +98,9 @@
 }
 
 .newsfeed-img-container img {
-  height: 250px;
+  max-height: 257px;
+  min-height: 265px;
+  max-width: 500px;
   width: 100%;
   border-radius: 2px;
   object-fit: cover;
@@ -106,12 +109,7 @@
 
 .newsfeed-icons-container {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 80px;
-  margin-top: 10px;
-  position: relative;
-  top: 300px;
-  left: 87px;
+  margin-top: -20px;
 }
 
 .newsfeed-icons-container p {
@@ -153,6 +151,7 @@
 
 
 .feed-btn {
+  text-align: left;
   margin-top: 45px;
   margin-top: 4vh;
   margin-right: 10vw;
@@ -166,7 +165,7 @@
 .feed-btn a{
   color: black;
   text-decoration:none;
-  text-align: center;
+  text-align: left;
   display:block;
   margin-bottom: -4px; /* important */
 }
@@ -196,6 +195,15 @@
 .feed-btn:hover .first-link{
   margin-top: -4em;
 }
+
+
+.card-rec-text {
+  bottom: 30px;
+  position: relative;
+  left: 60px;
+    p {
+      font-weight: 400;
+    }
 
 .top-place h3 {
   text-align: center;

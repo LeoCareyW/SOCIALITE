@@ -58,21 +58,23 @@
                   <div class="name-time-ago">
                     <div class="feed-btn">
                        <%= link_to "#{recommendation.place.name}", place_path(recommendation.place), class: "first-link" %>
-
                         <a href="/places/<%= recommendation.place.id %>">
-                        recommended <%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago
+                        <%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago
                         </a>
                     </div>
-                  </div>
-                  <div class="newsfeed-icons-container">
-                     <p><%= recommendation.place.recommendations.count%></p>
-                        <i class="fas fa-heart"></i>
                   </div>
                 </div>
                 <div class="newsfeed-img-container">
                   <%= cl_image_tag recommendation.place.photos.first.key %>
                 </div>
               </div>
+                <div class="card-rec-text">
+                  <p><%= recommendation.user.name %> recommended</p>
+                  <div class="newsfeed-icons-container">
+                     <p><%= recommendation.place.recommendations.count%></p>
+                        <i class="fas fa-heart"></i>
+                  </div>
+                </div>
             <% end %>
             <% friend.plans.each do |plan| %>
               <div class="newsfeed-card">
@@ -84,18 +86,21 @@
                     <div class="feed-btn">
                        <%= link_to "#{plan.place.name}", place_path(plan.place), class: "first-link" %>
                         <a>
-                        <%= friend.name %> visited
+                          <%= friend.name %> visited
                         </a>
                     </div>
-                  </div>
-                  <div class="newsfeed-icons-container">
-                     <p><%= plan.place.recommendations.count%></p>
-                     <i class="fas fa-heart"></i>
                   </div>
                 </div>
                 <div class="newsfeed-img-container">
                   <%= cl_image_tag plan.place.photos.first.key %>
                 </div>
+              </div>
+              <div class="card-rec-text">
+                <p><%= plan.user.name %> visited </p>
+                <div class="newsfeed-icons-container">
+                     <p><%= plan.place.recommendations.count%></p>
+                        <i class="fas fa-heart"></i>
+                 </div>
               </div>
             <% end %>
           <% end  %>
