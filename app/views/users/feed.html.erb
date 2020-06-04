@@ -37,7 +37,7 @@
                        <%= link_to "#{recommendation.place.name}", place_path(recommendation.place), class: "first-link" %>
 
                         <a href="/places/<%= recommendation.place.id %>">
-                        <%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago
+                        recommended <%= distance_of_time_in_words(Time.now - recommendation.created_at)%> ago
                         </a>
                     </div>
                   </div>
