@@ -8,11 +8,21 @@
 <div class="messages-buttons">
   <div class="button-container">
     <p class="profile-buttons" id="pbtn1"><%= link_to "Back", groups_path %></p>
-    <p class="profile-buttons" id="pbtn6"><%= link_to "Add", new_user_path %></p>
+    <p class="profile-buttons" id="pbtn2"><%= link_to "Add Users", edit_group_path(@group) %></p>
     <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
   </div>
 </div>
 </div>
+
+<div id="PopUpModal" class="custom-modal">
+  <div class="custom-modal-content">
+    <span class="close"></span>
+      <%= simple_form_for @group do |f| %>
+        <%= f.input :users, collection: @friends %>
+        <%= f.submit "+", class: 'add-button' %>
+      <% end %>
+    </div>
+  </div>
 
 <hr class="horizontal-line my-4" size="30" width="75%">
 
@@ -31,7 +41,8 @@
 <div class="upcoming-plan-cont">
   <div class="upcoming-group-plan">
     <% @group.plans.each do |plan| %>
-      <h3>Next meetup: <%= plan.place.name %></h3>
+      <h3>Next meetup: <%= link_to "#{plan.place.name}", place_path(plan.place) %></h3>
+      <h3>Date: <%= plan.date.strftime("%B #{plan.date.day.ordinalize}, %Y") %></h3>
       <div>
         <% if plan.place.photos.attached? %>
           <%= cl_image_tag plan.place.photos.first.key %>
@@ -46,7 +57,7 @@
   <div class="group-posts">
     <h3> Group Posts </h3>
     <!-- Button trigger modal -->
-    <button type="button" class="btn book-btn ml-2" data-toggle="modal" data-target="#exampleModal" id="review-btn">
+    <button type="button" class="btn group-post-btn ml-2" data-toggle="modal" data-target="#exampleModal" id="review-btn">
     Post
     </button>
   </div>
