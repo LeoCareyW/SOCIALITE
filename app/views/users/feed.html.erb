@@ -18,6 +18,29 @@
           <p><%= link_to "#{Group.find(membership.group_id).name}", groups_path %></p>
           <% end %>
         </div>
+        <div class="rpu-friends">
+          <div>
+            <h3>My friends</h3>
+          </div>
+          <div class="ru-friends-container">
+           <% @user.friendships.each do |friendship| %>
+              <div class="avatar-container">
+                <% if @user.photo.attached? %>
+                  <%= cl_image_tag friendship.friend.photo.key %>
+                <% else %>
+                  <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
+                <% end %>
+                  <p id="friendship-name"><%= friendship.friend.name %></p>
+                <div class="delete-friend-method">
+                  <p><%= link_to "remove", friendship, :method => :delete %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="ffriend">
+            <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-6">
@@ -85,25 +108,25 @@
       </div>
     </div>
     <div class="col">
-      <div class="newsfeed-friends-card">
-        <h4 class="profile-text"> <strong><%= @user.friendships.count %></strong> friends</h4>
-        <div class="ffriend">
-          <p class="find-friends"><%= link_to "Find Friends", users_path %></p>
-        </div>
-        <div class="friends-container w-100">
-          <% @user.friendships.each do |friendship| %>
-            <div class="avatar-container">
-              <% if @user.photo.attached? %>
-                <%= cl_image_tag @user.photo.key %>
-              <% else %>
-                <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
-              <% end %>
-              <p><%= link_to "#{friendship.friend.name}", users_path %></p>
-              <div>
+      <div class="right-side-container">
+        <div class="top-place">
+          <h3>#Trending</h3>
+          <% @trending.first(2).each do |place| %>
+          <div class="c-card" id="trending-card">
+            <%= cl_image_tag place.photos[0].key, class: "card-img" %>
+            <div class="c-card-text-flex">
+              <div class="c-card-text">
+                <h3><%= link_to "#{place.name}", place_path(place), class: "b-card-text" %></h3>
+              </div>
+              <div class="c-card-likes">
+                <p><%= place.recommendations.count%></p>
+                <i class="fas fa-heart"></i>
               </div>
             </div>
-          <%end%>
+          </div>
+          <% end %>
         </div>
+
       </div>
     </div>
   </div>

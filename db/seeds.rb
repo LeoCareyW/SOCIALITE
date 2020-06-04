@@ -118,18 +118,11 @@ Place.all.each do |place|
     review = Comment.new(
     place_id: place.id,
     user_id: User.all.sample.id,
-    content: Faker::Restaurant.review(10),
+    content: Faker::Restaurant.review,
     rating: rand(1..5))
     review.save!
   end
 end
-
-t.text "content"
-    t.bigint "place_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "rating"
 
 puts "recommending some places"
 
@@ -191,15 +184,10 @@ puts "making some friends... FINALLY"
 
 User.all.each do |user|
   if user.id == User.last.id
+  else
     friendship = Friendship.new(
     user_id: user.id,
-    friend_id: User.find.(user.id - 2).id
-    )
-  friendship.save!
-  else
-  friendship = Friendship.new(
-    user_id: user.id,
-    friend_id: User.find.(user.id + 1).id
+    friend_id: User.find(user.id + 1).id
     )
   friendship.save!
   end

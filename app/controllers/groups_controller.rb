@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
     @plans = Plan.where(group: @group)
     @members = @group.users
     @post = Post.new
+    @friends = current_user.friends - @members
   end
 
   def create
@@ -22,6 +23,23 @@ class GroupsController < ApplicationController
       redirect_to group_path(@group)
     else
       render :new
+    end
+  end
+
+  def edit
+    @group = Group.find(params[:id])
+    @friends = current_user.friends
+
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    @group.users << User.find(group_params[:users])
+
+    if @group.save
+        redirect_to group_path(@group)
+    else
+        render :new
     end
   end
 

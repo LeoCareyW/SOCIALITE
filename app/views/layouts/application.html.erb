@@ -34,7 +34,7 @@
           <li><%= link_to "Feed", feed_path %></li>
           <li><%= link_to "Profile", profile_path %></li>
           <% if current_user.messages.where(read: false) && current_user.messages.where(read: false).count > 0 %>
-            <li id="messages-click"><%= link_to "Messages(#{current_user.messages.where(read: false).count})", chatrooms_path %></li>
+            <li id="messages-click"><%= link_to "Messages (#{current_user.messages.where(read: false).count})", chatrooms_path %></li>
           <% else  %>
             <li id="messages-click"><%= link_to "Messages", chatrooms_path %></li>
           <% end %>
@@ -64,5 +64,6 @@
         Team Socialite
       </div>
     </div>
+  <%= render 'shared/flashes' %>
   </body>
 </html>

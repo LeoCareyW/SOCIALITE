@@ -5,7 +5,7 @@
       <div class="profile-text"><h3><%= current_user.name %> </h3></div>
       </div>
         <% if @user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key, width: 180, height: 180, radius: "max" %>
+            <%= cl_image_tag @user.photo.key %>
             <% else %>
             <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 180, height: 180, radius: "max") %>
           <% end %>
@@ -87,7 +87,7 @@
                 <p><%= link_to "remove", friendship, :method => :delete %></p>
               </div>
             </div>
-          <%end%>
+          <% end %>
         </div>
         <div class="ffriend">
           <p class="find-friends"><%= link_to "Find Friends", users_path %></p>

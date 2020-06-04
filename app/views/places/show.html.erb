@@ -25,10 +25,10 @@
       <div class="description">
         <p><%= @place.description %></p>
       </div>
-      <div class="recommendation-count-container">
-        <i class="fas fa-thumbs-up" id="recommendation-thumb"></i>
-        <p><b><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></b></p>
-       </div>
+    </div>
+    <div class="recommendation-count-container">
+      <i class="fas fa-thumbs-up" id="recommendation-thumb"></i>
+      <p><b><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></b></p>
     </div>
     <div class="recommenders-cont">
       <% if @place.recommendations %>
@@ -149,7 +149,7 @@
 
 
   <% if @place.comments.blank? %>
-    <h3>Be the first to leave a review for <%= @place.name  %></h3>
+    <h4>Be the first to leave a review for <%= @place.name  %></h4>
   <% else %>
     <% @place.comments.each do |comment| %>
       <div class="review-scroller">
