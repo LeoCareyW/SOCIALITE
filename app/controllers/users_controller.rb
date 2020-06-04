@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   def index
     if params[:search].present? && params[:search][:query].present?
-      @users = User.where("name ILIKE ?", "%#{params[:search][:query]}%")
+      @friends = current_user.friends
+      @users = User.where("name ILIKE ?", "%#{params[:search][:query]}%") - @friends
     else
-      @users = User.all
+      @friends = current_user.friends
+      @users = User.all - @friends
     end
-    friends = current_user.friendships.map { |friendship| friendship.friend }
-    @users = friends + @users
+    # friends = current_user.friendships.map { |friendship| friendship.friend }
+    # @users = friends + @users
   end
 
   def show
