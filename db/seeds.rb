@@ -118,7 +118,7 @@ Place.all.each do |place|
     review = Comment.new(
     place_id: place.id,
     user_id: User.all.sample.id,
-    content: Faker::Restaurant.review,
+    content: Faker::Restaurant.review(20),
     rating: rand(1..5))
     review.save!
   end
