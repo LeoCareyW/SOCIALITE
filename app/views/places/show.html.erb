@@ -1,8 +1,8 @@
 <div class="place-container mt-4">
   <div class="text-container">
     <div class="title-star-group">
-      <div class="container">
-        <span class="word"><%= @place.name %></span>
+      <div class="place-name-container">
+        <h2><%= @place.name %></h2>
       </div>
       <div class="star-rating" style="font-size:0.5rem;">
         <% total_rating = [] %>
@@ -23,28 +23,30 @@
       </div>
     </div>
     <div class="description-container">
-      <p><%= @place.description %></p>
+      <div class="description">
+        <p><%= @place.description %></p>
+      </div>
       <div class="recommendation-count-container">
+        <i class="fas fa-thumbs-up" id="recommendation-thumb"></i>
         <p><b><%= @place.recommendations.count %> <%= (@place.recommendations.count) == 1 ? 'Recommendation' : 'Recommendations'%></b></p>
       </div>
     </div>
-    <div class="d-flex justify-content-around w-75">
+    <div class="d-flex justify-content-between w-75">
       <div class="recommend">
         <% pre_like = @place.recommendations.find { |recommend| recommend.user_id == current_user.id} %>
         <% if pre_like %>
           <%= link_to place_recommendation_path(@place, pre_like), method: :delete, 'data-turbolinks-scroll': false, remote: true do %>
-            <button id="recommend-" type="button" class="recommend-btn">Unrecommend</button>
+            <button id="recommend-" type="button" class="book-btn">Unrecommend</button>
           <% end %>
           <% else %>
           <%= link_to place_recommendations_path(@place), method: :post, remote: true do %>
-            <button id="recommend-" type="button" class="recommend-btn">Recommend</button>
+            <button id="recommend-" type="button" class="book-btn">Recommend</button>
           <% end %>
         <% end %>
       </div>
-      <button type="button" class="book-btn">Book</button>
     </div>
   </div>
-  <%= cl_image_tag @place.photos[0].key, height: 600, width: 750, crop: :fill %>
+  <%= cl_image_tag @place.photos[0].key %>
 </div>
 
   <hr class="horizontal-line my-4" size="30" width="75%">
@@ -90,10 +92,10 @@
 
 
 <div class="reviews-container">
-  <div class="d-flex">
+  <div class="review-button-container">
     <h2>Reviews</h2>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn book-btn ml-2" data-toggle="modal" data-target="#exampleModal" id="review-btn">
     Leave a Review
     </button>
   </div>

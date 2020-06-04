@@ -8,12 +8,19 @@
   margin-top: 5% !important;
 }
 
+.place-container img {
+  height: 500px;
+  width: 650px;
+  crop: fill;
+  object-fit: cover;
+}
+
 .text-container {
  display: flex;
  flex-direction: column;
  justify-content: space-between;
  width: 638px;
- height: 638px;
+ height: 500px;
 }
 
 .recommendation-count-container p {
@@ -23,8 +30,17 @@
     font-size: 18px;
     line-height: 28px;
     color: #000000;
-    width: 450px
+    width: 450px;
   }
+
+.recommendation-count-container {
+  display: flex;
+};
+
+#recommendation-thumb {
+  margin-top: 6px;
+  margin-right: 10px;
+}
 
 .img-container {
   // width: 638px;
@@ -33,8 +49,14 @@
 
 .location-container {
   display: flex;
-  width: 450px
+  width: 450px;
 }
+
+.location-container h3 {
+  font-weight: 200px;
+  font-family: 'Roboto', sans-serif;
+}
+
 
 .description-container {
   font-family: 'Roboto Mono', monospace;
@@ -72,33 +94,6 @@ h1 {
   color: #000000;
 }
 
-span.word {
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 88px;
-    line-height: 103px;
-    color: #000000;
-  }
-
-  span.word:after  {
-    background-color: #9ED9EB;
-    content: " ";
-    height: 10%;
-    position: absolute;
-    left: 0;
-    margin-left: 0rem;
-    top: 76%;
-    width: calc(100% + 1rem);
-    z-index: -2;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 88px;
-    line-height: 103px;
-    color: #000000;
-  }
 
 h3 {
   font-family: 'Roboto Mono', monospace;
@@ -140,6 +135,10 @@ h6 {
   margin: 0 auto;
 }
 
+#profile-similar-places-container {
+  width: 90%;
+}
+
 .plan-container {
   margin-left: 75px;
 }
@@ -179,7 +178,7 @@ h6 {
 .book-btn {
   font-family: 'Roboto Mono', monospace;
   width: 175px;
-  height: 74px;
+  height: 50px;
   background: #334AC0;
   border: 1px solid #9ED9EB;
   box-sizing: border-box;
@@ -206,6 +205,13 @@ h2 {
   margin: 0 auto;
   margin-top: 5% !important;
 }
+
+.reviews-container h3 {
+  font-size: 18px;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif
+}
+
 
 .reviews-card-container {
   width: 90%;
@@ -253,4 +259,18 @@ h2 {
   padding: 16px;
 }
 
+.description {
+  max-height: 200px;
+  overflow: scroll;
+  font-size: 14px;
+  font-weight: 300;
+}
+.review-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#review-btn {
+  height: 50px;
+}
 

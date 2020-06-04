@@ -45,5 +45,57 @@
 <div class="post-cont">
   <div class="group-posts">
     <h3> Group Posts </h3>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn book-btn ml-2" data-toggle="modal" data-target="#exampleModal" id="review-btn">
+    Post
+    </button>
   </div>
 </div>
+
+<div class="reviews-container">
+  <% if @group.posts.blank? %>
+    <h3>Be the first to post in <%= @group.name  %></h3>
+  <% else %>
+    <% @group.posts.each do |post| %>
+      <div class="review-scroller">
+        <div class="reviews-card-container">
+          <div class="reviews-card" id="review-<%= post.id %>">
+            <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
+            <div class="reviews-card-infos">
+              <% if post.user.name  %>
+                <h2><%= post.user.name %></h2>
+              <% else %>
+              <% end  %>
+              <p><%= post.content %></p>
+            <%= link_to "Remove", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <%= simple_form_for [ @group, @post ] do |f| %>
+         <%= f.input :content %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

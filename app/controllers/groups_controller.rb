@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
     # @plans = @group.plans
     @plans = Plan.where(group: @group)
     @members = @group.users
+    @post = Post.new
   end
 
   def create

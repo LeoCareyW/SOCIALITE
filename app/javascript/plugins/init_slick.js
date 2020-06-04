@@ -6,12 +6,12 @@ const initSlick = () => {
     dots: true
   });
   $('.plan-carousel').slick({
+    arrows: true,
     dots: false,
     infinite: true,
     speed: 500,
     fade: true,
     cssEase: 'linear',
-    prevArrow: '<i class="fa fa-arrow-right"></i>',
   });
   $('#slick1').slick({
       rows: 3,

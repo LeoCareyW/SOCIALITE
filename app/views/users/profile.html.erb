@@ -21,8 +21,16 @@
       <p class="profile-buttons" id="pbtn2"><%= link_to "New Plans", new_user_path %></p>
       <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
     </div>
+  </div>
 
-<div class="p-title"><h3>My Plans</h3></div>
+
+<div class="p-title">
+  <% if @user.plans.empty? %>
+    <h3>My Plans</h3>
+  <% else %>
+    <h3>My Plans <%= "(#{@user.plans.count})" %> </h3>
+  <% end %>
+</div>
   <div class="p-up-cont">
     <div class="left-p-up">
       <div class="lpu-plans">
@@ -39,17 +47,19 @@
                 <% @user.plans.each do |plan| %>
                 <div class="plan-card">
                   <h2 class="plan-card-text"> <%= plan.place.name %></h2>
-                  <h2 class="plan-card-date"><%= plan.date %></h2>
+                  <h2 class="plan-card-date"><%= plan.date.strftime("%B #{plan.date.day.ordinalize}, %Y") %></h2>
                     <%= cl_image_tag plan.place.photos.first.key %>
-                  <div class="plan-user-avatar"><%= cl_image_tag plan.user.photo.key %></div>
+                  <div class="plan-user-avatar">
+                    <%= cl_image_tag plan.user.photo.key %>
                     <% if plan.group %>
                       <% plan.group.memberships.each do |members| %>
-                    <div class="plan-user-avatar"> <%= cl_image_tag members.user.photo.key %></div>
+                        <%= cl_image_tag members.user.photo.key %>
                       <% end %>
                     <% end %>
                     <% if plan.friend %>
-                    <div class="plan-user-avatar"> <%= cl_image_tag plan.friend.photo.key %></div>
+                      <%= cl_image_tag plan.friend.photo.key %>
                     <% end %>
+                  </div>
                 </div>
                 <% end %>
               <% end %>
@@ -68,7 +78,7 @@
          <% @user.friendships.each do |friendship| %>
             <div class="avatar-container">
               <% if @user.photo.attached? %>
-                <%= cl_image_tag @user.photo.key %>
+                <%= cl_image_tag friendship.friend.photo.key %>
               <% else %>
                 <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
               <% end %>
@@ -87,7 +97,7 @@
   </div>
 
 
-  <div class="similar-places-container">
+  <div class="similar-places-container" id="profile-similar-places-container">
    <% if @user.recommendations.empty? %>
      <h3></h3>
    <% else  %>
@@ -106,18 +116,15 @@
     </div>
 
 
-    <div class="row">
 
-  </div>
-  </div>
-  <div class="similar-places-container">
+  <div class="similar-places-container" id="profile-similar-places-container">
   <% if @user.plans.empty? %>
     <h3> Some ideas to get you started...</h3>
   <% else %>
     <h3>Similar Places You Might Like</h3>
     <% end %>
     <div class="multiple-items">
-      <% @places.each do |place|  %>
+      <% @places.first(12).each do |place|  %>
         <div class="b-card">
           <%= cl_image_tag place.photos[0].key, class: "card-img" %>
           <div class="b-card-text">
