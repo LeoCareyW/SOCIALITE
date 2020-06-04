@@ -8,15 +8,15 @@
   height: 86vh;
   overflow: scroll;
   margin-top: -40px;
+  background-color: #F8F8F8;
 }
 
 .newsfeed-card {
-  // height: 275px;
-  border-color: white;
+  border-color: #F8F8F8;
   width: 80%;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   margin: 35px auto;
-  background-color: #fff;
+  background-color: #F8F8F8;
   background-clip: border-box;
   border-radius: 8px;
   display: flex;
@@ -107,6 +107,17 @@
   align-content: center;
 }
 
+.rpu-friends {
+    h5 {
+  font-family: 'Roboto Mono', monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #000000
+  }
+}
+
+
 .newsfeed-icons-container {
   display: flex;
   margin-top: -20px;
@@ -159,7 +170,7 @@
   font: normal normal 700 1em/4em Arial,sans-serif;
   overflow: hidden;
   width: 200px;
-  background-color: #FFFFFF;
+  background-color: #F8F8F8;
 }
 
 .feed-btn a{
@@ -178,9 +189,22 @@
   transition: 0.3s;
 }
 
+.refresh-container {
+  text-align: center;
+  margin-top: 20px;
+  transition: 5s;
+}
+
+.refresh-container:hover {
+  letter-spacing: 7px;
+  a {
+    color: #66B967;
+  }
+}
+
 
 .feed-btn:hover{
-   background-color: #FFFFFF;
+   background-color: #F8F8F8;
 
 }
 
@@ -196,6 +220,15 @@
   margin-top: -4em;
 }
 
+.ru-friends-container-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+   img {
+    width: 45px;
+    height: 45px;
+
+  }
+}
 
 .card-rec-text {
   bottom: 30px;
@@ -206,9 +239,15 @@
     }
   }
 
-.top-place h3 {
+.top-place {
+  height: 80vh;
+  overflow-y: auto;
+  h3 {
   text-align: center;
+  }
 }
+
+
 
  .c-card {
    /* Add shadows to create the "card" effect */
@@ -216,7 +255,7 @@
    transition: 0.3s;
    border-radius: 10px; /* 5px rounded corners */
    height: 250px;
-   width: 85% !important;
+   width: 70% !important;
    position: relative;
    display: flex;
    flex-direction: column;
@@ -227,6 +266,10 @@
    border: 1px solid rgba(0, 0, 0, 0.125);
    border-radius: 2px;
    margin-bottom: 30px;
+   margin-left: 20px;
+     img {
+      object-fit: cover;
+     }
  }
 
  .image-card img {
@@ -269,6 +312,14 @@
 
  }
 
+.col-feed {
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  height: 80vh;
+  overflow: scroll;
+}
 
 .c-card-likes {
   display: flex;

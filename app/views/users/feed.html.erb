@@ -1,6 +1,6 @@
 <div class="newsfeed">
   <div class="row">
-    <div class="col">
+    <div class="col-feed">
       <div class="newsfeed-profile-card">
         <div class="newsfeed-profile-title">
           <h3><%= current_user.name %></h3>
@@ -13,27 +13,27 @@
           <% end %>
         </div>
         <div class="newsfeed-groups-container">
+        <% if @user.memberships.count > 0  %>
           <h3>My Groups</h3>
           <% @user.memberships.each do |membership| %>
           <p><%= link_to "#{Group.find(membership.group_id).name}", groups_path %></p>
           <% end %>
+        <%else %>
+        <%end %>
         </div>
         <div class="rpu-friends">
           <div>
-            <h3>My friends</h3>
+            <h5>My friends</h5>
           </div>
-          <div class="ru-friends-container">
+          <div class="ru-friends-container-feed">
            <% @user.friendships.each do |friendship| %>
               <div class="avatar-container">
-                <% if @user.photo.attached? %>
+                <% if friendship.friend.photo.attached? %>
                   <%= cl_image_tag friendship.friend.photo.key %>
                 <% else %>
                   <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
                 <% end %>
                   <p id="friendship-name"><%= friendship.friend.name %></p>
-                <div class="delete-friend-method">
-                  <p><%= link_to "remove", friendship, :method => :delete %></p>
-                </div>
               </div>
             <% end %>
           </div>
@@ -45,7 +45,9 @@
     </div>
     <div class="col-6">
       <div class="newsfeed-container">
-        <%= link_to "Refresh", feed_path, id: "autorefresh" %>
+        <div class="refresh-container">
+          <%= link_to "See new posts...", feed_path, id: "autorefresh" %>
+        </div>
         <% if @friends.nil? %>
         <% else %>
           <% @friends.each do |friend|%>
