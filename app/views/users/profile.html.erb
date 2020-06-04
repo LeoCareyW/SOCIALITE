@@ -77,7 +77,7 @@
         <div class="ru-friends-container">
          <% @user.friendships.each do |friendship| %>
             <div class="avatar-container">
-              <% if @user.photo.attached? %>
+              <% if friendship.friend.photo.attached? %>
                 <%= cl_image_tag friendship.friend.photo.key %>
               <% else %>
                 <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
