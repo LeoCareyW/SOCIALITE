@@ -16,18 +16,18 @@
 
     <div id="users">
       <% @users.each do |user| %>
-      <div>
-        <div class="user" id="user">
+        <div class="user row align-items-center mr-2 mb-2" id="user">
+          <div class="col">
           <% if user.photo.attached? %>
           <%= cl_image_tag user.photo.key %>
           <% else %>
           <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
           <% end %>
           <span><strong><%= user.name %></strong></span>
-          <div class="add-friend" id="add-friend-plus" > 
-            <%= link_to "+", friendships_path(friend_id: user), method: :post, remote: true %>
           </div>
-        </div>
+          <div class="col-auto">
+          <%= link_to  "+" , friendships_path(friend_id: user), method: :post, remote: true, class: "btn add-user-btn btn-sm"  %>
+          </div>    
       </div>
       <% end %>
     </div>
