@@ -52,8 +52,9 @@
                   <div class="plan-user-avatar">
                     <%= cl_image_tag plan.user.photo.key %>
                     <% if plan.group %>
-                      <% plan.group.memberships.each do |members| %>
-                        <%= cl_image_tag members.user.photo.key %>
+                    <% @avatars = plan.group.memberships - [current_user] %>
+                      <% @avatars.each do |avatar| %>
+                        <%= cl_image_tag avatar.user.photo.key %>
                       <% end %>
                     <% end %>
                     <% if plan.friend.photo.attached? %>
