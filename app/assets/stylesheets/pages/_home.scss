@@ -113,6 +113,7 @@ html {
   text-decoration:none;
   text-align: center;
   display:block; /* important */
+  font-family: 'Roboto-mono', monospace
 }
 
 .blue-btn, .first-link{
@@ -129,11 +130,11 @@ html {
   font: normal normal 700 1em/4em Arial,sans-serif;
   overflow: hidden;
   width: 200px;
-  background-color: #BDECB6;
+  background-color: #55CB61;
 }
 
 .blue-btn:hover{
-   background-color: #E6B7ED;
+   background-color: #D67AD8;
 
 }
 
