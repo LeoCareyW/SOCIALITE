@@ -112,7 +112,7 @@
       <div class="right-side-container">
         <div class="top-place">
           <h3>#Trending</h3>
-          <% @trending.first(2).each do |place| %>
+          <% @trending.first(3).each do |place| %>
             <div class="trending-container">
               <div class="trending-image"> <%= cl_image_tag place.photos[0].key %></div>
               </%>
