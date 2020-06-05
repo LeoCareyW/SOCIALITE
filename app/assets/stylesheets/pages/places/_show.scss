@@ -282,16 +282,16 @@ h2 {
 }
 
 .reviews-card {
-  overflow: hidden;
-  height: 120px;
+  overflow: scroll;
+  height: 130px;
   display: flex;
   align-items: center;
   padding: 30px;
 }
 
 .reviews-card img {
-  height:90px;
-  width: 90px;
+  height:80px;
+  width: 80px;
   object-fit: cover;
   border-radius: 50%;
   margin-right: 20px;
@@ -303,13 +303,14 @@ h2 {
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
+  margin-top: 5px;
 }
 
 .reviews-card p {
   font-family: 'Roboto Mono', monospace;
   font-style: italic;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 21px;
 }
 
