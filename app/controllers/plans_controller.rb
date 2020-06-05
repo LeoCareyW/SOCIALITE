@@ -26,6 +26,7 @@ class PlansController < ApplicationController
     @plan.friend = User.find(params[:plan][:friend_id])
     end
     if @plan.save
+      flash[:notice] = "Plan created"
       redirect_to place_path(@place)
     else
       render :new
