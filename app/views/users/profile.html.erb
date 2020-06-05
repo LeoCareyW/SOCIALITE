@@ -53,7 +53,9 @@
                     <% if plan.group %>
                     <% @avatars = plan.group.memberships %>
                       <% @avatars.each do |avatar| %>
+                      <% if avatar.user.photo.attached? %>
                         <%= cl_image_tag avatar.user.photo.key %>
+                      <% end %>
                       <% end %>
                     <% end %>
                     <% if plan.friend && plan.friend.photo.attached? %>
