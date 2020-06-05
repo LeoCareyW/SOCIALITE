@@ -1,15 +1,15 @@
 <div>
   <div class="groups-parent">
-   <div class="groups-title">
-    <div class="groups-title-child"><h3>My Groups</h3></div>
-  </div>
-    <div class="messages-buttons-b">
-      <div class="button-container">
-        <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
-        <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_group_path %> </p>
-        <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+  <div class="group-index-header">
+      <h3>My Groups</h3>
+      <div class="messages-buttons-b">
+        <div class="button-container" id="group-index">
+          <p class="profile-buttons" id="pbtn1"><%= link_to "Back", root_path %></p>
+          <p class="profile-buttons" id="pbtn2"><%= link_to "New", new_group_path %> </p>
+          <p class="profile-buttons" id="pbtn3"><%= link_to "Calendar", new_user_path %></p>
+        </div>
       </div>
-    </div>
+  </div>
   <div id="PopUpModal" class="custom-modal">
     <div class="custom-modal-content">
       <span class="close"></span>
@@ -22,16 +22,29 @@
     </div>
     <div class="group-indexes">
       <% @groups.each do |group| %>
-      <div class="group-container">
-        <span class="group-names"><p><%= link_to "#{group.name}", group_path(group)%>
-          (<%= group.users.count %>)</p></span>
-          <% group.users.each do |user| %>
-            <% if user.photo.attached? %>
-             <%= cl_image_tag user.photo.key %>
-            <% else %>
-             <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+      <div class="group-card-container">
+        <span class="group-names"><p><%= link_to "#{group.name}", group_path(group)%></p></span>
+          <div class="group-card-images">
+            <% group.users.each do |user| %>
+              <% if user.photo.attached? %>
+               <%= cl_image_tag user.photo.key %>
+              <% else %>
+               <%= cl_image_tag("u7dlw0t2qwoy93ogrpd3q6ir8soj") %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+          <div class="group-info-container">
+            <div class="group-numbers">
+              <i class="fas fa-users"></i>
+              <p><%= group.users.count %></p>
+            </div>
+            <div class="plan-numbers">
+              <i class="fas fa-calendar-o"></i>
+              <p><%= group.plans.count %></p>
+            </div>
+
+          </div>
+
         </div>
       <% end %>
     </div>
