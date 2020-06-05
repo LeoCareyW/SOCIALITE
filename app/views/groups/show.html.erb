@@ -71,7 +71,7 @@
       <div class="review-scroller">
         <div class="reviews-card-container">
           <div class="reviews-card" id="review-<%= post.id %>">
-            <img src="https://images.unsplash.com/photo-1590698505434-48be4c47dc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80" />
+            <%= cl_image_tag post.user.photo.key %>
             <div class="reviews-card-infos">
               <% if post.user.name  %>
                 <h2><%= post.user.name %></h2>
