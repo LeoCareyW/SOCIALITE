@@ -50,14 +50,14 @@
                   <h2 class="plan-card-date"><%= plan.date.strftime("%B #{plan.date.day.ordinalize}, %Y") %></h2>
                     <%= cl_image_tag plan.place.photos.first.key %>
                   <div class="plan-user-avatar">
-                    <%= cl_image_tag plan.user.photo.key %>
                     <% if plan.group %>
-                    <% @avatars = plan.group.memberships - [current_user] %>
+                    <% @avatars = plan.group.memberships %>
                       <% @avatars.each do |avatar| %>
                         <%= cl_image_tag avatar.user.photo.key %>
                       <% end %>
                     <% end %>
                     <% if plan.friend && plan.friend.photo.attached? %>
+                      <%= cl_image_tag plan.user.photo.key %>
                       <%= cl_image_tag plan.friend.photo.key %>
                     <% end %>
                   </div>
