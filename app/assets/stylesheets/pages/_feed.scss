@@ -237,6 +237,7 @@
   left: 60px;
     p {
       font-weight: 400;
+      font-family: 'Roboto Mono';
     }
   }
 
@@ -391,7 +392,13 @@
   width: 156px;
   a {
     opacity: 1;
-    font-size: 15px;
-    color: black
+    font-size: 13px;
+    color: black;
+    font-family: 'Roboto Mono';
+  }
+
+  p {
+    font-size: 14px;
+    font-family: 'Roboto Mono';
   }
 }

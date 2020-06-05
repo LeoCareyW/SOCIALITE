@@ -100,8 +100,7 @@
               <div class="card-rec-text">
                 <p><%= plan.user.name %> visited </p>
                 <div class="newsfeed-icons-container">
-                     <p><%= plan.place.recommendations.count%></p>
-                        <i class="fas fa-heart"></i>
+                     <p><%= plan.place.recommendations.count%></p>                        <i class="fas fa-heart"></i>
                  </div>
               </div>
             <% end %>
@@ -119,7 +118,7 @@
               </%>
                 <div class="middle">
                   <div class="text"><%= link_to "#{place.name}", place_path(place) %>
-                    <p><%= place.recommendations.count%><i class="fas fa-heart"></i></p>
+                    <p><%= place.recommendations.count%>&nbsp;<i class="fas fa-heart"></i></p>
                   </div>
                 </div>
             </div>
