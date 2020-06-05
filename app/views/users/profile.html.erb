@@ -53,10 +53,13 @@
                     <%= cl_image_tag plan.user.photo.key %>
                     <% if plan.group %>
                       <% plan.group.memberships.each do |members| %>
+                      <% if members.user.photo.attached?  %>
                         <%= cl_image_tag members.user.photo.key %>
+                      <% else %>
+                      <% end %>
                       <% end %>
                     <% end %>
-                    <% if plan.friend.photo.attached? %>
+                    <% if plan.friend && plan.friend.photo.attached? %>
                       <%= cl_image_tag plan.friend.photo.key %>
                     <% end %>
                   </div>
