@@ -111,7 +111,7 @@
     <div class="card card-body">
       <h3 class="text-center" id="plan">Make A Plan</h3>
       <div class="p-form-cont">
-        <%= simple_form_for([@place, Plan.new]) do |f| %>
+        <%= simple_form_for [@place, Plan.new] do |f| %>
         <%= f.input :date %>
         <%= f.input :group, collection: @groups %>
         <%= f.association :friend, collection: @friends %>

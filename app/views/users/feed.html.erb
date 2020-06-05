@@ -1,6 +1,6 @@
 <div class="newsfeed">
   <div class="row">
-    <div class="col">
+    <div class="col-feed">
       <div class="newsfeed-profile-card">
         <div class="newsfeed-profile-title">
           <h3><%= current_user.name %></h3>
@@ -13,27 +13,27 @@
           <% end %>
         </div>
         <div class="newsfeed-groups-container">
+        <% if @user.memberships.count > 0  %>
           <h3>My Groups</h3>
           <% @user.memberships.each do |membership| %>
           <p><%= link_to "#{Group.find(membership.group_id).name}", groups_path %></p>
           <% end %>
+        <%else %>
+        <%end %>
         </div>
         <div class="rpu-friends">
           <div>
-            <h3>My friends</h3>
+            <h5>My friends</h5>
           </div>
-          <div class="ru-friends-container">
+          <div class="ru-friends-container-feed">
            <% @user.friendships.each do |friendship| %>
               <div class="avatar-container">
-                <% if @user.photo.attached? %>
+                <% if friendship.friend.photo.attached? %>
                   <%= cl_image_tag friendship.friend.photo.key %>
                 <% else %>
                   <%= cl_image_tag("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png", width: 112, height: 112, radius: "max") %>
                 <% end %>
                   <p id="friendship-name"><%= friendship.friend.name %></p>
-                <div class="delete-friend-method">
-                  <p><%= link_to "remove", friendship, :method => :delete %></p>
-                </div>
               </div>
             <% end %>
           </div>
@@ -45,7 +45,9 @@
     </div>
     <div class="col-6">
       <div class="newsfeed-container">
-        <%= link_to "Refresh", feed_path, id: "autorefresh" %>
+        <div class="refresh-container">
+          <%= link_to "See new posts...", feed_path, id: "autorefresh" %>
+        </div>
         <% if @friends.nil? %>
         <% else %>
           <% @friends.each do |friend|%>
@@ -98,8 +100,7 @@
               <div class="card-rec-text">
                 <p><%= plan.user.name %> visited </p>
                 <div class="newsfeed-icons-container">
-                     <p><%= plan.place.recommendations.count%></p>
-                        <i class="fas fa-heart"></i>
+                     <p><%= plan.place.recommendations.count%></p>                        <i class="fas fa-heart"></i>
                  </div>
               </div>
             <% end %>
@@ -112,18 +113,15 @@
         <div class="top-place">
           <h3>#Trending</h3>
           <% @trending.first(2).each do |place| %>
-          <div class="c-card" id="trending-card">
-            <%= cl_image_tag place.photos[0].key, class: "card-img" %>
-            <div class="c-card-text-flex">
-              <div class="c-card-text">
-                <h3><%= link_to "#{place.name}", place_path(place), class: "b-card-text" %></h3>
-              </div>
-              <div class="c-card-likes">
-                <p><%= place.recommendations.count%></p>
-                <i class="fas fa-heart"></i>
-              </div>
+            <div class="trending-container">
+              <div class="trending-image"> <%= cl_image_tag place.photos[0].key %></div>
+              </%>
+                <div class="middle">
+                  <div class="text"><%= link_to "#{place.name}", place_path(place) %>
+                    <p><%= place.recommendations.count%>&nbsp;<i class="fas fa-heart"></i></p>
+                  </div>
+                </div>
             </div>
-          </div>
           <% end %>
         </div>
 

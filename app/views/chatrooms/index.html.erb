@@ -14,7 +14,7 @@
      <div id="PopUpModal" class="custom-modal">
         <div class="custom-modal-content">
           <span class="close"></span>
-            <%= simple_form_for @chatroom do |f| %>
+            <%= simple_form_for @chatroom, html: { class: "type-m-box", autocomplete: 'off'} do |f| %>
              <%= f.input :name %>
               <%= f.submit "+", class: 'add-button' %>
               <% end %>
