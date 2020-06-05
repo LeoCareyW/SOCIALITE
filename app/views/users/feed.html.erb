@@ -114,18 +114,15 @@
         <div class="top-place">
           <h3>#Trending</h3>
           <% @trending.first(2).each do |place| %>
-          <div class="c-card" id="trending-card">
-            <%= cl_image_tag place.photos[0].key, class: "card-img" %>
-            <div class="c-card-text-flex">
-              <div class="c-card-text">
-                <h3><%= link_to "#{place.name}", place_path(place), class: "b-card-text" %></h3>
-              </div>
-              <div class="c-card-likes">
-                <p><%= place.recommendations.count%></p>
-                <i class="fas fa-heart"></i>
-              </div>
+            <div class="trending-container">
+              <div class="trending-image"> <%= cl_image_tag place.photos[0].key %></div>
+              </%>
+                <div class="middle">
+                  <div class="text"><%= link_to "#{place.name}", place_path(place) %>
+                    <p><%= place.recommendations.count%><i class="fas fa-heart"></i></p>
+                  </div>
+                </div>
             </div>
-          </div>
           <% end %>
         </div>
 

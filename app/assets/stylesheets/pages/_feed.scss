@@ -158,6 +158,7 @@
 
 .fa-heart {
   color: #F7665E;
+  opacity: 1;
 }
 
 
@@ -254,8 +255,8 @@
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
    border-radius: 10px; /* 5px rounded corners */
-   height: 250px;
-   width: 70% !important;
+   height: 143px;
+   width: 50% !important;
    position: relative;
    display: flex;
    flex-direction: column;
@@ -340,4 +341,57 @@
   display: flex;
   justify-content: space-between;
   vertical-align: center;
+}
+
+
+.trending-container {
+  position: relative;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-left: 80px;
+}
+
+.trending-image {
+  img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+  }
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.trending-container:hover .image {
+  opacity: 0.3;
+}
+
+.trending-container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: white;
+  opacity: 0.8;
+  font-size: 16px;
+  padding: 26px 26px;
+  height: 104px;
+  width: 156px;
+  a {
+    opacity: 1;
+    font-size: 15px;
+    color: black
+  }
 }
