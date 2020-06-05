@@ -57,7 +57,7 @@
                         <%= cl_image_tag avatar.user.photo.key %>
                       <% end %>
                     <% end %>
-                    <% if plan.friend.photo.attached? %>
+                    <% if plan.friend && plan.friend.photo.attached? %>
                       <%= cl_image_tag plan.friend.photo.key %>
                     <% end %>
                   </div>

@@ -117,7 +117,7 @@
               <div class="trending-image"> <%= cl_image_tag place.photos[0].key %></div>
               </%>
                 <div class="middle">
-                  <div class="text"><%= link_to "#{place.name}", place_path(place) %>
+                  <div class="text-feed"><%= link_to "#{place.name}", place_path(place) %>
                     <p><%= place.recommendations.count%>&nbsp;<i class="fas fa-heart"></i></p>
                   </div>
                 </div>
